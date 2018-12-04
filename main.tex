@@ -1,0 +1,247 @@
+\documentclass[a4paper]{article}
+
+\usepackage{fullpage} % Package to use full page
+\usepackage{parskip} % Package to tweak paragraph skipping
+\usepackage{tikz} % Package for drawing
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+
+\DeclareMathOperator{\Tr}{Tr}
+
+\title{Optique des lasers : Cours 1 et 2}
+\author{Aline Vernier}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+
+\section{Rappels d'optique géométrique}
+Lors de cette section de rappels, nous nous placerons dans les conditions de Gauss, c'est à dire lorsque les rayons lumineux possèdent un angle d'incidence très faible par rapport à l'axe optique, et en sont peu éloignés (on parle aussi d'approximation \textit{paraxiale}). Les systèmes optiques seront aplanétiques et stigmatiques. Nous considérerons les caractéristiques de systèmes admettant un axe de symétrie de révolution (centrés) et des foyers (focaux). Un grand nombre de systèmes optiques sont l’association de miroirs plans, de miroirs sphériques et de lentilles, et l'approximation paraxiale sera toujours vérifiée lors ce cours, que ce soit en optique géométrique ou gaussienne (voir cours suivant et cours de K. Plamann). 
+
+\subsection{Lentilles minces}
+
+La lentille mince est une approximation que l'on peut appliquer lorsque l'épaisseur de la lentille est très inférieure aux rayons de courbure de ses deux surfaces. Lorsque ce n'est pas le cas, on parle alors de lentille épaisse Fig.~\ref{fig:lentille_mince}. 
+\begin{figure}[!htbp]
+\label{fig:lentille_mince}
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Lentille mince, doublet achromatique épais}
+\end{figure}
+
+L'axe optique de la lentille est défini par la droite passant par les deux centres de courbure $C$ et $C'$ des deux dioptres. Par convention, on définit le sens positif comme le sens de propagation de la lumière.  La distance focale $f$ d'une lentille dans l'air est donnée par la "formule des opticiens" Eq.~\ref{eq:lensmaker} où $n$ est l'indice du matériau à la longueur d'onde de travail, et $R_{1, 2}$ respectivement rayons de courbure des dioptres arrière et avant de la lentille. 
+\begin{equation}
+\label{eq:lensmaker}
+\frac{1}{f}=(n-1)\left[\frac{1}{R_1}-\frac{1}{R_2}+\frac{(n-1)d}{n R_1 R_2}\right]
+\end{equation}
+Tout système optique possède deux foyers, un foyer objet et un foyer image. Pour une lentille mince, ces foyers sont sur l'axe optique et symétriques par rapport au centre $O$ de la lentille. Le demi-espace délimité par le plan contenant la lentille porte le nom du foyer qu'il contient (espace objet ou espace image). Un objet réel se situe dans l'espace objet et un objet virtuel dans l'espace image, il en va de même pour une image, qui sera réelle si elle se situe dans l'espace image et virtuelle si elle se trouve dans l'espace objet.
+\begin{figure}[!htbp]
+\label{fig:espaces_lentille_mince}
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Espaces objet et image}
+\end{figure}
+
+\subsection{Formule(s) de conjugaison et construction d'images}
+
+La formule de conjugaison est la relation entre la focale de la lentille et les positions de l'objet et de l'image. La formule dite "de Descartes" s'écrit :
+\begin{equation}
+\label{eq:descartes}
+\frac{1}{\overline{OF}}=\frac{1}{\overline{OA'}}-\frac{1}{\overline{OA}}
+\end{equation}
+On peut en déduire la formule de Newton pour un système optique centré : 
+\begin{equation}
+\label{eq:newton}
+\overline{FA}\cdot\overline{F'A'}=-\overline{OF'}^2
+\end{equation}
+
+Afin de construire l'image d'un objet par une lentille, on se souviendra des règles suivantes : 
+\begin{itemize}
+    \item Tout rayon passant par le centre optique ne sont pas déviés
+    \item Tout rayon parallèle à l'axe optique se focalise au foyer image
+\end{itemize}
+On remarquera que par retour inverse de la lumière, un faisceau sortant d'une optique parallèlement à l'axe provient du foyer objet.
+
+\begin{figure}[!htbp]
+\label{fig:image_lentille_convergente}
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Construction d'une image par une lentille convergente}
+\end{figure}
+
+\begin{figure}[!htbp]
+\label{fig:image_lentille_divergente}
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Construction d'une image par une lentille divergente}
+\end{figure}
+
+Une quantité utile (ne serait-ce que pour choisir le bon objectif pour son appareil photo) est le grandissement du système. On le note $g$ et il est défini par :
+\begin{equation}
+\label{eq:grandissement}
+g=\frac{\overline{A'B'}}{\overline{AB}}=\frac{\overline{OA'}}{\overline{OA}}
+\end{equation}
+
+\subsection{Application aux miroirs sphériques}
+
+Comme nous le verrons d'ici quelques cours, la construction de lasers implique l'utilisation intensive de miroirs courbes. La construction d'images par ces systèmes optiques est très similaire à la construction d'images par une lentille à ceci près qu'un miroir évidemment inverse le sens de propagation de la la lumière. Souvenez-vous que par convention, le sens positif est le sens de propagation de la lumière, il faut donc rédéfinir ce sens après chaque réflexion ! 
+
+Un miroir concave est convergent, un miroir convexe est divergent. La focale d'un miroir sphérique est égale à la moitié de son rayon de courbure en mesure algébrique : $\overline{SF}=\frac{\overline{SC}}{2}$. $S$ est le sommêt du miroir (\textit{n'importe quel point de la surface est un sommet ! Par convention, on appelle S le point de la surface situé sur l'axe optique du miroir}) et $C$ son centre de courbure.
+\textit{Petit exercice : montrer géométriquement qu'un miroir sphérique n'est pas parfaitement stigmatique}
+\begin{figure}[!htbp]
+\label{fig:miroir_concave}
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Tracé de rayons lumineux pour un miroir concave}
+\end{figure}
+
+Du fait de l'inversion du sens de propagation de la lumière après réflexion, la formule de conjugaison "de Descartes" pour un miroir sphérique est alors : $\frac{2}{\overline{SC}}=\frac{1}{\overline{SA'}}+\frac{1}{\overline{SA}}$, et le grandissement $g = \frac{\overline{FS}}{\overline{FA}}$
+
+\subsection{Petite digression sur les aberrations}
+
+On peut facilement montrer que les rayons fortment hors-axe ne sont pas focalisés au même point que les rayons paraxiaux par une optique sphérique. Cette propriété géométrique est ce qu'on appelle une aberration géométrique. Il y en a beaucoup d'autres (dont l'astigmatisme -pouvant affecter les yeux- donnant lieu à l'existence de deux foyers distincts pour deux directions orthogonales perpendiculaires à l'axe optique). La seule surface permettant une focalisation parfaitement stigmatique quel que soit l'écart à l'axe optique d'un rayon parallèle à ce dernier est la parabole (c'est de ça dont il s'agit quand on parle d'optiques asphérisées, comme les lentilles des téléphones portables ou les lentilles de collimation des diodes laser).
+
+\begin{figure}[!htbp]
+\label{fig:astig}
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Astigmatisme}
+\end{figure}
+On remarque aussi que la formule dite "des opticiens" \ref{eq:lensmaker} dépend de l'indice de réfraction qui est une fonction de la longueur d'onde (voir par exemple https://refractiveindex.info/). Cela implique que la focale dépend de la longueur d'onde, donnant lieu à ce qu'on appelle l'aberration chromatique. Afin d'y remédier, on peut souvent utiliser des miroirs (achromatiques dans le sens des aberrations) ou des optiques spéciales combinant plusieurs verres pour compenser la variation d'indice avec la longueur d'onde. C'est le cas notamment des objectifs d'appareil photo, conçus pour travailler dans tout le spectre visible, ou d'un grand nombre d'objectifs de microscope. 
+
+\section{Description matricielle d'éléments optiques}
+
+Un ensemble de systèmes optiques travaillant dans les conditions de Gauss (== optique paraxiale) constitue une application linéaire, on peut donc exprimer les trajectoires des rayons par produits de \textit{matrices de transfert}, aussi appelées matrices de Gauss. Ce formalisme est  très pratique pour calculer numériquement la propagation d'un grand ensemble de rayons, notamment lors de la conception de cavités laser (voir section suivante!).
+
+Un rayon est complètement caractérisé dans un plan orthogonal à l'axe par sa distance $r$ à l'axe optique et l'angle définissant sa direction de propagation $\theta$. La convention de signe pour les angles est la même qu'en trigonométrie : angles positifs dans le sens inverse des aiguilles d'une montre et zéro au niveau de l'axe optique. 
+L'approximation paraxiale nous permettra d'assimiler $\mathrm{sin}(\theta)\sim\mathrm{tan}(\theta)\sim\theta$, et on aura une relation linéraire entre $\left(r_1, \theta_1\right)$ et $\left(r_2, \theta_2\right)$, positions et angles avant et après passage dans le système optique. Si on définit $r'_1$ et $r'_1$ tels que $\theta_1 \sim (dr/dz)_z_1 = r'_1$ et $\theta_2 \sim (dr/dz)_z_2 = r'_2$, on peut alors écrire: 
+
+\begin{align} 
+r_2 &=  Ar_1 + Br'_1 \\ 
+r_2' &=  Cr_1 + Dr'_1
+\end{align}
+où $A, B, C, D$ sont des constantes caractéristiques de l'élément optique. Dans une formulation matricielle, on écrira naturellement:
+
+\begin{gather}
+ \begin{bmatrix} r_2 \\ r'_2 \end{bmatrix}
+ =
+  \begin{bmatrix}
+   A & B \\
+   C & D 
+   \end{bmatrix}
+   \begin{bmatrix} r1 \\ r'_1 \end{bmatrix}
+\end{gather}
+
+\begin{figure}[!htbp]
+\label{fig:matrix}
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Schéma de principe de la représentation en matrices de transfert}
+\end{figure}
+
+
+\subsection{\'Elements de base}
+
+\subsubsection{Propagation libre sur une distance L}
+L'exemple le plus simple que nous pouvons prendre est celui de la propagation libre d'un rayon dans l'air sur une distance $L$. A titre d'exercice, on évaluera aussi la propagation d'un rayon dans un milieu d'indice $n$ pour des plans d'entrée et de sortie juste à l'extérieur de ce milieu.
+\subsubsection{Traversée d'un dioptre plan}
+\subsubsection{Traversée d'une lentille mince de focale $f$}
+\subsubsection{Traversée d'un dioptre sphérique de rayon $R$}
+\subsubsection{Matrice de transfert entre deux plans conjugés}
+\textit{Pour vous amuser...}
+
+Pour tous les exemples donnés ci-dessus, on notera que le déterminant de la matrice $ABCD$ est égal au rapport des indices de réfraction d'entrée et de sortie : $AD - BC = \frac{n_1}{n_2}$. Dans la plupart des cas concrets, le milieu d'entrée et de sortie est le même, par conséquent, le déterminant de la matrice $ABCD$ sera égal à 1.
+
+\section{Application des matrices de transfert aux cavités}
+Une des applications du formalisme des matrices de transfert est l'étude de la stabilité des cavités. Nous allons voir dans cette partie comment l'utiliser.
+
+\subsection{Condition de stabilité}
+
+Nous nous intéressons ici à la propagation des rayons lumineux dans une une cavité dans laquelle on se fixe un plan $\Pi$ de référence et dont on connaît la matrice de transfert $T$ sur un tour (départ du plan $\Pi$ et retour au plan $\Pi$ après traversée de toutes les optiques de la cavité).
+Après $n$ tours de cavité, un rayon de coordonnées $\left[r, r'\right]$ dans le plan $\Pi$ peut soit rester au voisinage de l'axe soit s'en éloigner. Une cavité pour laquelle les rayons restent confinés est dite stable. Lorsque les rayons divergent en-dehors de la cavité, cette cavité est instable. 
+\textbf{Nous cherchons ici à établir une relation générale nous permettant d'évaluer si la cavité est stable ou pas.}  
+
+Dans le cas général, les coordonnées $\left[r_n, r'_n\right]$ sont exprimées par :
+\begin{gather}
+ \begin{bmatrix} r_n \\ r'_n \end{bmatrix}
+ =
+\left[T\right]^n
+   \begin{bmatrix} r \\ r' \end{bmatrix}
+\end{gather}
+
+Si le résonateur est stable, pour tout rayon initial de coordonnées $\left[r_0, r'_0\right]$, le rayon $\left[r_n, r'_n\right]$ ne doit pas diverger lorsque $n$ augmente. Cela implique que :
+\begin{gather}
+  \begin{bmatrix}
+   A & B \\
+   C & D 
+   \end{bmatrix}^n
+\end{gather}
+ne diverge pas.
+
+Lorsqu'un rayon effectue un tour complet de cavité, l'indice d'entrée et l'indice de sortie sont évidemment identiques, le déterminant de la matrice de transfert $T$ de la cavité $AD-BC$ est par conséquent égal  1. Grâce au théorème de Sylvestre \cite{bornwolf}, et en posant $\mathrm{cos}(\theta) = (A+D)/2$, on peut montrer que :
+\begin{gather}
+  \begin{bmatrix}
+   A & B \\
+   C & D 
+   \end{bmatrix}^n
+ =\frac{1}{\mathrm{sin}(\theta)}
+   \begin{bmatrix}
+   A \mathrm{sin}n\theta - \sin(n-1)\theta & B\sin n\theta \\
+   C\sin n\theta & D\sin n\theta - \sin(n-1)\theta 
+   \end{bmatrix}
+\end{gather}
+Cette relation montre que la n-ième puissance de la matrice $T$ ne diverge pas si $\theta$ est réel. En effet, si on écrit :
+
+\begin{equation}
+\label{eq:thetaib}
+    \theta = a + ib
+\end{equation}
+
+alors : 
+\begin{align*}
+     \sin n\theta &= \left[\exp(in\theta)+\exp(-in\theta)\right]/2i \\
+     &=\left[\exp(ina - nb)+\exp(-ina + nb)\right]/2i 
+\end{align*}
+
+La quantité $\sin n\theta$ contiendrait donc un terme \textit{exponentiellement croissant} avec $n$ pour $|b|>0$, la matrice $T^n$ divergerait alors. Par conséquent, pour que le résonanteur soit stable, $\theta$ doit être réel, et d'après l'équation \ref{eq:thetaib}, cela implique :
+
+\begin{equation}
+\label{eq:stab}
+ -1<\left(\frac{A+D}{2}\right)<1
+\end{equation}
+
+Cette équation établit la condition de stabilité pour tout résonateur travaillant dans les conditions paraxiales. 
+On peut aussi démontrer cette condition par diagonalisation de la matrice $T$. 
+En utilisant le fait que le déterminant de la matrice vaille 1 sur un tour (milieux d'arrivée et de départ identique) ainsi que $\det\left[T-\lambda I\right] = 0$, on peut alors écrire l'équation aux valeurs propres :
+\begin{equation}
+\lambda^2- \lambda \mathrm{Tr}\left[T\right]+1 = 0
+\end{equation}
+Cette équation admet deux solutions (complexes) $\lambda_+$ et  $\lambda_-$:
+
+\begin{equation}
+    \lambda_{+, -}=
+    \frac{\mathrm{Tr}\left[T\right]}{2}
+    \pm
+    \sqrt{
+    \left(
+    \frac{\Tr\left[T\right]}
+    {2}
+    \right)^2-1
+    }
+\end{equation}
+
+
+\bibliographystyle{plain}
+\bibliography{bibliography.bib}
+\end{document}
