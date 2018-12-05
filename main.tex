@@ -197,8 +197,8 @@ Lorsqu'un rayon effectue un tour complet de cavité, l'indice d'entrée et l'ind
    \end{bmatrix}^n
  =\frac{1}{\mathrm{sin}(\theta)}
    \begin{bmatrix}
-   A \mathrm{sin}n\theta - \sin(n-1)\theta & B\sin n\theta \\
-   C\sin n\theta & D\sin n\theta - \sin(n-1)\theta 
+   A \mathrm{sin}(n\theta) - \sin\left((n-1)\theta\right) & B\sin (n\theta) \\
+   C\sin (n\theta) & D\sin (n\theta) - \sin\left((n-1)\theta \right)
    \end{bmatrix}
 \end{gather}
 Cette relation montre que la n-ième puissance de la matrice $T$ ne diverge pas si $\theta$ est réel. En effet, si on écrit :
@@ -210,7 +210,7 @@ Cette relation montre que la n-ième puissance de la matrice $T$ ne diverge pas 
 
 alors : 
 \begin{align*}
-     \sin n\theta &= \left[\exp(in\theta)+\exp(-in\theta)\right]/2i \\
+     \sin (n\theta) &= \left[\exp(in\theta)+\exp(-in\theta)\right]/2i \\
      &=\left[\exp(ina - nb)+\exp(-ina + nb)\right]/2i 
 \end{align*}
 
@@ -222,14 +222,17 @@ La quantité $\sin n\theta$ contiendrait donc un terme \textit{exponentiellement
 \end{equation}
 
 Cette équation établit la condition de stabilité pour tout résonateur travaillant dans les conditions paraxiales. 
+
+
 On peut aussi démontrer cette condition par diagonalisation de la matrice $T$. 
 En utilisant le fait que le déterminant de la matrice vaille 1 sur un tour (milieux d'arrivée et de départ identique), la résolution de $\det\left[T-\lambda I\right] = 0$ amène à l'équation aux valeurs propres suivante :
 \begin{equation}
 \lambda^2- \lambda \Tr{T}+1 = 0
 \end{equation}
-Cette équation admet deux solutions (que l'on peut écrire sous forme exponentielle) $\lambda_+ = \exp^{i\phi}$ et  $\lambda_- = \exp^{-i\phi}$ : 
+Cette équation admet deux solutions (que l'on peut écrire sous forme exponentielle) $\lambda_+ = \rho_+\exp^{i\phi_+}$ et  $\lambda_- = \rho_-\exp^{i\phi_-}$ : 
 
 \begin{equation}
+\label{eq:eigenval}
     \lambda_\pm=
     \frac{\Tr{T}}{2}
     \pm
@@ -240,8 +243,35 @@ Cette équation admet deux solutions (que l'on peut écrire sous forme exponenti
     \right)^2-1
     }
 \end{equation}
-On rappelle que $\Tr{T} = \lambda_{+}+\lambda_{-}$ et $\det{T}=\lambda_{+}\lambda_{-} = 1$, deux relations qui nous seront utiles par la suite.
-Lorsque $\lambda_{+}$ et $\lambda_{-}$ sont distinctes, les vecteurs propres associés $u_{+},\,u_{-}$ forment une base, et on peut alors exprimer tout rayon $x = \left[r_n, r'_n\right]$ comme une combinaison linéaire de ces deux vecteurs propres $x = au_{+}+bu_{-}$. Après $n$ tours de cavité, $x_n = a(\lambda_+)^nu_{+}+b(\lambda_-)^nu_{-}$.
+On rappelle que  $\det{T}=\lambda_{+}\lambda_{-} = 1$, par conséquent, si $\lambda_+ = \rho_+\exp^{i\phi_+}$ alors $\lambda_- = \rho_+^{-1}\exp^{-i\phi_+}$. 
+
+Lorsque $\lambda_{+}$ et $\lambda_{-}$ sont distinctes, les vecteurs propres associés $u_{+},\,u_{-}$ forment une base, et on peut alors exprimer tout rayon $x = \left[r_n, r'_n\right]$ comme une combinaison linéaire de ces deux vecteurs propres $x = au_{+}+bu_{-}$. 
+
+Après $n$ tours de cavité, $x_n = a(\lambda_+)^nu_{+}+b(\lambda_-)^nu_{-}$. Ce rayon reste borné si $|\lambda_+|\leq1$ et $|\lambda_-|\leq1$. Comme $\lambda_{+}\lambda_{-} = 1$, alors $|\lambda_+|=|\lambda_-|=1$. 
+Puisque $\Tr{T}=\lambda_+ + \lambda_-=A+D$, on obtient :
+\begin{equation}
+    2\cos\phi = A + D
+\end{equation}
+Nous retrouvons alors la condition de stabilité :
+
+\begin{equation}
+    -1\leq \frac{A+D}{2}\leq 1
+\end{equation}
+ou encore :
+\begin{equation}
+    0 \leq \frac{A+D+2}{4}\leq 1
+\end{equation}
+
+\subsection{Exemple pour une cavité linéraire}
+Maintenant que nous avons établi une relation générale permettant d'évaluer si la cavité que l'on cherche à concevoir sera stable ou pas, nous pouvons étudier le cas particulier d'une cavité linéaire :
+
+\begin{figure}[!htbp]
+\label{fig:image_cavite_lineaire}
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Une cavité linéaire}
+\end{figure}
 
 
 
