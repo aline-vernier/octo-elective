@@ -7,7 +7,7 @@
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 
-\DeclareMathOperator{\Tr}{Tr}
+\newcommand{\Tr}[1]{\mathrm{Tr}\left[{#1}\right]}
 
 \title{Optique des lasers : Cours 1 et 2}
 \author{Aline Vernier}
@@ -223,23 +223,26 @@ La quantité $\sin n\theta$ contiendrait donc un terme \textit{exponentiellement
 
 Cette équation établit la condition de stabilité pour tout résonateur travaillant dans les conditions paraxiales. 
 On peut aussi démontrer cette condition par diagonalisation de la matrice $T$. 
-En utilisant le fait que le déterminant de la matrice vaille 1 sur un tour (milieux d'arrivée et de départ identique) ainsi que $\det\left[T-\lambda I\right] = 0$, on peut alors écrire l'équation aux valeurs propres :
+En utilisant le fait que le déterminant de la matrice vaille 1 sur un tour (milieux d'arrivée et de départ identique), la résolution de $\det\left[T-\lambda I\right] = 0$ amène à l'équation aux valeurs propres suivante :
 \begin{equation}
-\lambda^2- \lambda \mathrm{Tr}\left[T\right]+1 = 0
+\lambda^2- \lambda \Tr{T}+1 = 0
 \end{equation}
-Cette équation admet deux solutions (complexes) $\lambda_+$ et  $\lambda_-$:
+Cette équation admet deux solutions (que l'on peut écrire sous forme exponentielle) $\lambda_+ = \exp^{i\phi}$ et  $\lambda_- = \exp^{-i\phi}$ : 
 
 \begin{equation}
-    \lambda_{+, -}=
-    \frac{\mathrm{Tr}\left[T\right]}{2}
+    \lambda_\pm=
+    \frac{\Tr{T}}{2}
     \pm
     \sqrt{
     \left(
-    \frac{\Tr\left[T\right]}
+    \frac{\Tr{T}}
     {2}
     \right)^2-1
     }
 \end{equation}
+On rappelle que $\Tr{T} = \lambda_{+}+\lambda_{-}$ et $\det{T}=\lambda_{+}\lambda_{-} = 1$, deux relations qui nous seront utiles par la suite.
+Lorsque $\lambda_{+}$ et $\lambda_{-}$ sont distinctes, les vecteurs propres associés $u_{+},\,u_{-}$ forment une base, et on peut alors exprimer tout rayon $x = \left[r_n, r'_n\right]$ comme une combinaison linéaire de ces deux vecteurs propres $x = au_{+}+bu_{-}$. Après $n$ tours de cavité, $x_n = a(\lambda_+)^nu_{+}+b(\lambda_-)^nu_{-}$.
+
 
 
 \bibliographystyle{plain}
