@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper]{book}
 
 \usepackage{fullpage} % Package to use full page
 \usepackage{parskip} % Package to tweak paragraph skipping
@@ -9,29 +9,33 @@
 
 \newcommand{\Tr}[1]{\mathrm{Tr}\left[{#1}\right]}
 
+\renewcommand{\chaptername}{Chapitre}
+\renewcommand{\bibname}{Bibliographie}
+
 \title{Optique des lasers : Cours 1 et 2}
-\author{Aline Vernier}
+\author{}
 \date{}
 
 \begin{document}
 
 \maketitle
 
-\section{Introduction}
+\chapter*{Introduction}
 
+\chapter{Approche géométrique}
 
 \section{Rappels d'optique géométrique}
 Lors de cette section de rappels, nous nous placerons dans les conditions de Gauss, c'est à dire lorsque les rayons lumineux possèdent un angle d'incidence très faible par rapport à l'axe optique, et en sont peu éloignés (on parle aussi d'approximation \textit{paraxiale}). Les systèmes optiques seront aplanétiques et stigmatiques. Nous considérerons les caractéristiques de systèmes admettant un axe de symétrie de révolution (centrés) et des foyers (focaux). Un grand nombre de systèmes optiques sont l’association de miroirs plans, de miroirs sphériques et de lentilles, et l'approximation paraxiale sera toujours vérifiée lors ce cours, que ce soit en optique géométrique ou gaussienne (voir cours suivant et cours de K. Plamann). 
 
 \subsection{Lentilles minces}
 
-La lentille mince est une approximation que l'on peut appliquer lorsque l'épaisseur de la lentille est très inférieure aux rayons de courbure de ses deux surfaces. Lorsque ce n'est pas le cas, on parle alors de lentille épaisse Fig.~\ref{fig:lentille_mince}. 
+La lentille mince est une approximation que l'on peut appliquer lorsque l'épaisseur de la lentille est très inférieure aux rayons de courbure de ses deux surfaces. Lorsque ce n'est pas le cas, on parle alors de lentille épaisse (Fig.~\ref{fig:lentille_mince}). 
 \begin{figure}[!htbp]
-\label{fig:lentille_mince}
 \begin{center}
 \includegraphics[width=8cm]{}
 \end{center}
 \caption{Lentille mince, doublet achromatique épais}
+\label{fig:lentille_mince}
 \end{figure}
 
 L'axe optique de la lentille est défini par la droite passant par les deux centres de courbure $C$ et $C'$ des deux dioptres. Par convention, on définit le sens positif comme le sens de propagation de la lumière.  La distance focale $f$ d'une lentille dans l'air est donnée par la "formule des opticiens" Eq.~\ref{eq:lensmaker} où $n$ est l'indice du matériau à la longueur d'onde de travail, et $R_{1, 2}$ respectivement rayons de courbure des dioptres arrière et avant de la lentille. 
@@ -41,11 +45,11 @@ L'axe optique de la lentille est défini par la droite passant par les deux cent
 \end{equation}
 Tout système optique possède deux foyers, un foyer objet et un foyer image. Pour une lentille mince, ces foyers sont sur l'axe optique et symétriques par rapport au centre $O$ de la lentille. Le demi-espace délimité par le plan contenant la lentille porte le nom du foyer qu'il contient (espace objet ou espace image). Un objet réel se situe dans l'espace objet et un objet virtuel dans l'espace image, il en va de même pour une image, qui sera réelle si elle se situe dans l'espace image et virtuelle si elle se trouve dans l'espace objet.
 \begin{figure}[!htbp]
-\label{fig:espaces_lentille_mince}
 \begin{center}
 \includegraphics[width=8cm]{}
 \end{center}
 \caption{Espaces objet et image}
+\label{fig:espaces_lentille_mince}
 \end{figure}
 
 \subsection{Formule(s) de conjugaison et construction d'images}
@@ -63,8 +67,8 @@ On peut en déduire la formule de Newton pour un système optique centré :
 
 Afin de construire l'image d'un objet par une lentille, on se souviendra des règles suivantes : 
 \begin{itemize}
-    \item Tout rayon passant par le centre optique ne sont pas déviés
-    \item Tout rayon parallèle à l'axe optique se focalise au foyer image
+    \item Un rayon passant par le centre optique n'est pas dévié
+    \item Un rayon parallèle à l'axe optique focalise au foyer image
 \end{itemize}
 On remarquera que par retour inverse de la lumière, un faisceau sortant d'une optique parallèlement à l'axe provient du foyer objet.
 
@@ -143,15 +147,15 @@ où $A, B, C, D$ sont des constantes caractéristiques de l'élément optique. D
 \end{gather}
 
 \begin{figure}[!htbp]
-\label{fig:matrix}
 \begin{center}
 \includegraphics[width=8cm]{}
 \end{center}
 \caption{Schéma de principe de la représentation en matrices de transfert}
+\label{fig:matrix}
 \end{figure}
 
 
-\subsection{\'Elements de base}
+\subsection{\'Elements de base}\label{subsec:el_base}
 
 \subsubsection{Propagation libre sur une distance L}
 L'exemple le plus simple que nous pouvons prendre est celui de la propagation libre d'un rayon dans l'air sur une distance $L$. A titre d'exercice, on évaluera aussi la propagation d'un rayon dans un milieu d'indice $n$ pour des plans d'entrée et de sortie juste à l'extérieur de ce milieu.
@@ -262,17 +266,161 @@ ou encore :
     0 \leq \frac{A+D+2}{4}\leq 1
 \end{equation}
 
-\subsection{Exemple pour une cavité linéraire}
-Maintenant que nous avons établi une relation générale permettant d'évaluer si la cavité que l'on cherche à concevoir sera stable ou pas, nous pouvons étudier le cas particulier d'une cavité linéaire :
+\subsection{Exemple pour une cavité linéraire}\label{subsec:ex_cavlin}
+
+
+Maintenant que nous avons établi une relation générale permettant d'évaluer si la cavité que l'on cherche à concevoir sera stable ou pas, nous pouvons étudier le cas particulier d'une cavité linéaire.
 
 \begin{figure}[!htbp]
-\label{fig:image_cavite_lineaire}
 \begin{center}
 \includegraphics[width=8cm]{}
 \end{center}
 \caption{Une cavité linéaire}
+\label{fig:image_cavite_lineaire}
 \end{figure}
 
+La matrice $ABCD$ associée à la cavité de la Figure~\ref{fig:image_cavite_lineaire} est obtenue par le produit ordonné des matrices des éléments optiques individuels qui la constituent. \\
+On a donc :
+\begin{enumerate}
+    \item Réflexion sur le miroir de rayon $R_1$
+    \item Propagation libre sur L
+    \item Réflexion sur le miroir de rayon $R_2$
+    \item Propagation libre sur L 
+\end{enumerate}
+
+En reprenant les éléments de base dérivés page~\pageref{subsec:el_base}, on construit donc :
+
+\begin{gather}
+  \begin{bmatrix}
+   A & B \\
+   C & D 
+   \end{bmatrix}
+   =
+  \begin{bmatrix}
+   1 & 0 \\
+   -2/R_1 & 1 
+  \end{bmatrix}
+  \begin{bmatrix}
+   1 & L \\
+   0 & 1 
+   \end{bmatrix}
+  \begin{bmatrix}
+   1 & 0 \\
+   -2/R_2 & 1 
+  \end{bmatrix}
+  \begin{bmatrix}
+   1 & L \\
+   0 & 1 
+   \end{bmatrix}
+\end{gather}
+
+D'où on calcule :
+\begin{align}
+\label{eq:stab_cav_lin}
+    \frac{A+D}{2}&=1-\frac{2L}{R_1}-\frac{2L}{R_2}+\frac{2L^2}{R_1R_2}\\
+                 &=2\left[1-\frac{L}{R_1}\right]\left[1-\frac{L}{R_2}\right]-1
+\end{align}
+
+Il est commun de définir les paramètres $g_1 = 1 -\left(\frac{L}{R_1}\right)$ et $g_2 = 1 -\left(\frac{L}{R_2}\right)$, qui nous permettent de réécrire l'équation~\ref{eq:stab_cav_lin} de façon très simple :
+
+\begin{equation}
+    0<g_1g_2<1
+\end{equation}
+
+Nous pouvons alors tracer le diagramme de stabilité général pour un résonateur sphérique (Figure~\ref{fig:diag_stab}).
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Diagramme de stabilité }
+\label{fig:diag_stab}
+\end{figure}
+
+\subsection{Pour aller plus loin...}
+https://doi.org/10.1364/OL.27.001869
+
+\chapter{Faisceaux Gaussiens}
+
+Bien que l'approche géométrique permette d'aller aussi loin que l'évaluation de la stabilité des cavités, elle est évidemment insuffisante à une analyse complète de la lumière en cavité puisque les effets d'interférence et de diffraction ne sont pas décrits. Lors du cours XXX il a été démontré que dans l'approximation paraxiale, le champ électrique scalaire en un point $r(x, y, z)$ éloigné de la source $r_0(x_0, y_0, z_0)$ peut s'écrire : 
+
+\begin{equation}
+    E(r,r_0) = \frac{1}{z-z_0}\exp\left[-ik\frac{(x - x_0)^2+(y - y_0)^2}{2(z - z_0)}\right]
+\end{equation}
+Soit $R_0$ le rayon de courbure de l'onde au point $z_0$, alors le rayon de l'onde au point $z$ est donné par :
+\begin{equation}
+    R(z) = R_0+z-z_0
+\end{equation}
+
+En cavité, nous pouvons faire des approximations supplémentaires, car les modes de la cavité par définition, restent confinés, et l'énergie ne se propage donc pas dans tout l'espace
+
+
+\section{Propagation libre de l'onde sphérique Gaussienne}
+
+On cherche ici à connaître l'évolution des paramètres w et R après propagation libre sur une distance $z-z_0$, en supposant ces paramètres connus dans un plan transverse donné. $z-z_0$ étant réel, il existe nécessairement un plan $\Pi_0$ de l'axe de propagation pour lequel $q$ est un imaginaire pur que l'on notera $q_0$. D'après la définition de $q$, sur ce plan particulier, la surface d'onde est infinie (onde plane) et on a :
+
+\begin{equation}
+    R_0 = \infty \quad \textrm{et} \quad q_0=i\frac{\pi w_0^2}{\lambda} = iz_R
+\end{equation}
+
+$z_R$ est une distance caractéristique que l'on appelle la longueur de Rayleigh. Ce paramètre est important et reviendra régulièrement dans les chapitres à venir.
+Par la suite, on prendra la position du plan $\Pi_0$ pour origine sur l'axe de propagation ($z_0=0$).
+
+A partir de ce plan, on a donc :
+\begin{align}
+    q(z) &= q_0+z\\
+    \frac{1}{q(z)}&=\frac{1}{z+iz_R}\\
+    \textrm{et} \quad \frac{1}{q(z)}&=\frac{1}{R(z)}-i\frac{\lambda}{\pi w^2(z)}
+\end{align}
+De ces équations, on tire les relations donnant l'évolution de $R$ et $w$ en fonction de la distance parcourue $z$ :
+
+\begin{align}
+  R(z) &= z + \frac{z_R^2}{z}\\
+  w^2(z)&= w_0^2\left[1+\left(\frac{z}{z_R}\right)^2\right]  = \frac{\lambda}{\pi}\left(z_R+\frac{z^2}{z_R}\right)
+\end{align}
+
+De ces équations, on tire que :
+\begin{itemize}
+    \item Sur le plan $\Pi_0$, la taille du faisceau gaussien est minimale et son rayon transverse vaut $w_0$. Ce lieu particulier est appelé waist du faisceau ou encore \``col\'' en français
+    \item Le faisceau est symétrique par rapport au plan du waist
+    \item Le rayon transverse $w(z$) varie de manière hyperbolique suivant $z$.
+\end{itemize}
+
+Quand $z\gg Z_R$, alors $w(z)\simeq\frac{w_0z}{z_R}\simeq \theta z$ où $\theta = \frac{\lambda}{\pi w_0}$ est le demi angle de divergence à $1/$e de
+l'amplitude. $\theta$ est l'angle formé par les asymptotes à l'hyperbole à grande
+distance du plan $\Pi_0$ (cf. Fig.~\ref{fig:carac_gauss}).
+La longueur de Rayleigh permet de définir deux régimes de propagation :
+\begin{itemize}
+    \item $z_R < z < z_R$ : les lois de l'optique géométrique classique ne sont pas valables.
+    \item $|z|\gg z_R$ : il est possible d'utiliser l'optique géométrique.
+\end{itemize}
+
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Caractéristiques du faisceau gaussien}
+\label{fig:carac_gauss}
+\end{figure}
+
+Le rayon de courbure de l'onde est plan en $z=0$, il est minimum en $z = z_R$ ($R_\textrm{min}=2z_R$) et il vaut environ $z$ quand $z$ est grand devant la longueur de Rayleigh.
+
+
+\section{Faisceaux Gaussiens et matrices ABCD}
+
+Il est ainsi possible de démontrer dans le cas général (ce que nous ne ferons pas ici), qu'après traversée d'un système optique décrit par une matrice $ABCD$, une onde gaussienne de rayon de
+courbure complexe $q$ se transforme en une autre onde gaussienne de rayon de courbure complexe $q'$ donné par :
+
+\subsection{Matrice ABCD gaussienne pour une lentille}
+
+Lors de cette section, nous allons nous pencher sur le cas particulier de la lentille, et démontrer que la matrice $ABCD$ qui y est associée est la même pour un faisceau gaussien que dans le cadre de l'optique géométrique. 
+
+\section{Formules de conjugaison des faisceaux gaussiens}
+
+
+ 
+\section{Faisceaux gaussiens en cavité, modes propres}
 
 
 \bibliographystyle{plain}
