@@ -6,8 +6,11 @@
 \usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
+\usepackage[x11names]{xcolor}
+\colorlet{myGray}{gray!15}
 
 \newcommand{\Tr}[1]{\mathrm{Tr}\left[{#1}\right]}
+\newcommand{\iu}{{i\mkern1mu}}
 
 \renewcommand{\chaptername}{Chapitre}
 \renewcommand{\bibname}{Bibliographie}
@@ -21,6 +24,9 @@
 \maketitle
 
 \chapter*{Introduction}
+
+Le contenu de ce cours est très largement inspiré de l'excellent ouvrage sur les lasers d'Orazio Svelto "Principles of Lasers", du cours de Frédérika Augé-Rochereau sur la Physique des Lasers, anciennement EPE11 à l'ENSTA, ainsi que de la référence en ligne d'optique pour l'ingénieur http://www.optique-ingenieur.org/. Etant donnée la contrainte temporelle de ce cours, des choix de matériel enseigné ont dû être fait, et pour compléter et affiner sa compréhension, le lecteur est encouragé à consulter chacune de ces références ainsi que celles en fin de document.
+
 
 \chapter{Approche géométrique}
 
@@ -54,7 +60,7 @@ Tout système optique possède deux foyers, un foyer objet et un foyer image. Po
 
 \subsection{Formule(s) de conjugaison et construction d'images}
 
-La formule de conjugaison est la relation entre la focale de la lentille et les positions de l'objet et de l'image. La formule dite "de Descartes" s'écrit :
+La formule de conjugaison est la relation entre la focale de la lentille et les positions de l'objet et de l'image. La formule dite "de Descartes" s'écrit~:
 \begin{equation}
 \label{eq:descartes}
 \frac{1}{\overline{OF}}=\frac{1}{\overline{OA'}}-\frac{1}{\overline{OA}}
@@ -88,7 +94,7 @@ On remarquera que par retour inverse de la lumière, un faisceau sortant d'une o
 \caption{Construction d'une image par une lentille divergente}
 \end{figure}
 
-Une quantité utile (ne serait-ce que pour choisir le bon objectif pour son appareil photo) est le grandissement du système. On le note $g$ et il est défini par :
+Une quantité utile (ne serait-ce que pour choisir le bon objectif pour son appareil photo) est le grandissement du système. On le note $g$ et il est défini par~:
 \begin{equation}
 \label{eq:grandissement}
 g=\frac{\overline{A'B'}}{\overline{AB}}=\frac{\overline{OA'}}{\overline{OA}}
@@ -108,7 +114,7 @@ Un miroir concave est convergent, un miroir convexe est divergent. La focale d'u
 \caption{Tracé de rayons lumineux pour un miroir concave}
 \end{figure}
 
-Du fait de l'inversion du sens de propagation de la lumière après réflexion, la formule de conjugaison "de Descartes" pour un miroir sphérique est alors : $\frac{2}{\overline{SC}}=\frac{1}{\overline{SA'}}+\frac{1}{\overline{SA}}$, et le grandissement $g = \frac{\overline{FS}}{\overline{FA}}$
+Du fait de l'inversion du sens de propagation de la lumière après réflexion, la formule de conjugaison "de Descartes" pour un miroir sphérique est alors~: $\frac{2}{\overline{SC}}=\frac{1}{\overline{SA'}}+\frac{1}{\overline{SA}}$, et le grandissement $g = \frac{\overline{FS}}{\overline{FA}}$
 
 \subsection{Petite digression sur les aberrations}
 
@@ -128,13 +134,13 @@ On remarque aussi que la formule dite "des opticiens" \ref{eq:lensmaker} dépend
 Un ensemble de systèmes optiques travaillant dans les conditions de Gauss (== optique paraxiale) constitue une application linéaire, on peut donc exprimer les trajectoires des rayons par produits de \textit{matrices de transfert}, aussi appelées matrices de Gauss. Ce formalisme est  très pratique pour calculer numériquement la propagation d'un grand ensemble de rayons, notamment lors de la conception de cavités laser (voir section suivante!).
 
 Un rayon est complètement caractérisé dans un plan orthogonal à l'axe par sa distance $r$ à l'axe optique et l'angle définissant sa direction de propagation $\theta$. La convention de signe pour les angles est la même qu'en trigonométrie : angles positifs dans le sens inverse des aiguilles d'une montre et zéro au niveau de l'axe optique. 
-L'approximation paraxiale nous permettra d'assimiler $\mathrm{sin}(\theta)\sim\mathrm{tan}(\theta)\sim\theta$, et on aura une relation linéraire entre $\left(r_1, \theta_1\right)$ et $\left(r_2, \theta_2\right)$, positions et angles avant et après passage dans le système optique. Si on définit $r'_1$ et $r'_1$ tels que $\theta_1 \sim (dr/dz)_z_1 = r'_1$ et $\theta_2 \sim (dr/dz)_z_2 = r'_2$, on peut alors écrire: 
+L'approximation paraxiale nous permettra d'assimiler $\mathrm{sin}(\theta)\sim\mathrm{tan}(\theta)\sim\theta$, et on aura une relation linéraire entre $\left(r_1, \theta_1\right)$ et $\left(r_2, \theta_2\right)$, positions et angles avant et après passage dans le système optique. Si on définit $r'_1$ et $r'_1$ tels que $\theta_1 \sim (dr/dz)_z_1 = r'_1$ et $\theta_2 \sim (dr/dz)_z_2 = r'_2$, on peut alors écrire~: 
 
 \begin{align} 
 r_2 &=  Ar_1 + Br'_1 \\ 
 r_2' &=  Cr_1 + Dr'_1
 \end{align}
-où $A, B, C, D$ sont des constantes caractéristiques de l'élément optique. Dans une formulation matricielle, on écrira naturellement:
+où $A, B, C, D$ sont des constantes caractéristiques de l'élément optique. Dans une formulation matricielle, on écrira naturellement~:
 
 \begin{gather}
  \begin{bmatrix} r_2 \\ r'_2 \end{bmatrix}
@@ -176,7 +182,7 @@ Nous nous intéressons ici à la propagation des rayons lumineux dans une une ca
 Après $n$ tours de cavité, un rayon de coordonnées $\left[r, r'\right]$ dans le plan $\Pi$ peut soit rester au voisinage de l'axe soit s'en éloigner. Une cavité pour laquelle les rayons restent confinés est dite stable. Lorsque les rayons divergent en-dehors de la cavité, cette cavité est instable. 
 \textbf{Nous cherchons ici à établir une relation générale nous permettant d'évaluer si la cavité est stable ou pas.}  
 
-Dans le cas général, les coordonnées $\left[r_n, r'_n\right]$ sont exprimées par :
+Dans le cas général, les coordonnées $\left[r_n, r'_n\right]$ sont exprimées par~:
 \begin{gather}
  \begin{bmatrix} r_n \\ r'_n \end{bmatrix}
  =
@@ -184,7 +190,7 @@ Dans le cas général, les coordonnées $\left[r_n, r'_n\right]$ sont exprimées
    \begin{bmatrix} r \\ r' \end{bmatrix}
 \end{gather}
 
-Si le résonateur est stable, pour tout rayon initial de coordonnées $\left[r_0, r'_0\right]$, le rayon $\left[r_n, r'_n\right]$ ne doit pas diverger lorsque $n$ augmente. Cela implique que :
+Si le résonateur est stable, pour tout rayon initial de coordonnées $\left[r_0, r'_0\right]$, le rayon $\left[r_n, r'_n\right]$ ne doit pas diverger lorsque $n$ augmente. Cela implique que~:
 \begin{gather}
   \begin{bmatrix}
    A & B \\
@@ -193,7 +199,7 @@ Si le résonateur est stable, pour tout rayon initial de coordonnées $\left[r_0
 \end{gather}
 ne diverge pas.
 
-Lorsqu'un rayon effectue un tour complet de cavité, l'indice d'entrée et l'indice de sortie sont évidemment identiques, le déterminant de la matrice de transfert $T$ de la cavité $AD-BC$ est par conséquent égal  1. Grâce au théorème de Sylvestre \cite{bornwolf}, et en posant $\mathrm{cos}(\theta) = (A+D)/2$, on peut montrer que :
+Lorsqu'un rayon effectue un tour complet de cavité, l'indice d'entrée et l'indice de sortie sont évidemment identiques, le déterminant de la matrice de transfert $T$ de la cavité $AD-BC$ est par conséquent égal  1. Grâce au théorème de Sylvestre \cite{bornwolf}, et en posant $\mathrm{cos}(\theta) = (A+D)/2$, on peut montrer que~:
 \begin{gather}
   \begin{bmatrix}
    A & B \\
@@ -205,7 +211,7 @@ Lorsqu'un rayon effectue un tour complet de cavité, l'indice d'entrée et l'ind
    C\sin (n\theta) & D\sin (n\theta) - \sin\left((n-1)\theta \right)
    \end{bmatrix}
 \end{gather}
-Cette relation montre que la n-ième puissance de la matrice $T$ ne diverge pas si $\theta$ est réel. En effet, si on écrit :
+Cette relation montre que la n-ième puissance de la matrice $T$ ne diverge pas si $\theta$ est réel. En effet, si on écrit~:
 
 \begin{equation}
 \label{eq:thetaib}
@@ -218,7 +224,7 @@ alors :
      &=\left[\exp(ina - nb)+\exp(-ina + nb)\right]/2i 
 \end{align*}
 
-La quantité $\sin n\theta$ contiendrait donc un terme \textit{exponentiellement croissant} avec $n$ pour $|b|>0$, la matrice $T^n$ divergerait alors. Par conséquent, pour que le résonanteur soit stable, $\theta$ doit être réel, et d'après l'équation \ref{eq:thetaib}, cela implique :
+La quantité $\sin n\theta$ contiendrait donc un terme \textit{exponentiellement croissant} avec $n$ pour $|b|>0$, la matrice $T^n$ divergerait alors. Par conséquent, pour que le résonanteur soit stable, $\theta$ doit être réel, et d'après l'équation \ref{eq:thetaib}, cela implique~:
 
 \begin{equation}
 \label{eq:stab}
@@ -229,11 +235,11 @@ Cette équation établit la condition de stabilité pour tout résonateur travai
 
 
 On peut aussi démontrer cette condition par diagonalisation de la matrice $T$. 
-En utilisant le fait que le déterminant de la matrice vaille 1 sur un tour (milieux d'arrivée et de départ identique), la résolution de $\det\left[T-\lambda I\right] = 0$ amène à l'équation aux valeurs propres suivante :
+En utilisant le fait que le déterminant de la matrice vaille 1 sur un tour (milieux d'arrivée et de départ identique), la résolution de $\det\left[T-\lambda I\right] = 0$ amène à l'équation aux valeurs propres suivante~:
 \begin{equation}
 \lambda^2- \lambda \Tr{T}+1 = 0
 \end{equation}
-Cette équation admet deux solutions (que l'on peut écrire sous forme exponentielle) $\lambda_+ = \rho_+\exp^{i\phi_+}$ et  $\lambda_- = \rho_-\exp^{i\phi_-}$ : 
+Cette équation admet deux solutions (que l'on peut écrire sous forme exponentielle) $\lambda_+ = \rho_+\exp^{i\phi_+}$ et  $\lambda_- = \rho_-\exp^{i\phi_-}$~: 
 
 \begin{equation}
 \label{eq:eigenval}
@@ -252,11 +258,11 @@ On rappelle que  $\det{T}=\lambda_{+}\lambda_{-} = 1$, par conséquent, si $\lam
 Lorsque $\lambda_{+}$ et $\lambda_{-}$ sont distinctes, les vecteurs propres associés $u_{+},\,u_{-}$ forment une base, et on peut alors exprimer tout rayon $x = \left[r_n, r'_n\right]$ comme une combinaison linéaire de ces deux vecteurs propres $x = au_{+}+bu_{-}$. 
 
 Après $n$ tours de cavité, $x_n = a(\lambda_+)^nu_{+}+b(\lambda_-)^nu_{-}$. Ce rayon reste borné si $|\lambda_+|\leq1$ et $|\lambda_-|\leq1$. Comme $\lambda_{+}\lambda_{-} = 1$, alors $|\lambda_+|=|\lambda_-|=1$. 
-Puisque $\Tr{T}=\lambda_+ + \lambda_-=A+D$, on obtient :
+Puisque $\Tr{T}=\lambda_+ + \lambda_-=A+D$, on obtient~:
 \begin{equation}
     2\cos\phi = A + D
 \end{equation}
-Nous retrouvons alors la condition de stabilité :
+Nous retrouvons alors la condition de stabilité~:
 
 \begin{equation}
     -1\leq \frac{A+D}{2}\leq 1
@@ -280,7 +286,7 @@ Maintenant que nous avons établi une relation générale permettant d'évaluer 
 \end{figure}
 
 La matrice $ABCD$ associée à la cavité de la Figure~\ref{fig:image_cavite_lineaire} est obtenue par le produit ordonné des matrices des éléments optiques individuels qui la constituent. \\
-On a donc :
+On a donc~:
 \begin{enumerate}
     \item Réflexion sur le miroir de rayon $R_1$
     \item Propagation libre sur L
@@ -288,7 +294,7 @@ On a donc :
     \item Propagation libre sur L 
 \end{enumerate}
 
-En reprenant les éléments de base dérivés page~\pageref{subsec:el_base}, on construit donc :
+En reprenant les éléments de base dérivés page~\pageref{subsec:el_base}, on construit donc~:
 
 \begin{gather}
   \begin{bmatrix}
@@ -314,14 +320,14 @@ En reprenant les éléments de base dérivés page~\pageref{subsec:el_base}, on 
    \end{bmatrix}
 \end{gather}
 
-D'où on calcule :
+D'où on calcule~:
 \begin{align}
 \label{eq:stab_cav_lin}
     \frac{A+D}{2}&=1-\frac{2L}{R_1}-\frac{2L}{R_2}+\frac{2L^2}{R_1R_2}\\
                  &=2\left[1-\frac{L}{R_1}\right]\left[1-\frac{L}{R_2}\right]-1
 \end{align}
 
-Il est commun de définir les paramètres $g_1 = 1 -\left(\frac{L}{R_1}\right)$ et $g_2 = 1 -\left(\frac{L}{R_2}\right)$, qui nous permettent de réécrire l'équation~\ref{eq:stab_cav_lin} de façon très simple :
+Il est commun de définir les paramètres $g_1 = 1 -\left(\frac{L}{R_1}\right)$ et $g_2 = 1 -\left(\frac{L}{R_2}\right)$, qui nous permettent de réécrire l'équation~\ref{eq:stab_cav_lin} de façon très simple~:
 
 \begin{equation}
     0<g_1g_2<1
@@ -342,22 +348,62 @@ https://doi.org/10.1364/OL.27.001869
 
 \chapter{Faisceaux Gaussiens}
 
-Bien que l'approche géométrique permette d'aller aussi loin que l'évaluation de la stabilité des cavités, elle est évidemment insuffisante à une analyse complète de la lumière en cavité puisque les effets d'interférence et de diffraction ne sont pas décrits. Lors du cours XXX il a été démontré que dans l'approximation paraxiale, le champ électrique scalaire en un point $r(x, y, z)$ éloigné de la source $r_0(x_0, y_0, z_0)$ peut s'écrire : 
+Bien que l'approche géométrique permette d'aller aussi loin que l'évaluation de la stabilité des cavités, elle est évidemment insuffisante à une analyse complète de la lumière en cavité puisque les effets d'interférence et de diffraction ne sont pas décrits. Lors du cours XXX il a été démontré que dans l'approximation paraxiale, le champ électrique scalaire en un point $r(x, y, z)$ éloigné de la source $r_0(x_0, y_0, z_0)$ peut s'écrire~: 
 
 \begin{equation}
-    E(r,r_0) = \frac{1}{z-z_0}\exp\left[-ik\frac{(x - x_0)^2+(y - y_0)^2}{2(z - z_0)}\right]
+    E(r,r_0) = \frac{1}{z-z_0}\exp\left[-\iu k\frac{(x - x_0)^2+(y - y_0)^2}{2(z - z_0)}\right]
+    \label{eq:chp_gaussien}
 \end{equation}
-Soit $R_0$ le rayon de courbure de l'onde au point $z_0$, alors le rayon de l'onde au point $z$ est donné par :
+
+%Soit $R_0$ le rayon de courbure de l'onde au point $z_0$, alors le rayon de l'onde au point $z$ est donné par :
+%\begin{equation}
+%    R(z) = R_0+z-z_0
+%\end{equation}
+
+Il s'agit du champ d'une onde paraxiale, qui est une solution approchée de l'équation de Helmholtz où l'on reconnaît le facteur de propagation $\exp(-ik(z-zo))$ et le facteur de variation transverse d'amplitude :
+
 \begin{equation}
-    R(z) = R_0+z-z_0
+    u(x, y, z) = \frac{1}{z-z_0}\exp\left(-ik\frac{(x-x_0)^2+(y-y_0)^2}{2(z-z_0)}\right)
 \end{equation}
 
-En cavité, nous pouvons faire des approximations supplémentaires, car les modes de la cavité par définition, restent confinés, et l'énergie ne se propage donc pas dans tout l'espace
+Nous allons à présent transformer l'expression du champ éléctrique \ref{eq:chp_gaussien} afin d'en donner une interprétation physique. 
+
+On introduit le rayon de courbure complexe~: 
+\begin{equation}
+    q(z)=q_0+z_z_0
+\end{equation}
+
+puis on réécrit la répartition transverse d'amplitude sous la forme~: 
+
+\begin{equation}
+    u(x, y, z) = \frac{1}{q(z)}\exp\left(-ik\frac{x^2+y^2}{2q(z)}\right)
+\end{equation}
+
+En séparant les parties réelle et imaginaire de $q(z)$ telles que $\frac{1}{q(z)}=\frac{1}{R(z)}-\frac{\iu}{q_i(z)}$, on obtient~:
+
+\begin{equation}
+    u(x,y,z)=\frac{1}{q(z)}\exp\left(-\iu k \frac{x^2 + y^2}{2q_r(z)}\right)\exp\left(-\iu k \frac{x^2 + y^2}{2q_i(z)}\right)
+\end{equation}
+
+où nous avons ainsi fait apparaître un terme de phase quadratique dont le rayon de courbure est égal à $q_r(z)$ et un profil d'amplitude gaussien de demi-largeur à $1/e^2$ égal à $q_i(z)$. Par souci de lisibilité, on adopte la notation suivante~:
+
+\begin{equation}
+    q_r(z)=R(z)\quad\mathrm{et}\quad w^2(z)=\frac{k}{2q_i(z)}
+\end{equation}
+
+$R(z)$ correspondant à un rayon de courbure et $w(z)$ au ``waist'' en anglais ou col en français, pour une abscisse $z$. Attention, $R(z)$ ne peut plus être déduit d'un rayon de courbure précédent par simple relation linéaire, comme en optique paraxiale. On remarque de plus que physiquement, $q_i(z)$ ne peut être que positif puisque par conservation de l'énergie, l'amplitude d'un champ dont l'étendue spatiale augmente ne peut pas croître. 
+On obtient ainsi deux relations qui nous seront très utiles :
+
+\begin{align}
+    \frac{1}{q(z)}&=\frac{1}{R(z)}-\frac{\iu \lambda}{\pi w^2(z)}\\
+    u(x,y,z)&=\frac{1}{q(z)}\exp\left(-\iu k \frac{x^2 + y^2}{2R(z)}\right)\exp\left(-\frac{x^2 + y^2}{w^2(z)}\right)
+\end{align}
+    
 
 
-\section{Propagation libre de l'onde sphérique Gaussienne}
+\section{Propagation libre de l'onde Gaussienne}
 
-On cherche ici à connaître l'évolution des paramètres w et R après propagation libre sur une distance $z-z_0$, en supposant ces paramètres connus dans un plan transverse donné. $z-z_0$ étant réel, il existe nécessairement un plan $\Pi_0$ de l'axe de propagation pour lequel $q$ est un imaginaire pur que l'on notera $q_0$. D'après la définition de $q$, sur ce plan particulier, la surface d'onde est infinie (onde plane) et on a :
+On cherche ici à connaître l'évolution des paramètres w et R après propagation libre sur une distance $z-z_0$, en supposant ces paramètres connus dans un plan transverse donné. $z-z_0$ étant réel, il existe nécessairement un plan $\Pi_0$ de l'axe de propagation pour lequel $q$ est un imaginaire pur que l'on notera $q_0$. D'après la définition de $q$, sur ce plan particulier, la surface d'onde est infinie (onde plane) et on a~:
 
 \begin{equation}
     R_0 = \infty \quad \textrm{et} \quad q_0=i\frac{\pi w_0^2}{\lambda} = iz_R
@@ -372,7 +418,7 @@ A partir de ce plan, on a donc :
     \frac{1}{q(z)}&=\frac{1}{z+iz_R}\\
     \textrm{et} \quad \frac{1}{q(z)}&=\frac{1}{R(z)}-i\frac{\lambda}{\pi w^2(z)}
 \end{align}
-De ces équations, on tire les relations donnant l'évolution de $R$ et $w$ en fonction de la distance parcourue $z$ :
+De ces équations, on tire les relations donnant l'évolution de $R$ et $w$ en fonction de la distance parcourue $z$~:
 
 \begin{align}
   R(z) &= z + \frac{z_R^2}{z}\\
@@ -386,7 +432,7 @@ De ces équations, on tire que :
     \item Le rayon transverse $w(z$) varie de manière hyperbolique suivant $z$.
 \end{itemize}
 
-Quand $z\gg Z_R$, alors $w(z)\simeq\frac{w_0z}{z_R}\simeq \theta z$ où $\theta = \frac{\lambda}{\pi w_0}$ est le demi angle de divergence à $1/$e de
+Quand $z\gg Z_R$, alors $w(z)\simeq\frac{w_0z}{z_R}\simeq \theta z$ où $\theta = \frac{\lambda}{\pi w_0}$ est le demi-angle de divergence à $1/$e de
 l'amplitude. $\theta$ est l'angle formé par les asymptotes à l'hyperbole à grande
 distance du plan $\Pi_0$ (cf. Fig.~\ref{fig:carac_gauss}).
 La longueur de Rayleigh permet de définir deux régimes de propagation :
@@ -409,18 +455,275 @@ Le rayon de courbure de l'onde est plan en $z=0$, il est minimum en $z = z_R$ ($
 
 \section{Faisceaux Gaussiens et matrices ABCD}
 
-Il est ainsi possible de démontrer dans le cas général (ce que nous ne ferons pas ici), qu'après traversée d'un système optique décrit par une matrice $ABCD$, une onde gaussienne de rayon de
-courbure complexe $q$ se transforme en une autre onde gaussienne de rayon de courbure complexe $q'$ donné par :
+Il est possible de démontrer dans le cas général (ce que nous ne ferons pas ici), qu'après traversée d'un système optique décrit par une matrice $ABCD$, une onde gaussienne de rayon de courbure complexe $q$ se transforme en une autre onde gaussienne de rayon de courbure complexe $q'$ donné par~:
 
-\subsection{Matrice ABCD gaussienne pour une lentille}
+\begin{equation}
+    q'=\frac{Aq+B}{Cq+D}
+\end{equation}
+C'est ce qu'on appelle \textit{la loi ABCD}.
 
-Lors de cette section, nous allons nous pencher sur le cas particulier de la lentille, et démontrer que la matrice $ABCD$ qui y est associée est la même pour un faisceau gaussien que dans le cadre de l'optique géométrique. 
+\subsection{Formules de conjugaison d'un faisceau gaussien}
 
-\section{Formules de conjugaison des faisceaux gaussiens}
+En utilisant la loi ABCD appliquée à un système optique centré avec origines aux foyers, on peut trouver les relations entre les positions et les tailles d'un waist objet situé avant le système optique et celles du waist image obtenu après traversée du système.
 
 
- 
-\section{Faisceaux gaussiens en cavité, modes propres}
+Le waist objet $w_0$ est situé sur le plan repéré par l'abscisse $\sigma$ par rapport au foyer objet tandis que le waist image $w'_0$ est repéré par l'abscisse $\sigma'$ par rapport au foyer image (cf. Figure~\ref{fig:conjugaison_gauss}). Le rayon de courbure complexe correspondant au waist objet est imaginaire pur et vaut :
+
+\begin{equation}
+    q_0=\iu \frac{\pi w_0^2}{\lambda}
+\end{equation}
+
+Les éléments de la matrice de transfert valent (démonstration en TD):
+\begin{equation}
+    A=\frac{-\sigma'}{f'};\,B=-f+\frac{\sigma \sigma'}{f'};\,C=-\frac{1}{f'};\,D=\frac{\sigma}{f'}
+\end{equation}
+
+En appliquant la loi ABCD et sachant que $q_0$ et $q_'0$ sont tous les deux des imaginaires purs, on trouve les relations suivantes :
+
+\begin{align}
+    \sigma \sigma'&=ff'-q_0q_0'\\
+    \sigma q_0 &= \sigma'q_0\\
+    \sigma \sigma' &= ff' + z_RzR'\\
+    -\frac{\sigma}{z_R}&=\frac{\sigma'}{z_R}
+\end{align}
+
+Ces relations démontrent que la position du waist image dépend non seulement de la position du waist objet mais aussi de sa taille. Lorsque $\sigma>>z_R$, l'onde au niveau du foyer objet est quasi-sphérique (celui-ci est dans le champ lointain du faisceau). Le front d'onde au niveau de la lentille s'apparente donc semble donc au front d'onde d'un point source, et on obtient alors : $\sigma\sigma'=ff'$. On retrouve ici les relations de Newton de l'optique géométrique.
+Un autre cas particulier est le cas $\sigma=0$. Dans ce cas, on a aussi $\sigma'=0$. Le waist image est situé exactement sur le foyer image et la relation de grandissement entre les waists est donnée par~:
+
+\begin{equation}
+    w_0'^2=-\frac{1}{w_0^2}\frac{ff'\lambda\lambda'}{\pi^2}
+\end{equation}
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Abscisses des waists objet et image}
+\label{fig:conjugaison_gauss}
+\end{figure}
+
+
+\subsection{Déphasage d'un faisceau gaussien par propagation}
+
+Le déphasage sur l'axe Oz par propagation du faisceau entre les plans de référence est donné par~:
+\begin{equation}
+    \phi(z) = -kz-\arg(A+B/q) = \phi_0+\phi_g
+\end{equation}
+
+Le terme $\phi_0$ représente le déphasage par propagation d'une onde plane et le terme $\phi_g$ est la phase de Gouy. En prenant pour origine le waist du faisceau, on peut calculer le terme $\phi_g$ correspondant à une propagation libre~:
+\begin{equation}
+    A+\frac{B}{q}=1+\frac{z}{\iu z_R}
+\end{equation}
+
+d'où on déduit~:
+\begin{equation}
+    \phi(z) = -kz-\arctan\left(\frac{z}{z_R}\right)
+\end{equation}
+
+Lorsque $w_0$ ou $Z_R$ deviennent très grands, le faisceau gaussien devient proche d'une onde plane et on voit alors que le déphasage $\phi_g$ tend vers zéro.
+
+\chapter{Résonateurs passifs}
+
+Lors de ce chapitre, nous allons nous intéresser aux propriétés, notamment spectrales, des champs électriques résonants au sein de cavités \textit{passives}, c'est-à-dire en l'absence de milieu à gain. 
+Les résonateurs utilisés dans les lasers sont composés de miroirs plans ou sphériques, et la longueur de la cavité va généralement de quelques centimètres à quelques dizaines de centimètres. 
+Ces résonateurs sont dits ouverts, à la différence des résonateurs micro-ondes qui sont fermés et confinent ainsi le champ dans les trois dimensions. Les résonateurs ouverts en revanche présentent des pertes transverses du fait de la diffraction du champ. Cependant, il existe dans les résonateurs ouverts des modes comportant de très faibles pertes ; on définit un tel mode comme une configuration électromagnétique que l'on écrit~:
+
+\begin{equation}
+    E(r,t)=E_0u(r)\exp\left[(-t/2\tau_c)+\iu \omega t\right]
+\end{equation}
+
+La quantité $\tau_c$ est le temps de vie d'un photon en cavité.
+
+\section{Fréquences de résonance}
+
+\subsection{Cavité plan-plan (cavité Fabry-Pérot)}
+Ce type de résonateur, que vous avez probablement étudié précédemment, est consrtuit par l'association de deux miroirs plans parallèles l'un à l'autre, et séparés par une distance $L$. En première approximation, on peut considérer que les modes de ce résonateur sont la superposition de deux ondes planes se propageant dans les deux directions opposées. On considèrera que les miroirs sont métalliques, et que par conséquent le champ au niveau du miroir s'annule. Par conséquent, on peut établir que la longueur de la cavité doit être un multiple de demi-entiers de la longeur d'onde $L = n(\lambda/2)$ où $n$ est un entier positif. On déduit ainsi la relation~:
+\begin{equation}
+    \nu = n\left(\frac{c}{2L}\right)
+    \label{eq:FP}
+\end{equation}
+une relation que l'on peut aussi déduire en imposant que le déphasage de l'onde sur un aller-retour soit un multiple de $2\pi$, c'est-à-dire $2kL=2n\pi$ afin que l'interférence soit constructive et que le champ obtenu par une succession de réflexions soit non nul. 
+On en tire aisément l'intervalle spectral libre : 
+\begin{equation}
+    \Delta\nu = \frac{c}{2L}
+\end{equation}
+qui est l'espacement fréquentiel entre deux modes \textit{longitudinaux} consécutifs.
+
+\subsection{Cavité concentrique}
+On construit un résonateur concentrique en plaçant deux miroirs sphériques de même rayon de courbure $R$ à une distance $L=2R$. Dans ce cas simple, les modes peuvent être approximés par une superposition de deux ondes sphériques prenant leur origine aux centres confondus des deux miroirs. On obtient ainsi la même relation de résonance que pour un résonateur Fabry-Pérot (Eq.~\ref{eq:FP}).
+
+\subsection{Cavité confocale}
+La combinaison de deux miroirs sphériques de rayons de courbure $R_1$ et $R_2$ à une distance telle que leurs \textbf{points focaux} soient confondus est un résonateur confocal. Dans le cas particulier de $R_1=R_2=R$, on a alors $L=R$. Comme le montre la figure~\ref{fig:resonateur_confocal}, on peut tracer un nombre infini de chemins optiques géométriques fermés dans ce type de cavité, et par conséquent on ne peut en déduire une relation simple avec les fréquences de résonance. 
+
+\subsection{Cavité sphérique générale}
+Dans le cas très général où les rayons de courbures et distances entre les miroirs sont arbitraires, on ne peut pas de façon générale trouver de rayon revenant à son point de départ, et de même que pour un résonateur confocal il est impossible par cette approche d'établir une condition de résonance. 
+
+\subsection{Cavité en anneau}
+Une cavité importante dans le domaine des lasers est la cavité en anneau qui peut être simple ou repliée. Elle peut être faite de miroirs plans et ou sphériques, comme indiqué Fig.~\ref{fig:ring_cavity}. Afin que l'onde revienne sur elle-même après un tour complet de cavité, on établit que~:
+
+\begin{equation}
+    \nu=\frac{nc}{L}
+\end{equation}
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Cavités en anneau}
+\label{fig:ring_cavity}
+\end{figure}
+
+\section{Modes propres, valeurs propres}
+
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Cavité à deux miroirs et structure linéaire équivalente}
+\label{fig:eigenmodes_cavity}
+\end{figure}
+
+Jusqu'à présent, nous avons adopté une approche quasiment géométrique à l'établissement des conditions de résonance des \textbf{modes longitudinaux}. On peut dans le cas général dériver une telle condition si on prend en compte l'existence de \textbf{modes transverses}. 
+Si on écrit l'amplitude du champ dans le cas décrit Fig.~\ref{fig:eigenmodes_cavity} après un tour complet de cavité \cite{svelto}, on obtient~:
+
+\begin{equation}
+    \tilde E(x,y,2L)=\left[\exp(-2\iu kL\right]\iint K(x,y; x_1,y_1)~E(x_1, y_1, 0)dx_1dy_1
+    \label{eq:gen_field}
+\end{equation}
+$K(x,y; x_1,y_1)$ est ce que l'on appelle le noyau de propagation (voir encart ci-après). 
+Afin que ce mode soit résonant, il faut que la forme du champ soit identique à elle-même après un tour complet de cavité. On établit donc que~: 
+
+\begin{equation}
+     \tilde E(x,y,2L)=\tilde\sigma\exp(-2\iu kL)\~E(x,y,0)
+\end{equation}
+
+$\sigma$ correspond à un facteur complexe constant donnant l'atténuation de l'onde par diffraction ainsi que son déphasage sur un tour complet. On réécrit $ \tilde\sigma = | \tilde\sigma|\exp(\iu \phi)$. On a alors deux contributions au terme de phase : longitudinale ($-2kL$) et une transverse ($\phi$). Le déphasage total est donc~:
+
+\begin{equation}
+    \Delta\phi=2kL+\phi
+\end{equation}
+Si on insère cette expression dans l'équation~\ref{eq:gen_field}, on obtient~:
+
+\begin{equation}
+    \tilde\sigma \tilde E(x,y,0)=\iint K(x,y; x_1,y_1)~E(x_1, y_1, 0)dx_1dy_1
+    \label{eq:fredholm}
+\end{equation}
+
+qui est une équation intégrale de Fredholm du second type admettant des solutions $ \tilde E_{lm}(x,y,0)$ auto-similaires après chaque période en cavité. Chaque solution est définie par un couple d'entiers ${l,m}$ sera notée $ \tilde\sigma_{lm}$.
+Comme nous l'avons souligné précédemment, le module de ces valeurs propres représente les pertes par diffraction, et il est par conséquent inférieur à 1. Le déphasage total acquis, $\Delta\phi_{lm}=-2kL+\phi_{lm}$ doit être multiple de $2\pi$ afin que l'interférence soit constructive c'est-à-dire $\phi_{lm}=-2\pi n$. On déduit alors facilement~: 
+
+\begin{equation}
+    \nu_{lmn}=\frac{c}{2L}\left[n+\frac{\phi_{lm}}{2\pi}\right]
+\end{equation}
+Nous avons ainsi exprimé les fréquences de résonance de la cavité en fonction des trois nombres entiers $(n, l, m)$ où $l$ et $m$ représentent l'ordre du mode propre de l'équation \ref{eq:fredholm}, et n le déphasage total du faisceau après un cycle complet en cavité en unités de $2\pi$. Dans la section suivante nous verrons un exemple concret des fréquences de résonance de modes propres en cavité.
+
+\medskip
+
+\noindent\fcolorbox{black}{myGray}{%
+    \minipage[t]{\dimexpr1\linewidth-2\fboxsep-2\fboxrule\relax}
+        \textbf{Considérations physiques relatives au noyau de propagation :\\}
+        Le noyau de propagation représente la distribution d'intensité et de phase résultant de la propagation d'un champ électromagnétique issu d'un point source dans un système donné. Par exemple, si on prend un point source en $z=z_1$, et qu'on cherche le noyau de propagation associé à une propagation libre sur une distance $z_1-z_2$, il suffit de prendre la distribution d'intensité et de phase du champ en $z=z_2$. 
+        
+        Dans le cas général, on peut appliquer le principe de Huygens-Fresnel qui décrit tout objet dans un plan par une somme continue de points source en émanant. On peut alors décrire le champ par l'intégrale sur $(x_1,y_1)$ du produit de la distribution d'intensité et de phase du champ par le noyau de propagation pour obtenir le champ dans le plan $z_2$, d'où~:
+        
+        \begin{equation*}
+             \tilde E(x,y,2L)=\left[\exp(-2\iu kL\right]\iint K(x,y; x_1,y_1)~E(x_1, y_1, 0)dx_1dy_1
+        \end{equation*}
+        
+    \endminipage}\hfill
+
+    
+    
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Résonateur confocal}
+\label{fig:resonateur_confocal}
+\end{figure}
+
+\subsection{Temps de vie d'un photon en cavité}
+
+Avant de traiter les fréquences de résonance des modes propres en cavité, nous allons nous pencher sur une autre caractéristique spectrale : la largeur de cette résonance. Nous verrons que cette largeur qui est reliée au facteur de qualité $Q$ de la cavité est également équivalente au temps de vie d'un photon dans cette même cavité. 
+
+Nous allons prendre ici l'exemple d'une cavité de longueur $L$ ayant deux miroirs de réflectivités en puissance $R_1$ et $R_2$. Soient $P_0$ la puissance initiale, et $T_i$ le coefficient de pertes fractionnaires \textit{par passage} dûes à la diffraction et autres pertes intra-cavité. La puissance au temps $t_1=2L/c$, c'est-à-dire après un tour complet de la cavité s'exprime alors~: 
+
+\begin{equation}
+    P(t_1)=R_1R_2(1-T_i)^2P_0
+\end{equation}
+
+La puissance à la même coordonnée au temps $t_m = 2mL/c$ est alors~:
+\begin{equation}
+    P(t_m)=\left[R_1R_2(1-T_i)^2\right]^mP_0
+\end{equation}
+
+Soit $N(t)$ le nombre de photons en cavité au temps $t$. Puisque $N(t)\propto P(t)$, alors~:
+
+\begin{equation}
+    N(t_m)=\left[R_1R_2(1-T_i)^2\right]^mN_0
+\end{equation}
+
+En introduisant un taux de pertes $1/\tau_c$, on exprime alors le nombre de photons en cavité en fonction du temps. On a alors $N(t_m) = N_0\exp(-t_m/\tau_c)$. Par identification, on déduit~:
+
+\begin{equation}
+    \exp(-t/\tau_c)=\left[R_1R_2(1-T_i)^2\right]^m
+\end{equation}
+
+et par conséquent le temps de vie caractéristique d'un photon en cavité est~:
+\begin{equation}
+    \tau_c = \frac{2L}{c \ln[R_1R_2(1-T_i)^2]}
+\end{equation}
+
+En faisant l'approximation d'un champ intra-cavité scalaire $E(t) = \tilde E\exp[(-t/\tau_c)+\iu \omega t]$ où $\omega = 2\pi \nu$ est la fréquence angulaire du mode, on peut alors déduire par transformée de Fourier que la réponse fréquentielle est lorentzienne et que la largeur spectrale à mi-hauteur de ce mode est~:
+
+\begin{equation}
+    \Delta \nu_c = \frac{1}{2\pi\nu\tau_c}
+\end{equation}
+
+
+\section{Modes gaussiens en cavité}
+
+Dans le cas où une cavité admet un mode propre gaussien, il est possible de montrer qu'il existe une famille de fonctions qui sont également des modes propres de la cavité. L'ensemble de ces solutions sont les modes transverses de la cavité.
+
+Il existe deux familles de fonctions. La première correspond à une symétrie spatiale rectangulaire du faisceau : ce sont les
+modes de Hermite Gauss. La seconde correspond à une symétrie spatiale axiale du faisceau : ce sont les modes de Laguerre Gauss.
+Nous ne ferons ici la démonstration que pour les modes de Hermite Gauss.
+
+Nous allons chercher des solutions à une équation de propagation paraxiale, solutions toujours de la forme $E(x,y,z,t)=u(x,y,z).\exp^{-\iu kz}.\exp^{\iu \omega t}$ telles que les variations de $u$ soient faibles lorsque $z$ varie. Rappelez-vous que nous avons établi que la distribution transverse du champ en cavité doit être auto-similaire, il ne peut donc y avoir de variation rapide de l'enveloppe du champ au cours de la propagation. En partant de l'équation d'onde pour une onde scalaire~:
+
+\begin{equation}
+    \nabla^2E -\frac{1}{c^2}\frac{d^2E}{dt^2}=0
+\end{equation}
+on déduit~: 
+
+\begin{equation}
+    \nabla^2u -\frac{1}{c^2}\frac{d^2u}{dt^2}=0
+\end{equation}
+
+on peut voir que la dérivée seconde de l'enveloppe du champ par rapport à $z$ est donc nécessairement très inférieure à sa variation transverse ; nous allons donc la négliger. En insérant l'expression de $E(x,y,z,t)$ dans l'expression ainsi établie, on obtient alors : 
+\begin{equation}
+    \left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2 }{\partial y^2}\right)u-2\iu k \frac{\partial u}{\partial z}=0
+\end{equation}
+
+Nous allons chercher une solution de la forme~:
+\begin{equation}
+    u(x,y,z)=g(x)h(y)\exp^{iP(z)}.\exp\left[-\frac{\iu k }{2}\frac{x^2+y^2}{q(z)}\right]
+\end{equation}
+
+Dans cette formule, on reconnaît la forme d'une onde gaussienne dont le profil transverse est modifié par une fonction $g$ ne dépendant que de $x$ et une fonction $h$ ne dépendant que de $y$. Ce choix est justifié dans le cadre des cavités laser par leur géométrie typique qui présente en générale des symétries selon les plans $Oxz$ et $Oyz$.
+
+En posant $X=\sqrt{2}\frac{x}{w(z)}$ et $Y=\sqrt{2}\frac{y}{w(z)}$ et en introduisant $u(x,y,z$ dans l'équation paraxiale, on transforme cette équation aux dérivées partielles à trois variables indépendantes en un système à trois équations différentielles à une seule variable chacune. Pour $g(X)$, on a alors~:
+
+\begin{equation}
+    \frac{d^2g}{dX^2}-2X\frac{dg}{fX}+\frac{a}{2}g=0
+\end{equation}
+où $a$ est une constante. 
+Cette équation est celle d'un oscillateur harmonique et il est connu que, pour que $g(X)$ conserve une valeur finie, il est nécessaire que $a/2=2m$, avec m entier naturel. Les solutions de ces équations sont connues, il s'agit des polynômes d'Hermite~:
+
+\begin{align}
+    g(X)&=H_m\left(\right)
+\end{align}
 
 
 \bibliographystyle{plain}
