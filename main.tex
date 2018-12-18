@@ -896,9 +896,9 @@ L'idée de base repose sur le fait qu'un plasma peut accomoder des champs élect
 
 Comment alors générer une telle onde plasma et atteindre les quelques 300$\,$GV/m estimés ci-dessus~? En 1979, Dawson et Tajima proposèrent une idée portée par la technologie en emergence : l'onde plasma pouvait être excitée par laser \cite{tajima}, dans un plasma généré par l'impulsion laser elle-même. 
 
-\subsection{Génération d'un plasma par l'impulsion laser par suppression de barrière de potentiel}
+\subsection{Génération d'un plasma par suppression de barrière de potentiel}
 
-Comme nous l'avons mentionné au tout début de ce chapitre, lorsqu'on focalise un laser intense à quelques $10^{18}\,\mathrm{W/cm^2}$ dans un matériau, les "pieds" de l'impulsion ionisent déjà le milieu. Dans cette section, nous proposons de calculer l'énergie requise pour qu'un faisceau gaussien homogène focalisé dont le waist $w_0$ est de $5\,\mathrm{\mu m}$ ionise le premier niveau de l'atome d'Hélium. 
+Comme nous l'avons mentionné au tout début de ce chapitre, lorsqu'on focalise un laser intense à quelques $10^{18}\,\mathrm{W/cm^2}$ dans un matériau, les "pieds" de l'impulsion ionisent déjà le milieu. Dans cette section, nous proposons de calculer l'énergie requise pour qu'un faisceau gaussien homogène focalisé dont le waist $w_0$ est de $10\,\mathrm{\mu m}$, et de durée d'impulsion $30\,\mathrm{fs}$ ionise le premier niveau de l'atome d'Hélium. 
 
 Commençons par estimer le champ électrique nécessaire pour ioniser l'atome d'Hélium. Dans un atome, les électrons sont liés au noyau par le potentiel coulombien (voir Figure~\ref{fig:potentiel} résultant de la combinaison des charges du noyau et des charges des électrons du nuage atomique le cas échéant. Ce potentiel s'écrit~:
 \begin{equation}
@@ -936,10 +936,19 @@ L'équation~\ref{eq:max_potentiel} nous permet de calculer le champ $E_{sb}$ tel
 
 Dans l'approximation du champ central, le champ subi par l'électron le plus périphérique est écranté par $Z-1$ électrons, on obtient alors $Z* = Z-(Z-1) = 1$. En insérant les valeurs des constantes fondamentales dans l'équation~\ref{eq:Isb}, on trouve la valeur de l'intensité dans des unités d'expérimentateur (en $\mathrm{W/cm^2}$)~:
 
-
 \begin{equation}
-    I_{sb}(\mathrm{W/cm^2})=4\times10^9V_i^4(\mathrm{eV}) 
+    I_{sb}(\mathrm{W/cm^2})=4\times10^9\frac{V_i^4\mathrm{(eV)}}{Z*^2}
 \end{equation}
+
+Les valeurs des énergies d'ionisation sont des données expérimentales mesurées disponibles sur des bases de données de référence (voir par exemple https://physics.nist.gov/PhysRefData/ASD/ionEnergy.html ) et on peut alors facilement calculer l'intensité laser nécessaire pour ioniser un atome donné. Pour l'Hélium, les énergies d'ionisation sont de $\approx 24.54\mathrm{eV}$ et $\approx 54.42\mathrm{eV}$. On calcule alors les intensités d'ionisation $I_1=1.45\times10^{15}\,\mathrm{W/cm^2}$ et $I_2=8.77\times10^{15}\,\mathrm{W/cm^2}$. \textit{[On peut faire la même chose pour l'azote et voir pour quelle intensité on peut faire un plasma dans l'air... Rendez-vous à la visite de labo !]}
+
+Nous pouvons à présent répondre à la question posée en début de section, à savoir, si notre impulsion fait $30\,\mathrm{fs}$ de durée, et est focalisée sur un waist de $10\,\mathrm{\mu m}$, quelle est l'énergie nécessaire pour ioniser l'Hélium ?
+
+Faisons tout d'abord un calcul d'ordre de grandeur pour aiguiser notre intuitionL'intensité est une densité surfacique de puissance. Estimons tout d'abord la puissance instantanée $P$ d'une impulsion d'énergie $U$ et de durée à mi-hauteur $\tau$ par $P = U/\tau$ (Nous avons alors de $\mathrm{J/s}$). Puis, supposons une distribution plate de l'énergie sur un disque de rayon $w_0$. On a une surface $S=\pi w_0^2$, et donc une intensité $I = P/S = U/(\tau S)$. On obtient alors que $137\,\mathrm{\mu J}$ suffisent à ioniser le premier niveau de l'Hélium. 
+
+
+
+
 \printbibliography[title={Bibliographie}]
 
 
