@@ -859,6 +859,8 @@ Il est assez clair que l'un des facteurs limitants est la taille des structures 
 
 \section{L'accélération par interaction laser-plasma}
 
+\subsection{Introduction}
+
 "Puisque la limite des champs accélérateurs est le champ de claquage, utilisons donc un milieu déjà claqué !" Ainsi pourrions nous décrire avec un brin d'humour l'idée de base de l'utilisation des champs présents dans un plasma pour accélérer des électrons. \textit{[Cette dernière remonte d'après \cite{malka} à une intervention de Budker en 1956 \cite{budker} mais dont l'auteure du document présent n'a pu trouver de trace en ligne (peut-être l'article en question se trouve-t-il dans les bibliothèques du CERN ?...)]}  
 L'idée de base repose sur le fait qu'un plasma peut accomoder des champs électriques colossaux lorsque les charges libres sont accumulées dans une zone de l'espace, comme dans une onde plasma. 
 
@@ -894,8 +896,38 @@ L'idée de base repose sur le fait qu'un plasma peut accomoder des champs élect
 
 Comment alors générer une telle onde plasma et atteindre les quelques 300$\,$GV/m estimés ci-dessus~? En 1979, Dawson et Tajima proposèrent une idée portée par la technologie en emergence : l'onde plasma pouvait être excitée par laser \cite{tajima}, dans un plasma généré par l'impulsion laser elle-même. 
 
+\subsection{Génération d'un plasma par l'impulsion laser par suppression de barrière de potentiel}
 
+Comme nous l'avons mentionné au tout début de ce chapitre, lorsqu'on focalise un laser intense à quelques $10^{18}\,\mathrm{W/cm^2}$ dans un matériau, les "pieds" de l'impulsion ionisent déjà le milieu. Dans cette section, nous proposons de calculer l'énergie requise pour qu'un faisceau gaussien homogène focalisé dont le waist $w_0$ est de $5\,\mathrm{\mu m}$ ionise le premier niveau de l'atome d'Hélium. 
+
+Commençons par estimer le champ électrique nécessaire pour ioniser l'atome d'Hélium. Dans un atome, les électrons sont liés au noyau par le potentiel coulombien (voir Figure~\ref{fig:potentiel} résultant de la combinaison des charges du noyau et des charges des électrons du nuage atomique le cas échéant. Ce potentiel s'écrit~:
+\begin{equation}
+    V(r)=-\frac{Z*e^2}{4\pi\epsilon_0r}
+\end{equation}
+où $Z*$ est le numéro atomique effectif (il prend en compte l'écrantage du champ du noyau par les électrons), $e$ est la charge électronique élémentaire, et $r$ est la position radiale. Il existe une énergie $V_i$ pour laquelle un électron piégé dans un tel potentiel n'est plus lié. C'est ce qu'on appelle l'énergie d'ionisation. 
+
+Dans les fréquences optiques, le moment dipolaire magnétique est négligeable par rapport au moment dipolaire électrique. La contribution au potentiel du laser se limite donc à son champ électrique $E_0$. On a alors~:
+
+\begin{equation}
+    V(r)=-\frac{Z*e^2}{4\pi\epsilon_0r}-eE_0z
+\end{equation}
+
+La figure~\ref{fig:potentiel} montre que le champ extérieur abaisse la barrière de potentiel. Lorsque cette dernière passe en-dessous de l'énergie de liaison $V_i$, on a ionisation par suppression de barrière. Pour calculer ce champ, on calcule le maximum du potentiel (abscisses positives sur la figure~\ref{fig:potentiel}) au point $z_M$ tel que $\left(\partial V/\partial r\right)_{r_M}=0$. Ce maximum se situe en $r_M=\left(\frac{Z*e}{4\pi\epsilon_0E}\right)^{1/2}$, où le potentiel vaut~:
+
+\begin{equation}
+    V(r_M)=2e\left(\frac{Z*eE}{4\pi\epsilon_0}\right)^{1/2}
+\end{equation}
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Potentiel coulombien, effet du champ laser sur le potentiel}
+\label{fig:potentiel}
+\end{figure}
 \printbibliography[title={Bibliographie}]
+
+Cette équation nous permet de calculer le champ $E_{sb}$ telle que $V(r_M)<V_i$
 
 %\bibliographystyle{plain}
 %\bibliography{bibliography.bib}
