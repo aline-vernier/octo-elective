@@ -798,6 +798,7 @@ La figure~\ref{fig:modes_long_et_trans} présente un exemple arbitraire de spect
 
 \chapter{Application : accélération d'électrons par laser}
 
+\section{Introduction}
 Le contenu de ce cours est un peu spécial puisqu'il présente une application des lasers qui n'est pas de l'optique, mais à la croisée des chemins entre l'optique, l'interaction laser-matière et l'électrodynamique relativiste. Nous aborderons par conséquent un grand nombre de notions de physique de base, en particulier d'électromagnétisme. Ce support écrit donne les grandes lignes et les concepts essentiels qui vous permettront d'avoir une idée schématique des processus permettant l'accélération d'électrons par laser. 
 
 Comme nous l'avons souligné dans l'introduction, l'essor de l'utilisation des lasers impulsionnels est remarquable : ils ont d'une part peuplé des domaines aussi éloignés que la découpe de tôle et la chirurgie de l'\oe{}il, et ils trouvent d'autre part des applications en recherche fondamentale. Dans un grand nombre de ces activités de recherche, c'est l'intensité crête qui fait l'attractivité des lasers impulsionnels : cette dernière peut atteindre $10^{22}\,\mathrm{W/cm^2}$. L'interaction entre un laser aussi intense et la matière permet d'accéder à des phénomènes physiques dits \textit{relativistes}, c'est-à-dire qu'ils mettent en jeu des énergies cinétiques de l'ordre de l'énergie de masse des particules mises en mouvement par le champ. Pour un électron, cela correspond à une énergie cinétique de l'ordre de $1\,\mathrm{MeV}$. 
@@ -853,12 +854,46 @@ Pour plus d'informations sur les accélérateurs, la lecture de l'article de Ber
 \label{fig:acc_dec}
 \end{figure}
 
-Il est assez clair que l'un des facteurs limitants est la taille des structures accélératrices. C'est le problème que l'accélération laser-plasma pourrait permettre de résoudre. 
+Il est assez clair que l'un des facteurs limitants est la taille des structures accélératrices qui devient monumentale lorsqu'on atteint des vitesses relativistes. C'est le problème que l'accélération laser-plasma pourrait permettre de résoudre. De plus, nous verrons que les propriétés 
 
 
 \section{L'accélération par interaction laser-plasma}
 
-L'idée de base de l'utilisation des champs présents dans un plasma pour accélérer des électrons 
+"Puisque la limite des champs accélérateurs est le champ de claquage, utilisons donc un milieu déjà claqué !" Ainsi pourrions nous décrire avec un brin d'humour l'idée de base de l'utilisation des champs présents dans un plasma pour accélérer des électrons. \textit{[Cette dernière remonte d'après \cite{malka} à une intervention de Budker en 1956 \cite{budker} mais dont l'auteure du document présent n'a pu trouver de trace en ligne (peut-être l'article en question se trouve-t-il dans les bibliothèques du CERN ?...)]}  
+L'idée de base repose sur le fait qu'un plasma peut accomoder des champs électriques colossaux lorsque les charges libres sont accumulées dans une zone de l'espace, comme dans une onde plasma. 
+
+
+\medskip
+
+\noindent\fcolorbox{black}{myGray}{%
+    \minipage[t]{\dimexpr1\linewidth-2\fboxsep-2\fboxrule\relax}
+        \textbf{Calcul d'ordre de grandeur du champ collectif dans un plasma :\\}
+          Sachant qu'on a un plasma de densité électronique $10^{19}\,\mathrm{cm^{-3}}$, quelle est la fréquence plasma $\omega_p$ associée~? Que représente-t-elle~? Quelle est la longueur d'onde plasma $\lambda_p$~? Et le vecteur d'onde $k_p$~?\\
+          \\
+          \begin{itemize}
+              \item  $\omega_p = $
+              \\\\
+              \item  $\lambda_p = $
+              \\\\
+              \item  $k_p = $
+              \\\\
+          \end{itemize}
+         
+          \\\\
+
+          On suppose qu'on excite une telle onde, et que la distribution de la densité électronique est de la forme $\rho(x, y, z) = \rho_0\cos{k_p z}$. Quel est le champ longitudinal $E_z$ maximal dans le milieu~? (On pensera à appliquer le théorème de Gauss)\\
+          \\
+          \begin{itemize}
+              \item  $E_z = $
+              \\\\
+          \end{itemize}
+          \\\\\\\\
+    \endminipage}\hfill
+    
+\medskip
+
+Comment alors générer une telle onde plasma et atteindre les quelques 300$\,$GV/m estimés ci-dessus~? En 1979, Dawson et Tajima proposèrent une idée portée par la technologie en emergence : l'onde plasma pouvait être excitée par laser \cite{tajima}, dans un plasma généré par l'impulsion laser elle-même. 
+
 
 \printbibliography[title={Bibliographie}]
 
