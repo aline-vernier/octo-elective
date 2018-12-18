@@ -916,6 +916,7 @@ La figure~\ref{fig:potentiel} montre que le champ extérieur abaisse la barrièr
 
 \begin{equation}
     V(r_M)=2e\left(\frac{Z*eE}{4\pi\epsilon_0}\right)^{1/2}
+    \label{eq:max_potentiel}
 \end{equation}
 
 \begin{figure}[!htbp]
@@ -925,9 +926,23 @@ La figure~\ref{fig:potentiel} montre que le champ extérieur abaisse la barrièr
 \caption{Potentiel coulombien, effet du champ laser sur le potentiel}
 \label{fig:potentiel}
 \end{figure}
+
+L'équation~\ref{eq:max_potentiel} nous permet de calculer le champ $E_{sb}$ tel que $V(r_M)<V_i$ qui correspond au champ électrique seuil pour atteindre le régime de suppression de barrière : $E_{sb}=\frac{\pi\epsilon_0V_i^2}{Z*e^3}$. Le paramètre mesuré lors d'expériences est l'intensité du champ, qui correspond à une densité surfacique de puissance, et s'exprime en fonction du champ électrique~:~$I=\frac{\epsilon_0cE^2}{2}$. On obtient alors l'intensité de suppression de barrière~:
+
+\begin{equation}
+    I_{sb}\left[\mathrm{J/s/m^2}\right]=\frac{\pi^2c\epsilon_0^3V_i^4}{2e^6Z*^2}
+    \label{eq:Isb}
+\end{equation}
+
+Dans l'approximation du champ central, le champ subi par l'électron le plus périphérique est écranté par $Z-1$ électrons, on obtient alors $Z* = Z-(Z-1) = 1$. En insérant les valeurs des constantes fondamentales dans l'équation~\ref{eq:Isb}, on trouve la valeur de l'intensité dans des unités d'expérimentateur (en $\mathrm{W/cm^2}$)~:
+
+
+\begin{equation}
+    I_{sb}(\mathrm{W/cm^2})=4\times10^9V_i^4(\mathrm{eV}) 
+\end{equation}
 \printbibliography[title={Bibliographie}]
 
-Cette équation nous permet de calculer le champ $E_{sb}$ telle que $V(r_M)<V_i$
+
 
 %\bibliographystyle{plain}
 %\bibliography{bibliography.bib}
