@@ -358,7 +358,7 @@ https://doi.org/10.1364/OL.27.001869
 Bien que l'approche géométrique permette d'aller aussi loin que l'évaluation de la stabilité des cavités, elle est évidemment insuffisante à une analyse complète de la lumière en cavité puisque les effets d'interférence et de diffraction ne sont pas décrits. Lors du cours XXX il a été démontré que dans l'approximation paraxiale, le champ électrique scalaire en un point $r(x, y, z)$ éloigné de la source $r_0(x_0, y_0, z_0)$ peut s'écrire~: 
 
 \begin{equation}
-    E(r,r_0) = \frac{1}{z-z_0}\exp\left[-\iu k\frac{(x - x_0)^2+(y - y_0)^2}{2(z - z_0)}\right]
+    E(r,r_0) \propto \frac{1}{z-z_0}\mathrm{e}^{-ik(z-z_0)}\exp\left[-\iu k\frac{(r - r_0)^2}{2(z - z_0)}\right]
     \label{eq:chp_gaussien}
 \end{equation}
 
@@ -367,17 +367,17 @@ Bien que l'approche géométrique permette d'aller aussi loin que l'évaluation 
 %    R(z) = R_0+z-z_0
 %\end{equation}
 
-Il s'agit du champ d'une onde paraxiale, qui est une solution approchée de l'équation de Helmholtz où l'on reconnaît le facteur de propagation $\exp(-ik(z-zo))$ et le facteur de variation transverse d'amplitude :
+Il s'agit du champ d'une onde paraxiale, qui est une solution approchée de l'équation de Helmholtz où l'on reconnaît le facteur de propagation $\exp(-ik(z-z_0))$ et le facteur de variation transverse d'amplitude~:
 
 \begin{equation}
-    u(x, y, z) = \frac{1}{z-z_0}\exp\left(-ik\frac{(x-x_0)^2+(y-y_0)^2}{2(z-z_0)}\right)
+    u(x, y, z) = \frac{1}{z-z_0}\exp\left[-ik\frac{(x-x_0)^2+(y-y_0)^2}{2(z-z_0)}\right]
 \end{equation}
 
 Nous allons à présent transformer l'expression du champ éléctrique \ref{eq:chp_gaussien} afin d'en donner une interprétation physique. 
 
 On introduit le rayon de courbure complexe~: 
 \begin{equation}
-    q(z)=q_0+z_z_0
+    q(z)=q_0+z_{z_{0}}
 \end{equation}
 
 puis on réécrit la répartition transverse d'amplitude sous la forme~: 
@@ -735,12 +735,13 @@ Cette équation est celle d'un oscillateur harmonique et il est connu que, pour 
     h(X)&=H_n\left(\sqrt{2}\frac{y}{w(z)}\right)\quad&n\in\mathbb{N}\\
     H_i(j)&=(-1)^i\exp(j^2)\frac{d^i}{dj^i}\left(\exp(-j^2)\right)
 \end{align}
+
 En résolvant l'équation pour $P(z)$, on trouve alors l'expression suivante pour le champ électromagnétique~:
 
 \begin{equation}
     \begin{split}
-        E_{mn}(x,y,z)&=E_0\frac{w_0}{w(z)}H_m\left(\sqrt{2}\frac{y}{w(z)}\mathrm{e}^{-\iu k z}\right)\\
-        &\quad\exp\left[\iu (m+n+1)\arctan\left(\frac{z}{z_R}\right)\right]\exp\left[\iu \frac{k}{2}\frac{x^2+y^2}{q(z)}\right]
+        E_{mn}(x,y,z)&=E_0\frac{w_0}{w(z)}H_m\left(\sqrt{2}\frac{y}{w(z)}\mathrm{e}^{-\iu k z}\right)H_n\left(\sqrt{2}\frac{y}{w(z)}\mathrm{e}^{-\iu k z}\right)\\
+        &\quad\exp\left[\iu (m+n+1)\arctan\left(\frac{z}{z_R}\right)\right]\exp\left[-\iu \frac{k}{2}\frac{x^2+y^2}{q(z)}\right]
         \label{eq:HermiteGauss}
     \end{split}
 \end{equation}
@@ -944,16 +945,119 @@ Les valeurs des énergies d'ionisation sont des données expérimentales mesuré
 
 Nous pouvons à présent répondre à la question posée en début de section, à savoir, si notre impulsion fait $30\,\mathrm{fs}$ de durée, et est focalisée sur un waist de $10\,\mathrm{\mu m}$, quelle est l'énergie nécessaire pour ioniser l'Hélium~?
 
-Faisons tout d'abord un calcul d'ordre de grandeur pour aiguiser notre intuitionL'intensité est une densité surfacique de puissance. Estimons tout d'abord la puissance instantanée $P$ d'une impulsion d'énergie $U$ et de durée à mi-hauteur $\tau$ par $P = U/\tau$ (Nous avons alors de $\mathrm{J/s}$). Puis, supposons une distribution plate de l'énergie sur un disque de rayon $w_0$. On a une surface $S=\pi w_0^2$, et donc une intensité $I = P/S = U/(\tau S)$. On obtient alors que $137\,\mathrm{\mu J}$ suffisent à ioniser le premier niveau de l'Hélium en première approximation. 
+Faisons tout d'abord un calcul d'ordre de grandeur pour aiguiser notre intuition. L'intensité est une densité surfacique de puissance. Estimons tout d'abord la puissance instantanée $P$ d'une impulsion d'énergie $U$ et de durée à mi-hauteur $\tau$ par $P = U/\tau$ (Nous avons alors de $\mathrm{J/s}$). Puis, supposons une distribution plate de l'énergie sur un disque de rayon $w_0$. On a une surface $S=\pi w_0^2$, et donc une intensité $I = P/S = U/(\tau S)$. On obtient alors que $137\,\mathrm{\mu J}$ suffisent à ioniser le premier niveau de l'Hélium en première approximation. 
 
-Afin d'affiner cette estimation, revenons à l'expression du mode fondamental d'un champ électromagnétique gaussien~:
+Afin d'affiner cette estimation, revenons à l'expression du mode fondamental d'un champ électromagnétique gaussien dans le plan focal, c'est-à-dire en $z=0$ (Eq.~\ref{eq:HermiteGauss})~:
 
 \begin{equation}
-    
+    E(r)=E_0\mathrm{e}^{-\frac{r^2}{w_0^2}}
 \end{equation}
 
+On déduit alors l'intensité (en W/cm$^2$ ou J/s/cm$^2$)~:
+
+\begin{equation}
+    I(r)=\frac{E_0^2}{2\eta}\mathrm{e}^{-\frac{2r^2}{w_0^2}}
+\end{equation}
+
+Si on suppose une disribution temporelle gaussienne de l'impulsion de largeur à 1/e$^2$ égale à $\tau$, on peut alors écrire~:
+\begin{equation}
+    I(r, t)=\frac{E_0^2}{2\eta}\mathrm{e}^{-\frac{2r^2}{w_0^2}}\mathrm{e}^{-\frac{t^2}{\tau^2}}
+\end{equation}
+
+où $\eta = 377\,\mathrm{\Omega}$ est l'impédance caractéristique du vide. La puissance $P(t)$ du faisceau (en W ou J/s) est donnée par~: 
+\begin{equation}
+    P(t)=\int  r I(r, t)d\theta dr
+\end{equation}
+et l'énergie $U$ par~:
+\begin{equation}
+    U=\int  r I(r)d\theta dr dt
+\end{equation}
+
+En utilisant les intégrales gaussiennes connues $\int \mathrm{e}^{-ax^2} dx = \sqrt{\frac{\pi}{a}}$ et $\int x^n\mathrm{e}^{-ax^2} dx = \frac{\Gamma(\frac{n+1}{2})}{2a^{\frac{n+1}{2}}}$, on obtient un facteur $\frac{\sqrt{\pi}}{2}$ avec notre estimation "naïve". Une énergie $U = 137\frac{\sqrt{\pi}}{2}\approx 120\,\mathrm{\mu J}$ est donc suffisante pour ioniser le premier niveau de l'Hélium. 
+
+\medskip
+
+\noindent\fcolorbox{black}{myGray}{%
+    \minipage[t]{\dimexpr1\linewidth-2\fboxsep-2\fboxrule\relax}
+        \textbf{Et pour faire un plasma dans l'air ?\\}
+          
+            \vspace{40 mm}
+       
+    \endminipage}\hfill
+    
+\medskip
+
+Comme vous l'avez appris dans votre cours de mécanique quantique, il existe aussi une probablitité non nulle d'ionisation, même si la barrière de potentiel n'est pas complètement supprimée. C'est ce qu'on appelle l'effet tunnel. Pour plus de détails à ce sujet, veuillez vous référer à votre cours PA101.
+
+\subsection{Excitation d'ondes plasma}
+
+Nous allons à présent nous intéresser au mouvement collectif des électrons dans le plasma en présence d'un champ électromagnétique fort. Cette partie du cours de la physique des plasmas plutôt que de la physique des lasers, et les démonstrations qui suivent ne font pas partie des choses à savoir pour l'examen. Elles apporteront un peu plus de profondeur à votre compréhension de l'interaction lumière-matière pour des champs intenses. On soulignera aussi que la physique contemporaine se situe souvent au croisement entre plusieurs domaines. Dans ce cours vous trouverez évidemment de l'électromagnétisme, mais aussi de la mécanique des fluides et un peu de physique semi-classique.
+
+\subsubsection{Mouvement d'une tranche d'électrons dans un plasma}
+
+On veut tout d'abord connaître le mouvement d'un ensemble d'électrons dans un plasma de densité $n_0$, en présence d'un champ électrique. On supposera que les ions sont lourds, et que par conséquent leurs déplacements sont négligeables par rapport à ceux des électrons. A l'équilibre, la densité ionique et la densité électronique sont homogènes. De plus, on supposera que le mouvement thermique de électrons est négligeable. Cela n'est pas nécéssairement le cas, mais pour notre cas particulier, l'énergie cinétique des électrons mis en mouvement par le laser est bien plus élevée que l'énergie thermique et on peut donc supposer qu'il n'y a pas de collisions. 
 
 
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Déplacement d'une tranche d'électrons dans le plasma}
+\label{fig:osc_plas}
+\end{figure}
+
+Lorsque les électrons sont déplacés de leur position d'équilibre par un champ électrique externe (tel qu'un champ laser) d'une quantité $\delta x$ (voir Figure~\ref{fig:osc_plas}), ils subissent une force de rappel $F=e E_x$ dûe au champ électrostatique qui résulte de ce déplacement. On peut alors très simplement écrire l'équation du mouvement en 1D de ces électrons~: 
+
+\begin{equation}
+    m_e\frac{d^2\delta x}{dt^2}=eE_x(\delta x)
+\end{equation}
+
+On applique alors le théorème de Gauss $\nabla\cdot\textbf{E}=-\frac{e n_0}{\epsilon_0}$~: 
+
+\begin{equation}
+    E_x(\delta x) = -en_0\frac{\delta x}{\epsilon_0}
+\end{equation}
+
+On obtient alors l'équation du mouvement des électrons~:
+\begin{equation}
+    \frac{d^2\delta x}{dt^2}+\frac{n_0e^2}{\epsilon_0 m_e}\delta x =0
+\end{equation}
+
+La solution à cette équation est une oscillation harmonique de pulsation $\omega_p = \sqrt{\frac{n_0 e^2}{\epsilon_0 m_e}}$ que l'on appelle la pulsation de Langmuir. 
+Soumis à une perturbation, les électrons suivent donc, dans le régime linéaire, un mouvement oscillant collectif $\delta x(t) = \delta x_0\cos(\omega_p t +\theta_0)$. Il est intéressant de représenter ce mouvement dans ce que l'on appelle l'espace des phases qui est tout simplement une représentation graphique de la quantité de mouvement $p$ en fonction de la postition. Pour une oscillation harmonique dans le régime non-relativiste, on a les trajectoires représentées figure~\ref{fig:phase_space}.
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Mouvement oscillant harmonique dans l'espace des phases}
+\label{fig:phase_space}
+\end{figure}
+
+Cette onde électronique est ce que l'on appelle une onde de sillage lorsqu'elle est excitée par un champ laser. Cet nom est donnée par analogie à l'onde générée dans le sillage d'un bateau (Fig.~\ref{fig:sillage})
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Onde de sillage}
+\label{fig:sillage}
+\end{figure}
+\subsubsection{Trajectoire des électrons dans l'onde plasma}
+
+Nous venons de voir que lorsqu'un plasma est perturbé (par un champ externe dans notre cas), il est mis en mouvement et oscille à la pulsation de Langmuir $\omega_p = \sqrt{\frac{n_0 e^2}{\epsilon_0 m_e}}$. Dans ce modèle très simple, les électrons oscillent mais n'obtiennent aucune quantité de mouvement longitudinale. Afin de modéliser les trajectoires des électrons, et de montrer qu'il existe des conditions sous lesquelles un électron peut être piégé dans l'onde plasma et suivre ainsi l'impulsion laser, on peut considérer l'Hamiltonien en 1D d'un électron soumis d'une part au champ laser et d'autre part au potentiel électrostatique $\phi$ dû à l'onde plasma elle-même~: 
+
+\begin{equation}
+    H=m_ec^2\sqrt{1+\frac{p_z^2}{m_e^2c^2}}-e\Phi(z-v_pt)
+\end{equation}
+
+Le premier terme représente l'énergie de masse de l'électron et son énergie cinétique, et le deuxième terme, son énergie potentielle. Afin de simplifier les notations, on normalise cet Hamiltonien en utilisant les variables $u_z=\frac{p_z}{m_ec}$ et $\phi = \frac{e\Phi}{m_ec^2}$. On obtient alors~:
+
+\begin{equation}
+    H=\sqrt{1+u_z^2}-e\phi(z-v_pt)
+\end{equation}
+
+Cet Hamiltonien dépend du temps et de la position, mais les deux sont couplés par la vitesse, ce qui se traduit par une dépendance en $\zeta = z-v_pt$, on peut alors effectuer la transformation canonique de l'Hamiltonien $(z, u_z)\rightarrow(\zeta, u_z)$. En utilisant la fonction génératrice du second type $F_2(z, u_z)=u_z(z-v_pt)$ vérifiant les deux conditions 
 
 \printbibliography[title={Bibliographie}]
 
