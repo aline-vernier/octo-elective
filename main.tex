@@ -1006,34 +1006,26 @@ On veut tout d'abord connaître le mouvement d'un ensemble d'électrons dans un 
 \label{fig:osc_plas}
 \end{figure}
 
-Lorsque les électrons sont déplacés de leur position d'équilibre par un champ électrique externe (tel qu'un champ laser) d'une quantité $\delta x$ (voir Figure~\ref{fig:osc_plas}), ils subissent une force de rappel $F=e E_x$ dûe au champ électrostatique qui résulte de ce déplacement. On peut alors très simplement écrire l'équation du mouvement en 1D de ces électrons~: 
+Lorsque les électrons sont déplacés de leur position d'équilibre par un champ électrique externe (tel qu'un champ laser) d'une quantité $x$ (voir Figure~\ref{fig:osc_plas}), ils subissent une force de rappel $F=-e E_x$ dûe au champ électrostatique qui résulte de ce déplacement. On peut alors très simplement écrire l'équation du mouvement en 1D de ces électrons~: 
 
 \begin{equation}
-    m_e\frac{d^2\delta x}{dt^2}=eE_x(\delta x)
+    m_e\frac{d^2 x}{dt^2}=-eE_x(x)
 \end{equation}
 
-On applique alors le théorème de Gauss $\nabla\cdot\textbf{E}=-\frac{e n_0}{\epsilon_0}$~: 
+Si on considère la variation de la densité de charge en fonction de la position représentée figure~\ref{fig:osc_plas} et qui découle de la conservation de la charge, on peut appliquer la Loi de Gauss $\nabla\cdot\textbf{E}=-\frac{e n_0}{\epsilon_0}$ que l'on intègre de 0 à $x$~: 
 
 \begin{equation}
-    E_x(\delta x) = -en_0\frac{\delta x}{\epsilon_0}
+    E_x(x) = en_0\frac{x}{\epsilon_0}
+    \label{eq:chp_E}
 \end{equation}
 
 On obtient alors l'équation du mouvement des électrons~:
 \begin{equation}
-    \frac{d^2\delta x}{dt^2}+\frac{n_0e^2}{\epsilon_0 m_e}\delta x =0
+    \frac{d^2x}{dt^2}+\frac{n_0e^2}{\epsilon_0 m_e} x =0
 \end{equation}
 
 La solution à cette équation est une oscillation harmonique de pulsation $\omega_p = \sqrt{\frac{n_0 e^2}{\epsilon_0 m_e}}$ que l'on appelle la pulsation de Langmuir. 
-Soumis à une perturbation, les électrons suivent donc, dans le régime linéaire, un mouvement oscillant collectif $\delta x(t) = \delta x_0\cos(\omega_p t +\theta_0)$. Il est intéressant de représenter ce mouvement dans ce que l'on appelle l'espace des phases qui est tout simplement une représentation graphique de la quantité de mouvement $p$ en fonction de la postition. Pour une oscillation harmonique dans le régime non-relativiste, on a les trajectoires représentées figure~\ref{fig:phase_space}.
-
-\begin{figure}[!htbp]
-\begin{center}
-\includegraphics[width=8cm]{}
-\end{center}
-\caption{Mouvement oscillant harmonique dans l'espace des phases}
-\label{fig:phase_space}
-\end{figure}
-
+Soumis à une perturbation, les électrons suivent donc, dans le régime linéaire, un mouvement oscillant collectif $x(t) = x_0\cos(\omega_p t +\theta_0)$. 
 Cette onde électronique est ce que l'on appelle une onde de sillage lorsqu'elle est excitée par un champ laser. Cet nom est donnée par analogie à l'onde générée dans le sillage d'un bateau (Fig.~\ref{fig:sillage})
 
 \begin{figure}[!htbp]
@@ -1043,21 +1035,118 @@ Cette onde électronique est ce que l'on appelle une onde de sillage lorsqu'elle
 \caption{Onde de sillage}
 \label{fig:sillage}
 \end{figure}
-\subsubsection{Trajectoire des électrons dans l'onde plasma}
 
-Nous venons de voir que lorsqu'un plasma est perturbé (par un champ externe dans notre cas), il est mis en mouvement et oscille à la pulsation de Langmuir $\omega_p = \sqrt{\frac{n_0 e^2}{\epsilon_0 m_e}}$. Dans ce modèle très simple, les électrons oscillent mais n'obtiennent aucune quantité de mouvement longitudinale. Afin de modéliser les trajectoires des électrons, et de montrer qu'il existe des conditions sous lesquelles un électron peut être piégé dans l'onde plasma et suivre ainsi l'impulsion laser, on peut considérer l'Hamiltonien en 1D d'un électron soumis d'une part au champ laser et d'autre part au potentiel électrostatique $\phi$ dû à l'onde plasma elle-même~: 
+
+
+\subsubsection{Mouvement collectif des électrons, approche Hamiltonienne}
+
+La mécanique Hamiltonienne est l'approche la plus élégante d'étudier le mouvement des électrons dans l'onde plasma. Comme la mécanique Newtonienne, elle permet d'établir les équations du mouvement d'un système soumis à un ensemble de forces, et repose, pour faire simple, sur la conservation de l'énergie. Dans le cas de notre tranche d'électrons perturbés, on a une énergie cinétique $\frac{p_x^2}{2m_e}$ et une énergie potentielle électrostatique $\Phi_E$ que l'on peut déduire du champ électrique établi dans la section précédente (équation~\ref{eq:chp_E}). On sait tout d'abord que la force électrostatique est conservative, le champ est donc le gradient du potentiel. De plus, l'énergie électrostatique est le produit de la charge et du potentiel, on a donc~:
 
 \begin{equation}
-    H=m_ec^2\sqrt{1+\frac{p_z^2}{m_e^2c^2}}-e\Phi(z-v_pt)
+    \textbf{E}=-\nabla V_E \quad \mathrm{et} \quad \Phi_E=-eV_E
 \end{equation}
 
-Le premier terme représente l'énergie de masse de l'électron et son énergie cinétique, et le deuxième terme, son énergie potentielle. Afin de simplifier les notations, on normalise cet Hamiltonien en utilisant les variables $u_z=\frac{p_z}{m_ec}$ et $\phi = \frac{e\Phi}{m_ec^2}$. On obtient alors~:
+d'où on déduit $\Phi_E=\frac{e^2n_0}{\epsilon_0}x^2$, ce qui nous permet d'écrire l'Hamiltonien du système~:
+
+\begin{align}
+    H &= E_K + \Phi_E \\
+      &= \frac{p^2}{2m_e}+\frac{e^2n_0}{2\epsilon_0}x^2
+      \label{eq:hamiltonien}
+\end{align}
+On trouve l'évolution temporelle du système en mécanique Hamiltonienne par les relations suivantes~:
+
+\begin{equation}
+    \frac{dp}{dt}=-\frac{\partial H}{\partial q}, \quad \frac{dq}{dt}=\frac{\partial H}{\partial p}
+\end{equation}
+
+où $p$ est la quantité de mouvement et $q$ la position. En appliquant ces relations au Hamiltonien~\ref{eq:hamiltonien}, on obtient alors~:
+
+\begin{eqnarray}
+        \frac{dp(t)}{dt}&=-\frac{n_0e^2}{\epsilon_0}x(t)\\
+        \frac{dx(t)}{dt}&=-\frac{p(t)}{m_e}
+\end{eqnarray}
+n obtient alors le système d'équations~:
 
 \begin{equation}
     H=\sqrt{1+u_z^2}-e\phi(z-v_pt)
 \end{equation}
+que l'on peut dériver et réarranger afin d'obtenir les équations différentielles pour la position $x$ et la quantité de mouvement $p$~:
 
-Cet Hamiltonien dépend du temps et de la position, mais les deux sont couplés par la vitesse, ce qui se traduit par une dépendance en $\zeta = z-v_pt$, on peut alors effectuer la transformation canonique de l'Hamiltonien $(z, u_z)\rightarrow(\zeta, u_z)$. En utilisant la fonction génératrice du second type $F_2(z, u_z)=u_z(z-v_pt)$ vérifiant les deux conditions 
+\begin{eqnarray}
+        \frac{d^2x(t)}{dt^2} +\frac{n_0e^2}{m_e\epsilon_0}x(t)= 0\\
+        \frac{d^2p(t)}{dt^2} +\frac{n_0e^2}{m_e\epsilon_0}p(t)= 0
+\end{eqnarray}
+
+que l'on peut résoudre avec la condition initiale $x(0)=x_0$ et $p(0)=0$. En utilisant $\omega_0^2=\frac{n_0e^2}{\epsilon_0}$ a alors le couple d'équations paramétriques suivant~:
+
+\begin{eqnarray}
+       x(t)&=x_0\cos{\omega_0 t} \\
+       p(t)&=-m_ex_0\omega_0\sin{\omega_0 t}
+\end{eqnarray}
+
+En écrivant $x^2(t)+\frac{p^2(t)}{m\omega_0}=x_0^2\cos{\omega_0t}+x_0^2\sin{\omega_0t}=x_0^2$, on peut alors facilement représenter $\frac{p^2(t)}{m\omega_0}$ en fonction de $x$, voir figure\ref{fig:espace_phases}. C'est ce qu'on appelle l'espace des phases. Cet outil nous sera très utile dans l'analyse des trajectoires des électrons dans le plasma. 
+
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=8cm]{}
+\end{center}
+\caption{Espace des phases pour un oscillateur harmonique}
+\label{fig:espace_phases}
+\end{figure}
+
+\subsubsection{Mouvement des électrons dans l'onde plasma}
+Nous venons de voir que lorsqu'un plasma est perturbé (par un champ externe dans notre cas), il est mis en mouvement et oscille à la pulsation de Langmuir $\omega_p = \sqrt{\frac{n_0 e^2}{\epsilon_0 m_e}}$. Dans ce modèle très simple, les électrons oscillent mais n'obtiennent aucune quantité de mouvement longitudinale. Afin de modéliser les trajectoires des électrons, et de montrer qu'il existe des conditions sous lesquelles un électron peut être piégé dans l'onde plasma et suivre ainsi l'impulsion laser, on peut considérer l'Hamiltonien en 1D d'un électron soumis d'une part au champ laser et d'autre part au potentiel électrostatique $\phi$ dû à l'onde plasma elle-même~: 
+
+\begin{equation*}
+    H=m_ec^2\sqrt{1+\frac{p_z^2}{m_e^2c^2}}-e\Phi(z-v_pt)
+\end{equation*}
+
+Le premier terme représente l'énergie de masse de l'électron et son énergie cinétique, et le deuxième terme, son énergie potentielle. Cette dernière, dans le cas d'une onde plasma harmonique, est une onde sinusoïde qui se déplace à la vitesse de phase $v_p$. Afin de simplifier les notations, on normalise cet Hamiltonien en utilisant les variables $u_z=\frac{p_z}{m_ec}$ et $\phi = \frac{e\Phi}{m_ec^2}$~:
+
+\begin{equation}
+    H=\sqrt{1+u_z^2}-\phi(z-v_pt)
+\end{equation}
+
+Cet Hamiltonien dépend du temps et de la position, mais les deux sont couplés par la vitesse, ce qui se traduit par une dépendance en $\zeta = z-v_pt$, on peut alors effectuer la transformation canonique de l'Hamiltonien $(z, u_z)\rightarrow(\zeta, u_z)$. En utilisant la fonction génératrice du second type $F_2(z, u_z)=u_z(z-v_pt)$ vérifiant les deux conditions~:
+
+\begin{eqnarray*}
+    \frac{\partial F_2}{\partial u_z}&=\zeta\\
+    \frac{\partial F_2}{\partial z}&=u_z
+\end{eqnarray*}
+
+On peut ainsi simplifier l'Hamiltonien en utilisant la relation $H' = H+\frac{1}{c}\frac{\partial F_2}{\partial t}$~:
+
+\begin{equation}
+    H'=\sqrt{1+u_z^2}-\phi(\zeta)-\frac{v_p}{c}
+\end{equation}
+
+En définissant $\beta=v_p/c$ et $\gamma=\sqrt{1+u_z^2}$, on obtient l'Hamiltonien que nous utiliserons pour notre analyse des trajectoires~:
+
+\begin{equation}
+    H'=\gamma-\beta\sqrt{\gamma^2-1}-\phi(\zeta)
+\end{equation}
+
+Par conservation de l'énergie, si un électron est placé en $\zeta_0$ avec une énergie cinétique $\gamma_0$ à $t=0$, son Hamiltonien $H_0$ est une constante du mouvement, et on a alors~:
+
+\begin{equation*}
+H=H_0=\gamma -\beta_p\sqrt{\gamma^2-1}-\phi
+\end{equation*}
+que l'on peut réécrire come une équation polynomiale du second ordre~:
+
+\begin{equation*}
+\gamma^2-2\gamma\gamma_p^2(H_0+\phi)+\gamma_p^2(H_0+\phi)^2+\beta_p^2\gamma_p^2=0
+\end{equation*}
+
+ dans laquelle on a défini $\gamma_p^2=\frac{1}{1-\beta_p^2}$. En résolvant pour $\gamma$, on obtient~:
+
+\begin{equation}\label{eqsol}
+\gamma=\gamma_p^2(H_0+\phi)\pm\sqrt{\gamma_p^2-1}\sqrt{\gamma_p^2(H_0+\phi)^2-1}
+\end{equation}
+
+Cette équation décrit les trajectoires des électrons dans l'onde de sillage en fonction de leur condition initiale $H_0$. Supposons maintenant que le potentiel électrostatique est de la forme $\phi=\phi_0\cos{\omega_p t}$, et 
+
+
 
 \printbibliography[title={Bibliographie}]
 
