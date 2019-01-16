@@ -1144,7 +1144,18 @@ que l'on peut réécrire come une équation polynomiale du second ordre~:
 \gamma=\gamma_p^2(H_0+\phi)\pm\sqrt{\gamma_p^2-1}\sqrt{\gamma_p^2(H_0+\phi)^2-1}
 \end{equation}
 
-Cette équation décrit les trajectoires des électrons dans l'onde de sillage en fonction de leur condition initiale $H_0$. Supposons maintenant que le potentiel électrostatique est de la forme $\phi=\phi_0\cos{(\omega_p \zeta)}$. Nous pouvons alors tracer les trajectoires des particules dans l'espace des phases $\gamma(\zeta)$.
+Cette équation décrit les trajectoires des électrons dans l'onde de sillage en fonction de leur condition initiale $H_0$. 
+
+Afin de pouvoir calculer ces trajectoires, il est nécessaire de connaître le potentiel électrostatique $\phi$ de l'onde de sillage. On peut montrer qu'en une dimension, ce potentiel est régi par l'équation suivante~:
+
+\begin{equation}
+    \frac{\partial^2 \phi}{\partial \zeta ^2 }\approx\frac{k_p^2}{2}\left(\frac{1+a^2/2}{(1+\phi)^2}-1\right)
+    \label{eq:1Dnonlinear}
+\end{equation}
+où $a$ est \textit{grosso modo} l'amplitude du potentiel issu du champ laser (on l'appelle le "potentiel vecteur normalisé"). Pour des lasers intenses, on a $a>1$. Pour notre exemple, nous allons prendre $a=3$. En résolvant l'équation~\ref{eq:1Dnonlinear} numériquement, on peut alors tracer le potentiel électrostatique et le champ électrique qui en dérive~: 
+
+
+Nous pouvons alors tracer les trajectoires des particules dans l'espace des phases $\gamma(\zeta)$.
 
 
 
