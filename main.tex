@@ -1084,7 +1084,7 @@ que l'on peut résoudre avec la condition initiale $x(0)=x_0$ et $p(0)=0$. En ut
        p(t)&=-m_ex_0\omega_0\sin{\omega_0 t}
 \end{eqnarray}
 
-En écrivant $x^2(t)+\frac{p^2(t)}{m\omega_0}=x_0^2\cos{\omega_0t}+x_0^2\sin{\omega_0t}=x_0^2$, on peut alors facilement représenter $\frac{p^2(t)}{m\omega_0}$ en fonction de $x$, voir figure\ref{fig:espace_phases}. C'est ce qu'on appelle l'espace des phases. Cet outil nous sera très utile dans l'analyse des trajectoires des électrons dans le plasma. 
+En écrivant $x^2(t)+\frac{p^2(t)}{m\omega_0}=x_0^2\cos{\omega_0t}+x_0^2\sin{\omega_0t}=x_0^2$, on peut alors facilement représenter $\frac{p^2(t)}{m\omega_0}$ en fonction de $x$, voir figure~\ref{fig:espace_phases}. C'est ce qu'on appelle l'espace des phases. Cet outil nous sera très utile dans l'analyse des trajectoires des électrons dans le plasma. 
 
 
 \begin{figure}[!htbp]
@@ -1152,10 +1152,18 @@ Afin de pouvoir calculer ces trajectoires, il est nécessaire de connaître le p
     \frac{\partial^2 \phi}{\partial \zeta ^2 }\approx\frac{k_p^2}{2}\left(\frac{1+a^2/2}{(1+\phi)^2}-1\right)
     \label{eq:1Dnonlinear}
 \end{equation}
-où $a$ est \textit{grosso modo} l'amplitude du potentiel issu du champ laser (on l'appelle le "potentiel vecteur normalisé"). Pour des lasers intenses, on a $a>1$. Pour notre exemple, nous allons prendre $a=3$. En résolvant l'équation~\ref{eq:1Dnonlinear} numériquement, on peut alors tracer le potentiel électrostatique et le champ électrique qui en dérive~: 
+où $a$ est \textit{grosso modo} l'amplitude du potentiel issu du champ laser (on l'appelle le "potentiel vecteur normalisé"). Pour des lasers intenses, on a $a>1$. Pour notre exemple, nous allons prendre $a=3$. En résolvant l'équation~\ref{eq:1Dnonlinear} numériquement, on peut alors tracer le potentiel électrostatique $\phi$ et le champ électrique $E$ qui en dérive en fonction de notre variable d'espace-temps $\zeta$ qui se déplace à la vitesse de groupe de l'impulsion laser~: 
 
 
-Nous pouvons alors tracer les trajectoires des particules dans l'espace des phases $\gamma(\zeta)$.
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=12cm]{1D_Field_and_Potential.png}
+\end{center}
+\caption{Potentiel $\phi$ et champ électrique $E$ de l'onde de sillage}
+\label{fig:1D_pot_field}
+\end{figure}
+
+Nous pouvons alors tracer les trajectoires des particules dans ce potentiel dans l'espace des phases $(\gamma, k_p\zeta)$.
 
 
 
