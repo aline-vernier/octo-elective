@@ -29,14 +29,16 @@ tnum = 1000
 tstep = (tmax - tmin)/tnum
 
 t_array = np.arange(tmin, tmax, tstep)
-x = [m.cos(t) for t in t_array]
-y = [m.sin(t) for t in t_array]
+
 
 fig = plt.figure(1, figsize=(10,10), dpi=80, facecolor='w', edgecolor='k')
 
 # Plot theta as a function of time
 ax1 = fig.add_subplot(111)
-ax1.plot(x, y, linewidth=2, color=tableau20[0])
+for a0 in np.arange(1, 10, 1):
+    x = [a0*m.cos(t) for t in t_array]
+    y = [a0*m.sin(t) for t in t_array]
+    ax1.plot(x, y, linewidth=2, color=tableau20[a0])
 
 ax1.set_xlabel('$x$', fontsize=30)
 ax1.set_ylabel('$\\frac{p^2(t)}{m\omega_0}$', fontsize=30)
