@@ -44,3 +44,8 @@ ax1.set_xlabel('$x$', fontsize=30)
 ax1.set_ylabel('$\\frac{p^2(t)}{m\omega_0}$', fontsize=30)
 plt.tight_layout()
 plt.savefig(my_path + 'simple_phase_space.png')
+
+##############################################
+#       SPECTRUM OF LONGITUDINAL MODES       #
+##############################################
+
