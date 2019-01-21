@@ -7,6 +7,7 @@
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[x11names]{xcolor}
+\usepackage{textcomp}
 \colorlet{myGray}{gray!15}
 
 \usepackage[
@@ -32,7 +33,7 @@ sorting=ynt
 
 \chapter*{Introduction}
 
-Le contenu des deux premières  cours est très largement inspiré de l'excellent ouvrage sur les lasers d'Orazio Svelto "Principles of Lasers", du cours de Frédérika Augé-Rochereau sur la Physique des Lasers (dont ce cours est une refonte partielle), anciennement EPE11 à l'ENSTA, ainsi que de la référence en ligne d'optique pour l'ingénieur http://www.optique-ingenieur.org/. Etant donnée la contrainte temporelle, des choix de matériel enseigné ont dû être faits. Pour compléter et affiner sa compréhension, le lecteur est encouragé à consulter chacune de ces références ainsi que celles en fin de document.
+Le contenu des deux premières  cours est très largement inspiré de l'excellent ouvrage sur les lasers d'Orazio Svelto "Principles of Lasers", du cours de Frédérika Augé-Rochereau sur la Physique des Lasers (dont ce cours est une refonte partielle), anciennement EPE11 à l'ENSTA, ainsi que de la référence en ligne d'optique pour l'ingénieur http://www.optique-ingenieur.org/. Etant donnée la contrainte temporelle, des choix de matériel enseigné ont dû être faits. Pour compléter et affiner sa compréhension, le lecteur est encouragé à consulter ces références ainsi que celles en fin de document.
 
 
 \chapter{Approche géométrique}
@@ -47,7 +48,7 @@ La lentille mince est une approximation que l'on peut appliquer lorsque l'épais
 \begin{center}
 \includegraphics[width=8cm]{lenses.PNG}
 \end{center}
-\caption{a) Lentilles minces, b) Lentilles asphériques épaisses. Source : Edmund Optics }
+\caption{a) Lentilles minces, b) Lentilles asphériques épaisses. Source : \textcopyright Edmund Optics }
 \label{fig:lentille_mince}
 \end{figure}
 
@@ -832,14 +833,6 @@ Comme nous l'avons souligné dans l'introduction, l'essor de l'utilisation des l
 
 Nous appréhenderons les phénomènes fondamentaux permettant l'accélération d'électrons par interaction entre un laser impulsionnel ultra-intense et un gaz moléculaire. Nous commencerons par une brève introduction aux accélérateurs coventionnels et à leurs limitations, ainsi qu'aux raisons pour lesquelles l'accélération par laser peut permettre de dépasser ces limites. Nous décrirons ensuite les phénomènes physiques qui ont lieu dans la matière lorsqu'on l'illumine à des intensités supérieures à $10^{16}\,\mathrm{W/cm^2}$. Nous verrons que l'arrivée de l'impulsion provoque tout d'abord l'ionisation du milieu, et génère ainsi un plasma. Lorsque l'intensité dépasse les quelques $10^{18}\,\mathrm{W/cm^2}$, selon la densité éléctronique du plasma, on peut alors déclencher une excitation d'ondes plasma de forte amplitude donnant lieu à l'accélération d'électrons. Nous discuterons en particulier de ce qu'on appelle le ``régime de la bulle'' dans lequel l'onde plasma est excitée de façon résonante. Elle prend alors un caractère non-linéaire, et le champ éléctrique qui en résulte peut dépasser $100\,\textrm{GV/m}$. Nous verrons alors comment ce champ électrique permet d'accélérer des électrons à des énergies relativistes.
 
-\begin{figure}[!htbp]
-\begin{center}
-\includegraphics[width=8cm]{}
-\end{center}
-\caption{Impulsion laser et phénomènes physiques associés}
-\label{fig:laser_matiere}
-\end{figure}
-
 \section{Considérations sur les accélérateurs conventionnels, et limitations}
 
 Le principe de base de l'accélération de particules repose sur la génération d'un champ électrique accélérateur ainsi que sur l'injection d'électrons dans un tel champ. Le tout premier appareil conçu s'apparentant à un accélérateur de particules est le tube de Geissler (ou tube cathodique). Il s'agit d'un tube de verre, contenant une faible pression de gaz, souvent des gaz rares comme le néon ou l'argon, mais aussi d'autres gaz tels que le sodium ou le mercure. De part et d'autre de ce tube sont placées deux électrodes sur lesquelles on applique une haute tension. Le champ éléctrique fort ainsi créé provoque l'ionisation provoque la génération de lumière dont la couleur dépend du gaz utilisé. La haute tension appliquée induit à la fois l'ionisation des atomes ainsi qu'un courant électrique. C'est la recombinaison des électrons avec les ions (et la désexcitation radiative qui s'ensuit) qui produit l'émission de lumière par fluorescence. Lorsque le tube est sous vide poussé, on appelle ce type de dispositif un tube de Crookes (du scientifique anglais W.~Crookes qui est son inventeur). Dans un tube de Crookes, un ratonnement lumineux est aussi émis, mais seulement au niveau de l'anode. Ces rayonnements, à l'époque mystérieux furent nommés rayons cathodiques. En 1897, J.~J.~Thomson (le même que celui du modèle atomique de Thomson !) démontra que ces rayonnement provenaient d'une particule, alors inconnue, qui fut nommée ``électron''. 
@@ -1055,9 +1048,9 @@ Cette onde électronique est ce que l'on appelle une onde de sillage lorsqu'elle
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[width=8cm]{}
+\includegraphics[width=10cm]{Fjordn_surface_wave_boat.png}
 \end{center}
-\caption{Onde de sillage}
+\caption{Onde de sillage. \textcopyleft Edmont [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0) }
 \label{fig:sillage}
 \end{figure}
 
