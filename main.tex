@@ -22,7 +22,7 @@ sorting=ynt
 \renewcommand{\chaptername}{Chapitre}
 \renewcommand{\bibname}{Bibliographie}
 
-\title{Optique des lasers : Cours 1, 2, 5}
+\title{Optique des lasers : Cours 1, 2, 3, et 5}
 \author{}
 \date{}
 
@@ -434,7 +434,7 @@ De ces équations, on tire les relations donnant l'évolution de $R$ et $w$ en f
 
 De ces équations, on tire que :
 \begin{itemize}
-    \item Sur le plan $\Pi_0$, la taille du faisceau gaussien est minimale et son rayon transverse vaut $w_0$. Ce lieu particulier est appelé waist du faisceau ou encore \``col\'' en français
+    \item Sur le plan $\Pi_0$, la taille du faisceau gaussien est minimale et son rayon transverse vaut $w_0$. Ce lieu particulier est appelé waist du faisceau ou encore  ``col" en français
     \item Le faisceau est symétrique par rapport au plan du waist
     \item Le rayon transverse $w(z$) varie de manière hyperbolique suivant $z$.
 \end{itemize}
@@ -528,6 +528,31 @@ d'où on déduit~:
 \end{equation}
 
 Lorsque $w_0$ ou $Z_R$ deviennent très grands, le faisceau gaussien devient proche d'une onde plane et on voit alors que le déphasage $\phi_g$ tend vers zéro.
+
+
+
+\medskip
+
+\noindent\fcolorbox{black}{myGray}{%
+    \minipage[t]{\dimexpr1\linewidth-2\fboxsep-2\fboxrule\relax}
+        \textbf{Calculs de la taille et de la position du waist en cavité :\\}
+            Soit une cavité linéaire de longueur $L$ et dont les miroirs sont de courbures $R_1$ et $R_2$
+          \\
+          \\
+          \begin{itemize}
+              \item  Etablir le système de trois équations sur les trois inconnues $z_1, z_2$ et $z_R^2$
+              \\\\\\
+              \item  En utilisant la relation $L = z_2 - z_1$, résoudre ce système et en déduire la position et la taille du waist (attention, ne vous embarquez pas dans unr résolution de polynômes du 2e degré... Horrible !)
+              \\\\\\
+              \item  On introduit les paramètres $g_1 = 1-\frac{L}{R_1}$ et $g_2 = 1-\frac{L}{R_2}$. Retrouver la condition de stabilité de la cavité linéaire. 
+              \\\\\\
+          \end{itemize}
+         
+          \\\\
+    \endminipage}\hfill
+    
+\medskip
+
 
 \chapter{Résonateurs passifs}
 
@@ -692,7 +717,7 @@ En faisant l'approximation d'un champ intra-cavité scalaire $E(t) = \tilde E\ex
 \section{Modes gaussiens d'ordre supérieur en cavité}
 
 
-Dans le cas où une cavité admet un mode propre gaussien, il est possible de montrer qu'il existe une famille de fonctions qui sont également des modes propres de la cavité. L'ensemble de ces solutions sont les modes transverses de la cavité.
+Dans le cas où une cavité admet un mode propre gaussien, il est possible de montrer qu'il existe une famille de fonctions qui sont également des modes propres de la cavité. L'ensemble de ces solutions correspond aux modes transverses de la cavité.
 
 Il existe deux familles de fonctions. La première correspond à une symétrie spatiale rectangulaire du faisceau : ce sont les
 modes de Hermite Gauss. La seconde correspond à une symétrie spatiale axiale du faisceau : ce sont les modes de Laguerre Gauss.
@@ -781,7 +806,7 @@ Chaque mode transverse (notion spatiale), caractérisé par un couple d'indices 
     \Delta\nu_p=\frac{c}{2[L]}
 \end{equation}
 
-Pour un mode longitudinal fixé, la fréquence de résonance des différents modes transverses dépend de la valeur de $n+m$. L'écart entre deux résonances successives est en général nettement plus faible que celui des modes longitudinaux~:
+Pour un mode longitudinal fixé, la fréquence de résonance des différents modes transverses dépend de la valeur de $n+m$. L'écart entre deux résonances successives est en général plus faible que celui des modes longitudinaux~:
 
 \begin{equation}
     \Delta\nu_{mn}=\frac{c}{4\pi[L]}\mathrm{arg}\left(A+\frac{B}{q}\right)
@@ -821,7 +846,7 @@ Le principe de base de l'accélération de particules repose sur la génération
 
 C'est en partant de ce principe que Cockcroft and Walton développèrent le tout premier accélérateur de particules lors de leurs travaux avec Rutherford. Il s'agissait d'un accélérateur de protons destiné à l'étude de la structure interne de l'atome. L'accélérateur fut mis en service en mars 1932. Un mois plus tard, Rutherford, Cockcroft et Walton mirent en évidence la première fission atomique artificielle par bombardement de protons sur une cible de lithium. L'énergie des protons à l'époque était de 710$\,\mathrm{keV}$. Ce type d'accélérateur est ce que l'on appelle un accélérateur électrostatique, toujours très utilisé aujourd'hui notamment dans les tubes à rayons X utilisés pour les radiographies médicales. L'énergie des particules issues d'un tel accélérateur est cependant limitée par le champ de claquage (même sous "vide" !) à environ 1$\,\mathrm{MV/m}$. On peut pour certaines applications utiliser des gaz isolants tels que le $\mathrm{SF}_6$ afin de multiplier cette limite par un facteur 30.
 
-Une autre méthode, l'accélération radiofréquence fut inventée par Ising et développée par Wider{\o}e en 1928. En connectant une série d'électrodes de polarité alternée, on peut arriver à des énergies assez importantes mais sur des dimensions colossales comme le SLAC (l'accélérateur linéaire de Stanford) qui peut accélérer des électrons à 50$\,\mathrm{GeV}$, sur une distance de 3,2$\,\mathrm{km}$ ! En général ce type d'accélérateur est utilisé autour de quelques dizaines de MeV. En principe, ce type d'appareil permet de démultiplier la tension d'alimentation étage après étage, tant que le faisceau (impulsionnel !) est isolé du champ décélérateur (déphasé de $\pi$). On peut faire un calcul simple des dimensions de l'accélérateur pour des énergies non-relativistes : le gain d'énergie après le $n$-ième étage est le suivant~:
+Une autre méthode, l'accélération radiofréquence fut inventée par Ising et développée par Wider{\o}e en 1928 (voir Fig.~\ref{fig:wideroe} et Fig.~\ref{fig:acc_dec}. En connectant une série d'électrodes de polarités alternées, on peut arriver à des énergies assez importantes mais sur des dimensions colossales comme le SLAC (l'accélérateur linéaire de Stanford) qui peut accélérer des électrons à 50$\,\mathrm{GeV}$, sur une distance de 3,2$\,\mathrm{km}$ ! En général ce type d'accélérateur est utilisé autour de quelques dizaines de MeV. En principe, ce type d'appareil permet de démultiplier la tension d'alimentation étage après étage, tant que le faisceau (impulsionnel !) est isolé du champ décélérateur (déphasé de $\pi$). On peut faire un calcul simple des dimensions de l'accélérateur pour des énergies non-relativistes : le gain d'énergie après le $n$-ième étage est le suivant~:
 
 \begin{equation}
     E_n=nqU_0\sin\left(\phi_s\right)
@@ -841,7 +866,7 @@ Pour plus d'informations sur les accélérateurs, la lecture de l'article de Ber
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[width=8cm]{}
+\includegraphics[width=11cm]{Wideroe.PNG}
 \end{center}
 \caption{Accélérateur de Wider{\o}e~\cite{Wideroe1928}}
 \label{fig:wideroe}
@@ -851,7 +876,7 @@ Pour plus d'informations sur les accélérateurs, la lecture de l'article de Ber
 \begin{center}
 \includegraphics[width=8cm]{}
 \end{center}
-\caption{Champs accélérateur et décélérateur dans la structure}
+\caption{Champs accélérateur et décélérateur dans un accélérateur radiofréquence}
 \label{fig:acc_dec}
 \end{figure}
 
