@@ -32,7 +32,8 @@ g1_t = np.append(np.arange(-10, -0.001, 0.001), np.arange(0.001, 10, 0.001))
 g2_t = [g2_f(g1) for g1 in g1_t]
 
 fig = plt.figure(1, figsize=(10,10), dpi=80, facecolor='w', edgecolor='k')
-
+plt.xticks([])
+plt.yticks([])
 # Plot theta as a function of time
 ax1 = fig.add_subplot(111)
 ax1.plot(g1_t, g2_t, linewidth=2, color=tableau20[2])
@@ -43,6 +44,7 @@ ax1.set_ylabel('$g2$', fontsize=30)
 ax1.set_ylim(-1., 1.)
 ax1.axhline(0, color='black')
 ax1.axvline(0, color='black')
+
 
 plt.tight_layout()
 #plt.show()
