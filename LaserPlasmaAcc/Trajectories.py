@@ -12,8 +12,8 @@ import pristinifier as ps
 
 [tableau20, tableau20Edge] = ps.rgb_array()
 font = {'family' : 'Tahoma',
-        'weight' : 'bold',
-        'size'   : 11}
+ #       'weight' : 'bold',
+        'size'   : 15}
 
 matplotlib.rc('font', **font)
 
@@ -120,7 +120,7 @@ psoln = odeint(f, y0, t, hmax=2*tInc)
 ##############################################
 
 # Plot results
-fig = plt.figure(1, figsize=(8,6), dpi=80, facecolor='w', edgecolor='k', linewidth=5)
+fig = plt.figure(1, figsize=(10,6), dpi=80, facecolor='w', edgecolor='k', linewidth=5)
 
 # Plot theta as a function of time
 ax1 = fig.add_subplot(211)
