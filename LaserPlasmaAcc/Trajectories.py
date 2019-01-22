@@ -124,22 +124,28 @@ fig = plt.figure(1, figsize=(8,6), dpi=80, facecolor='w', edgecolor='k', linewid
 
 # Plot theta as a function of time
 ax1 = fig.add_subplot(211)
-ax1.plot(-t/(2*3.14), psoln[:, 0], linewidth=2, color=tableau20[0])
-ax1.plot(-t/(2*3.14), [a_zeta(zeta)*a_zeta(zeta) for zeta in t], dashes=[6, 2], linewidth=1, color=tableau20[4])
-ax1.set_ylabel('$\phi(k_p\zeta)$', fontsize=15, color=tableau20[0])
+ax1.plot(-t/(2*3.14), psoln[:, 0], linewidth=2, color=tableau20[0], label = '$\phi(k_p\zeta)$')
+ax1.plot(-t/(2*3.14), [a_zeta(zeta)*a_zeta(zeta) for zeta in t], dashes=[6, 2], linewidth=1, color=tableau20[4], label='$a^2(\zeta)$')
+
+#ax1.set_ylabel('$\phi(k_p\zeta)$', fontsize=15, color=tableau20[0])
+
 
 ax1.set_xlim(-1.7, 0.5)
 ax1.set_ylim(-0.4, 1.1)
 
 # Plot derivative as a function of zetakp
 ax2 = fig.add_subplot(212)
-ax2.plot(-t/(2*3.14), np.gradient(psoln[:, 0])/max(np.gradient(psoln[:, 0])), linewidth=2, color=tableau20[2])
+ax2.plot(-t/(2*3.14), np.gradient(psoln[:, 0])/max(np.gradient(psoln[:, 0])), linewidth=2, color=tableau20[2], label='$E(k_p\zeta )/E_{Max}$')
 ax2.set_xlabel('$k_p\zeta/2\pi$', fontsize=15)
-ax2.set_ylabel('$E(k_p\zeta )/E_{Max}$', fontsize=15, color=tableau20[2])
+#ax2.set_ylabel('$E(k_p\zeta )/E_{Max}$', fontsize=15, color=tableau20[2])
 ax2.set_xlim(-1.7, 0.5)
 ax2.set_ylim(-1.5, 1.1)
+
+ax1.legend(loc='upper left')
+ax2.legend(loc='upper left')
 plt.tight_layout()
 plt.savefig(my_path + '1D_Field_and_Potential.png')
+#plt.show()
 
 ##############################################
 #    CREATE TRAJECTORIES IN STATIC FIELD     #
@@ -227,6 +233,6 @@ for h in Hin:
 ax1.set_xlim(-1.7, 0.5)
 ax1.set_xlabel('$k_p\zeta/2\pi$', fontsize=15)
 ax1.set_ylabel('$u_z+1$', fontsize=15)
-plt.savefig(my_path + 'trajectories.png')
+#plt.savefig(my_path + 'trajectories.png')
 
 
