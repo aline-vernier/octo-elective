@@ -91,8 +91,8 @@ def a_zeta(_zeta):
 
 # Make time array for solution
 tStart = -5.0
-tStop = 12.
-tNum = 10000
+tStop = 20.
+tNum = 500000
 tInc = tStop/tNum
 t = np.arange(tStart, tStop, tInc)
 
@@ -130,7 +130,7 @@ ax1.plot(-t/(2*3.14), [a_zeta(zeta)*a_zeta(zeta) for zeta in t], dashes=[6, 2], 
 #ax1.set_ylabel('$\phi(k_p\zeta)$', fontsize=15, color=tableau20[0])
 
 
-ax1.set_xlim(-1.7, 0.5)
+ax1.set_xlim(-2.5, 0.5)
 ax1.set_ylim(-0.4, 1.1)
 
 # Plot derivative as a function of zetakp
@@ -168,34 +168,87 @@ gamma_num = 10.
 gamma_step = (gamma_max)/gamma_num
 
 
-# A few trajectories
-fig2 = plt.figure(2, figsize=(8,6), dpi=80, facecolor='w', edgecolor='k', linewidth=5)
-ax1 = fig2.add_subplot(111)
+# # A few trajectories
+# fig2 = plt.figure(2, figsize=(8,6), dpi=80, facecolor='w', edgecolor='k', linewidth=5)
+# ax1 = fig2.add_subplot(111)
+#
+# for gamma_0 in np.arange(gamma_min, gamma_max, gamma_step):
+#     for i0 in np.arange(i0_min, i0_max, i0_step):
+#         phi_0 = phi_zeta_kp_sol[i0]
+#
+#         H0 = H(gamma_0, beta_p, phi_0)
+#
+#
+#         s1 = []
+#         s2 = []
+#
+#         for i in np.arange(i0, len(zeta_kp)):
+#             phi = phi_zeta_kp_sol[i]
+#             a = a_zeta(i)
+#             a1, a2 = uz(H0, phi, a)
+#
+#             s1.append(a1)
+#             s2.append(a2)
+#
+#         ax1.semilogy(-t[i0:]/(2*3.14), s1, dashes=[6, 2], linewidth=1, color=tableau20[2])
+#         ax1.semilogy(-t[i0:]/(2*3.14), s2, dashes=[6, 2], linewidth=1, color=tableau20[2])
+#
+#
+# Hsep = 1/gamma_p - min(phi_zeta_kp_sol)
+# print "Hsep = " + str(Hsep)
+# s1 = []
+# s2 = []
+# for i in np.arange(i0_min, len(zeta_kp)):
+#     phi = phi_zeta_kp_sol[i]
+#     a = a_zeta(i)
+#     a1, a2 = uz(Hsep, phi, a)
+#
+#     s1.append(a1)
+#     s2.append(a2)
+#
+# ax1.semilogy(-t[i0:]/(2*3.14), s1, linewidth=2, color=tableau20[6])
+# ax1.semilogy(-t[i0:]/(2*3.14), s2, linewidth=2, color=tableau20[6])
+#
+# Hin = [Hsep/i for i in [2, 3, 5, 50]]
+#
+# for h in Hin:
+#     for i0 in np.arange(i0_min, i0_max, i0_step):
+#         phi_0 = phi_zeta_kp_sol[i0]
+#
+#         H0 = h
+#         s1 = []
+#         s2 = []
+#
+#         for i in np.arange(i0, len(zeta_kp)):
+#             phi = phi_zeta_kp_sol[i]
+#             a = a_zeta(i)
+#             a1, a2 = uz(H0, phi, a)
+#
+#             s1.append(a1)
+#             s2.append(a2)
+#
+#         ax1.semilogy(-t[i0:]/(2*3.14), s1, dashes=[6, 2], linewidth=1, color=tableau20[2])
+#         ax1.semilogy(-t[i0:]/(2*3.14), s2, dashes=[6, 2], linewidth=1, color=tableau20[2])
+#
+# ax1.set_xlim(-1.7, 0.5)
+# ax1.set_xlabel('$k_p\zeta/2\pi$', fontsize=15)
+# ax1.set_ylabel('$u_z+1$', fontsize=15)
+#
+#
+# #plt.savefig(my_path + 'trajectories.png')
 
-for gamma_0 in np.arange(gamma_min, gamma_max, gamma_step):
-    for i0 in np.arange(i0_min, i0_max, i0_step):
-        phi_0 = phi_zeta_kp_sol[i0]
+##############################################
+#    PLOT TRAJECTORIES WITH SEPERATRIX       #
+##############################################
 
-        H0 = H(gamma_0, beta_p, phi_0)
-
-
-        s1 = []
-        s2 = []
-
-        for i in np.arange(i0, len(zeta_kp)):
-            phi = phi_zeta_kp_sol[i]
-            a = a_zeta(i)
-            a1, a2 = uz(H0, phi, a)
-
-            s1.append(a1)
-            s2.append(a2)
-
-        ax1.semilogy(-t[i0:]/(2*3.14), s1, dashes=[6, 2], linewidth=1, color=tableau20[2])
-        ax1.semilogy(-t[i0:]/(2*3.14), s2, dashes=[6, 2], linewidth=1, color=tableau20[2])
+fig3 = plt.figure(2, figsize=(8,6), dpi=80, facecolor='w', edgecolor='k', linewidth=5)
+ax1 = fig3.add_subplot(111)
 
 
 Hsep = 1/gamma_p - min(phi_zeta_kp_sol)
 print "Hsep = " + str(Hsep)
+
+
 s1 = []
 s2 = []
 for i in np.arange(i0_min, len(zeta_kp)):
@@ -206,14 +259,14 @@ for i in np.arange(i0_min, len(zeta_kp)):
     s1.append(a1)
     s2.append(a2)
 
-ax1.semilogy(-t[i0:]/(2*3.14), s1, linewidth=2, color=tableau20[6])
-ax1.semilogy(-t[i0:]/(2*3.14), s2, linewidth=2, color=tableau20[6])
+ax1.semilogy(-t[i0_min:]/(2*3.14), s1, linewidth=2, color=tableau20[6])
+ax1.semilogy(-t[i0_min:]/(2*3.14), s2, linewidth=2, color=tableau20[6])
 
-Hin = [Hsep/i for i in [2, 3, 5, 50]]
+
+Hin = [Hsep/i for i in [1.1, 1.6, 2, 5, 10, 200]]
 
 for h in Hin:
     for i0 in np.arange(i0_min, i0_max, i0_step):
-        phi_0 = phi_zeta_kp_sol[i0]
 
         H0 = h
         s1 = []
@@ -227,12 +280,50 @@ for h in Hin:
             s1.append(a1)
             s2.append(a2)
 
-        ax1.semilogy(-t[i0:]/(2*3.14), s1, dashes=[6, 2], linewidth=1, color=tableau20[2])
-        ax1.semilogy(-t[i0:]/(2*3.14), s2, dashes=[6, 2], linewidth=1, color=tableau20[2])
+        ax1.semilogy(-t[i0:]/(2*3.14), s1, dashes=[4, 2], linewidth=1.2, color=tableau20[0])
+        ax1.semilogy(-t[i0:]/(2*3.14), s2, dashes=[4, 2], linewidth=1.2, color=tableau20[0])
 
 ax1.set_xlim(-1.7, 0.5)
 ax1.set_xlabel('$k_p\zeta/2\pi$', fontsize=15)
 ax1.set_ylabel('$u_z+1$', fontsize=15)
-#plt.savefig(my_path + 'trajectories.png')
 
+Hout = [Hsep*i for i in [1.1, 1.5]]
 
+for h in Hout:
+    for i0 in np.arange(i0_min, i0_max, i0_step):
+
+        H0 = h
+        s1 = []
+        s2 = []
+
+        for i in np.arange(i0, len(zeta_kp)):
+            phi = phi_zeta_kp_sol[i]
+            a = a_zeta(i)
+            a1, a2 = uz(H0, phi, a)
+
+            s1.append(a1)
+            s2.append(a2)
+
+        ax1.semilogy(-t[i0:]/(2*3.14), s1, dashes=[4, 2],linewidth=2, color=tableau20[8])
+  #      ax1.semilogy(-t[i0:]/(2*3.14), s2, dashes=[6, 2], linewidth=1, color=tableau20[8])
+
+for i0 in np.arange(i0_min, i0_max, i0_step):
+
+    H0 = H(1, beta_p,0)
+    s1 = []
+    s2 = []
+
+    for i in np.arange(i0, len(zeta_kp)):
+        phi = phi_zeta_kp_sol[i]
+        a = a_zeta(i)
+        a1, a2 = uz(H0, phi, a)
+
+        s1.append(a1)
+        s2.append(a2)
+
+    ax1.semilogy(-t[i0:]/(2*3.14), s1, linewidth=2, color='black')
+
+ax1.set_xlim(-2.5, 0.5)
+ax1.set_xlabel('$k_p\zeta/2\pi$', fontsize=15)
+ax1.set_ylabel('$u_z+1$', fontsize=15)
+plt.savefig(my_path + 'trajectories.png')
