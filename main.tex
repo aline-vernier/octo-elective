@@ -1130,13 +1130,13 @@ En écrivant $x^2(t)+\frac{p^2(t)}{m\omega_0}=x_0^2\cos{\omega_0t}+x_0^2\sin{\om
 Nous venons de voir que lorsqu'un plasma est perturbé (par un champ externe dans notre cas), il est mis en mouvement et oscille à la pulsation de Langmuir $\omega_p = \sqrt{\frac{n_0 e^2}{\epsilon_0 m_e}}$. Dans ce modèle très simple, les électrons oscillent mais n'obtiennent aucune quantité de mouvement longitudinale. Afin de modéliser les trajectoires des électrons, et de montrer qu'il existe des conditions sous lesquelles un électron peut être piégé dans l'onde plasma et suivre ainsi l'impulsion laser, on peut considérer l'Hamiltonien en 1D d'un électron soumis d'une part au champ laser et d'autre part au potentiel électrostatique $\phi$ dû à l'onde plasma elle-même~: 
 
 \begin{equation*}
-    H=m_ec^2\sqrt{1+\frac{p_z^2}{m_e^2c^2}}-e\Phi(z-v_pt)
+    H=m_ec^2\sqrt{1+\frac{p_z^2}{m_e^2c^2}+\frac{p_\perp^2}{m_e^2c^2}}-e\Phi(z-v_pt)
 \end{equation*}
 
 Le premier terme représente l'énergie de masse de l'électron et son énergie cinétique, et le deuxième terme, son énergie potentielle. Cette dernière, dans le cas d'une onde plasma harmonique, est une onde sinusoïde qui se déplace à la vitesse de phase $v_p$. Afin de simplifier les notations, on normalise cet Hamiltonien en utilisant les variables $u_z=\frac{p_z}{m_ec}$ et $\phi = \frac{e\Phi}{m_ec^2}$~:
 
 \begin{equation}
-    H=\sqrt{1+u_z^2}-\phi(z-v_pt)
+    H=\sqrt{1+u_z^2+u_\perp^2}-\phi(z-v_pt)
 \end{equation}
 
 Cet Hamiltonien dépend du temps et de la position, mais les deux sont couplés par la vitesse, ce qui se traduit par une dépendance en $\zeta = z-v_pt$, on peut alors effectuer la transformation canonique de l'Hamiltonien $(z, u_z)\rightarrow(\zeta, u_z)$. En utilisant la fonction génératrice du second type $F_2(z, u_z)=u_z(z-v_pt)$ vérifiant les deux conditions~:
@@ -1149,33 +1149,27 @@ Cet Hamiltonien dépend du temps et de la position, mais les deux sont couplés 
 On peut ainsi simplifier l'Hamiltonien en utilisant la relation $H' = H+\frac{1}{c}\frac{\partial F_2}{\partial t}$~:
 
 \begin{equation}
-    H'=\sqrt{1+u_z^2}-\phi(\zeta)-\frac{v_p}{c}
+    H'=\sqrt{1+u_z^2+u_\perp^2}-\phi(\zeta)-\frac{v_p}{c}u_z
 \end{equation}
 
-En définissant $\beta=v_p/c$ et $\gamma=\sqrt{1+u_z^2}$, on obtient l'Hamiltonien que nous utiliserons pour notre analyse des trajectoires~:
+En définissant $\beta=v_p/c$, on obtient l'Hamiltonien que nous utiliserons pour notre analyse des trajectoires~:
 
 \begin{equation}
-    H'=\gamma-\beta\sqrt{\gamma^2-1}-\phi(\zeta)
+    H'=\sqrt{1+u_z^2+u_\perp^2}-\phi(\zeta)-\beta_p u_z
 \end{equation}
 
-Par conservation de l'énergie, si un électron est placé en $\zeta_0$ avec une énergie cinétique $\gamma_0$ à $t=0$, son Hamiltonien $H_0$ est une constante du mouvement, et on a alors~:
+En une dimension, l'Hamiltonien ne varie pas en fonction de $r_\perp$, c'est-à-dire $\partial H/\partial r_\perp = 0$. On peut en déduire que la somme de la composante transverse de la quantité de mouvement $u_\perp$ et de l'amplitude du laser (purement transverse en 1D) doit être constante~:~ $u_\perp(\zeta) - a(\zeta) = \mathrm{cste}$, où $a(\zeta)$ est ce qu'on appelle le potentiel vecteur normalisé. 
 
-\begin{equation*}
-H=H_0=\gamma -\beta_p\sqrt{\gamma^2-1}-\phi
-\end{equation*}
-que l'on peut réécrire come une équation polynomiale du second ordre~:
+\textit{[NDA~:~Pour ceux d'entre vous qui n'ont jamais rencontré le potentiel vecteur, sachez simplement qu'il s'agit d'un potentiel duquel le champ électomagnétique dérive (de la même manière qu'on a $\textbf{E} = -\nabla V$ où $\textbf{E}$ est le champ électrique et $V$ le potentiel duquel le champ dérive, on a $\textbf{B} = \nabla\times\textbf{A}$ avec $\textbf{B}$ le champ magnétique et $\textbf{A}$ le potentiel vecteur.]}
 
-\begin{equation*}
-\gamma^2-2\gamma\gamma_p^2(H_0+\phi)+\gamma_p^2(H_0+\phi)^2+\beta_p^2\gamma_p^2=0
-\end{equation*}
 
- dans laquelle on a défini $\gamma_p^2=\frac{1}{1-\beta_p^2}$. En résolvant pour $\gamma$, on obtient~:
+Par conservation de l'énergie, si un électron est placé en $\zeta_0$ avec une énergie cinétique $\gamma_0$ à $t=0$, son Hamiltonien $H_0$ est donc une constante du mouvement. En résolvant l'équation polynômiale du second ordre pour $u_z$, on obtient~:
 
 \begin{equation}\label{eqsol}
-\gamma=\gamma_p^2(H_0+\phi)\pm\sqrt{\gamma_p^2-1}\sqrt{\gamma_p^2(H_0+\phi)^2-1}
+u_z(\zeta) = \beta_p\gamma_p^2(H_0+\phi(\zeta))\pm\gamma_p\sqrt{\gamma_p^2(H_0+\phi(\zeta))^2-\gamma\perp^2}
 \end{equation}
 
-Cette équation décrit les trajectoires des électrons dans l'onde de sillage en fonction de leur condition initiale $H_0$. 
+Cette équation décrit les trajectoires des électrons dans l'onde de sillage dans l'espace des phases $(\zeta, u_z)$ en fonction de leur condition initiale $H_0$. 
 
 Afin de pouvoir calculer ces trajectoires, il est nécessaire de connaître le potentiel électrostatique $\phi$ de l'onde de sillage. On peut montrer qu'en une dimension, ce potentiel est régi par l'équation suivante~:
 
@@ -1183,12 +1177,12 @@ Afin de pouvoir calculer ces trajectoires, il est nécessaire de connaître le p
     \frac{\partial^2 \phi}{\partial \zeta ^2 }\approx\frac{k_p^2}{2}\left(\frac{1+a^2/2}{(1+\phi)^2}-1\right)
     \label{eq:1Dnonlinear}
 \end{equation}
-où $a$ est \textit{grosso modo} l'amplitude du potentiel issu du champ laser (on l'appelle le "potentiel vecteur normalisé"). Pour des lasers intenses, on a $a>1$. Pour notre exemple, nous allons prendre $a=3$. En résolvant l'équation~\ref{eq:1Dnonlinear} numériquement, on peut alors tracer le potentiel électrostatique $\phi$ et le champ électrique $E$ qui en dérive en fonction de notre variable d'espace-temps $\zeta$ qui se déplace à la vitesse de groupe de l'impulsion laser~: 
+où $a$ est \textit{grosso modo} l'amplitude du potentiel issu du champ laser (on l'appelle le "potentiel vecteur normalisé"). Pour des lasers intenses, on a $a>1$. Pour notre exemple, nous allons prendre $a=3$. En résolvant l'équation~\ref{eq:1Dnonlinear} numériquement, on peut alors tracer le potentiel électrostatique $\phi$ et le champ électrique $E$ qui en dérive en fonction de notre variable d'espace-temps $\zeta$ qui se déplace à la vitesse de groupe de l'impulsion laser (voir Fig.~\ref{fig:1D_pot_field}. 
 
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[width=12cm]{1D_Field_and_Potential.png}
+\includegraphics[width=8cm]{1D_Field_and_Potential.png}
 \end{center}
 \caption{Potentiel $\phi$ et champ électrique $E$ de l'onde de sillage}
 \label{fig:1D_pot_field}
@@ -1197,6 +1191,13 @@ où $a$ est \textit{grosso modo} l'amplitude du potentiel issu du champ laser (o
 Nous pouvons alors tracer les trajectoires des particules dans ce potentiel dans l'espace des phases~$(\gamma, k_p\zeta)$.
 
 
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=12cm]{trajectories.png}
+\end{center}
+\caption{Trajectoires des électrons dans l'onde de sillage}
+\label{fig:1D_pot_field}
+\end{figure}
 
 \printbibliography[title={Bibliographie}]
 
