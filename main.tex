@@ -60,7 +60,7 @@ L'axe optique de la lentille est défini par la droite passant par les deux cent
 Tout système optique possède deux foyers, un foyer objet et un foyer image. Pour une lentille mince, ces foyers sont sur l'axe optique et symétriques par rapport au centre $O$ de la lentille. Le demi-espace délimité par le plan contenant la lentille porte le nom du foyer qu'il contient (espace objet ou espace image). Un objet réel se situe dans l'espace objet et un objet virtuel dans l'espace image, il en va de même pour une image, qui sera réelle si elle se situe dans l'espace image et virtuelle si elle se trouve dans l'espace objet.
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[width=8cm]{espaces.png}}
+\includegraphics[width=8cm]{espaces.png}
 \end{center}
 \caption{Espaces objet et image}
 \label{fig:espaces_lentille_mince}
@@ -79,6 +79,14 @@ On peut en déduire la formule de Newton pour un système optique centré :
 \overline{FA}\cdot\overline{F'A'}=-\overline{OF'}^2
 \end{equation}
 
+\begin{figure}[!htbp]
+\label{fig:image_lentille_convergente}
+\begin{center}
+\includegraphics[width=5cm]{cv_lens.png}
+\end{center}
+\caption{Construction d'une image par une lentille convergente}
+\end{figure}
+
 Afin de construire l'image d'un objet par une lentille, on se souviendra des règles suivantes : 
 \begin{itemize}
     \item Un rayon passant par le centre optique n'est pas dévié
@@ -86,18 +94,12 @@ Afin de construire l'image d'un objet par une lentille, on se souviendra des rè
 \end{itemize}
 On remarquera que par retour inverse de la lumière, un faisceau sortant d'une optique parallèlement à l'axe provient du foyer objet.
 
-\begin{figure}[!htbp]
-\label{fig:image_lentille_convergente}
-\begin{center}
-\includegraphics[width=8cm]{}
-\end{center}
-\caption{Construction d'une image par une lentille convergente}
-\end{figure}
+
 
 \begin{figure}[!htbp]
 \label{fig:image_lentille_divergente}
 \begin{center}
-\includegraphics[width=8cm]{}
+\includegraphics[width=5cm]{dv_lens.png}
 \end{center}
 \caption{Construction d'une image par une lentille divergente}
 \end{figure}
@@ -117,7 +119,7 @@ Un miroir concave est convergent, un miroir convexe est divergent. La focale d'u
 \begin{figure}[!htbp]
 \label{fig:miroir_concave}
 \begin{center}
-\includegraphics[width=8cm]{}
+\includegraphics[width=5cm]{}
 \end{center}
 \caption{Tracé de rayons lumineux pour un miroir concave}
 \end{figure}
@@ -1177,7 +1179,7 @@ Afin de pouvoir calculer ces trajectoires, il est nécessaire de connaître le p
     \frac{\partial^2 \phi}{\partial \zeta ^2 }\approx\frac{k_p^2}{2}\left(\frac{1+a^2/2}{(1+\phi)^2}-1\right)
     \label{eq:1Dnonlinear}
 \end{equation}
-où $a$ est \textit{grosso modo} l'amplitude du potentiel issu du champ laser (on l'appelle le "potentiel vecteur normalisé"). Pour des lasers intenses, on a $a>1$. Pour notre exemple, nous allons prendre $a=3$. En résolvant l'équation~\ref{eq:1Dnonlinear} numériquement, on peut alors tracer le potentiel électrostatique $\phi$ et le champ électrique $E$ qui en dérive en fonction de notre variable d'espace-temps $\zeta$ qui se déplace à la vitesse de groupe de l'impulsion laser (voir Fig.~\ref{fig:1D_pot_field}. 
+où $a$ est \textit{grosso modo} l'amplitude du potentiel issu du champ laser (on l'appelle le "potentiel vecteur normalisé"). Pour des lasers intenses, on a $a>1$. Pour notre exemple, nous allons prendre $a=3$. En résolvant l'équation~\ref{eq:1Dnonlinear} numériquement, on peut alors tracer le potentiel électrostatique $\phi$ et le champ électrique $E$ qui en dérive en fonction de notre variable d'espace-temps $\zeta$ qui se déplace à la vitesse de groupe de l'impulsion laser (voir Fig.~\ref{fig:1D_pot_field}). 
 
 
 \begin{figure}[!htbp]
