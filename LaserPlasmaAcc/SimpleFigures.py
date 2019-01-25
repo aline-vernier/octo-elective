@@ -134,7 +134,7 @@ for p_i in range(p_mid-p_lim, p_mid+p_lim):
                                                 *m.pow(2, -(n_i+m_i)/2)
 
 
-fig = plt.figure(1, figsize=(10, 6), dpi=80, facecolor='w', edgecolor='k')
+fig = plt.figure(1, figsize=(12, 6), dpi=80, facecolor='w', edgecolor='k')
 ax1 = fig.add_subplot(111)
 ax1.plot(f_array*1e-12, spectrum/max(spectrum), linewidth=2, color=tableau20[0])
 #cursor = Cursor(ax1, useblit=True, color='red', linewidth=1)
@@ -144,7 +144,8 @@ ax1.set_ylabel('Amplitude du mode (a.u.)', fontsize=20)
 ax1.set_ylim(0, 1.05)
 ax1.ticklabel_format(useOffset=False)
 ax1.set_xlim(fmin*1e-12, fmax*1e-12)
-plt.savefig(my_path + 'Mode Amplitude.png')
+#plt.show()
+plt.savefig(my_path + 'ModeAmplitude.png')
 
 
 #fig = plt.figure(1, figsize=(10,10), dpi=80, facecolor='w', edgecolor='k')
