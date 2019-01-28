@@ -137,14 +137,14 @@ On peut facilement montrer que les rayons fortment hors-axe ne sont pas focalis�
 \caption{Aberration sphérique : cette aberration géométrique apparaît lorsqu'on utilise une optique sphérique à grande ouverture.}
 \end{figure}
 
-On remarque aussi que la formule dite "des opticiens" \ref{eq:lensmaker} dépend de l'indice de réfraction qui est une fonction de la longueur d'onde (voir par exemple https://refractiveindex.info/). Cela implique que la focale dépend de la longueur d'onde, donnant lieu à ce qu'on appelle l'aberration chromatique. Afin d'y remédier, on peut souvent utiliser des miroirs (achromatiques dans le sens des aberrations) ou des optiques spéciales combinant plusieurs verres pour compenser la variation d'indice avec la longueur d'onde. C'est le cas notamment des objectifs d'appareil photo, conçus pour travailler dans tout le spectre visible, ou d'un grand nombre d'objectifs de microscope. 
+On remarque aussi que la formule dite "des opticiens" \ref{eq:lensmaker} dépend de l'indice de réfraction qui est une fonction de la longueur d'onde (voir par exemple https://refractiveindex.info/). Cela implique que la focale dépend de la longueur d'onde, donnant lieu à ce qu'on appelle l'aberration chromatique. Afin d'y remédier, on peut souvent utiliser des miroirs (achromatiques dans le sens des aberrations, mais dont le coefficient de réflectivité peut en revanche très fortement dépendre de la longueur d'onde) ou des optiques spéciales combinant plusieurs verres pour compenser la variation d'indice avec la longueur d'onde. C'est le cas notamment des objectifs d'appareil photo, conçus pour travailler dans tout le spectre visible, ou d'un grand nombre d'objectifs de microscope. 
 
 \section{Description matricielle d'éléments optiques}
 
-Un ensemble de systèmes optiques travaillant dans les conditions de Gauss (== optique paraxiale) constitue une application linéaire, on peut donc exprimer les trajectoires des rayons par produits de \textit{matrices de transfert}, aussi appelées matrices de Gauss. Ce formalisme est  très pratique pour calculer numériquement la propagation d'un grand ensemble de rayons, notamment lors de la conception de cavités laser (voir section suivante!).
+Un ensemble de systèmes optiques travaillant dans les conditions de Gauss (== optique paraxiale) constitue une application linéaire, on peut donc exprimer les trajectoires des rayons par produits de \textit{matrices de transfert}, aussi appelées matrices de Gauss. Ce formalisme est  très pratique pour calculer numériquement la propagation d'un grand ensemble de rayons, notamment lors de la conception de cavités laser (voir section~\ref{sec:MTCavite} et Chapitre~\ref{ch:resPass} ).
 
-Un rayon est complètement caractérisé dans un plan orthogonal à l'axe par sa distance $h(z)$ à l'axe optique et l'angle définissant sa direction de propagation $\theta(z)$. La convention de signe pour les angles est la même qu'en trigonométrie : angles positifs dans le sens inverse des aiguilles d'une montre et zéro au niveau de l'axe optique. 
-L'approximation paraxiale nous permettra d'assimiler $\mathrm{sin}(\theta)\sim\mathrm{tan}(\theta)\sim\theta$, et on aura une relation linéraire entre $\left(r_1, \theta_1\right)$ et $\left(r_1, \theta_2\right)$, positions et angles avant et après passage dans le système optique. Si on définit $r_1'$ et $r_2'$ tels que $\theta_1 \sim (dr/dz)_z_1 = r_1'$ et $\theta_2 \sim (dr/dz)_z_2 = r_2'$, on peut alors écrire~: 
+Un rayon est complètement caractérisé dans un plan orthogonal à l'axe par sa distance $h(z)$ à l'axe optique et l'angle définissant sa direction de propagation $\theta(z)$. La convention de signe pour les angles est la même qu'en trigonométrie : le sens positif est défini dans le sens inverse des aiguilles d'une montre et l'origine au niveau de l'axe optique. 
+L'approximation paraxiale nous permet d'assimiler $\mathrm{sin}(\theta)\sim\mathrm{tan}(\theta)\sim\theta$, et on a ainsi une relation linéraire entre $\left(r_1, \theta_1\right)$ et $\left(r_1, \theta_2\right)$, positions et angles avant et après passage dans le système optique. Si on définit $r_1'$ et $r_2'$ tels que $\theta_1 \sim (dr/dz)_z_1 = r_1'$ et $\theta_2 \sim (dr/dz)_z_2 = r_2'$. Du fait de la linéarité du système optique il existe des coefficients $A, B, C$ et $D$ tels que~: 
 
 \begin{align} 
 r_2 &=  Ar_1 + Br'_1 \\ 
@@ -184,6 +184,7 @@ L'exemple le plus simple que nous pouvons prendre est celui de la propagation li
 Pour tous les exemples donnés ci-dessus, on notera que le déterminant de la matrice $ABCD$ est égal au rapport des indices de réfraction d'entrée et de sortie : $AD - BC = \frac{n_1}{n_2}$. Dans la plupart des cas concrets, les milieux d'entrée et de sortie sont les mêmes, par conséquent, le déterminant de la matrice $ABCD$ sera égal à 1.
 
 \section{Application des matrices de transfert aux cavités}
+\label{sec:MTCavite}
 Une des applications du formalisme des matrices de transfert est l'étude de la stabilité des cavités. Nous allons voir dans cette partie comment l'utiliser.
 
 \subsection{Condition de stabilité}
@@ -556,6 +557,7 @@ Lorsque $w_0$ ou $Z_R$ deviennent très grands, le faisceau gaussien devient pro
 
 
 \chapter{Résonateurs passifs}
+\label{ch:resPass}
 
 Lors de ce chapitre, nous allons nous intéresser aux propriétés, notamment spectrales, des champs électriques résonants au sein de cavités \textit{passives}, c'est-à-dire en l'absence de milieu à gain. 
 Les résonateurs utilisés dans les lasers sont composés de miroirs plans ou sphériques, et la longueur de la cavité va généralement de quelques centimètres à quelques dizaines de centimètres. 
