@@ -36,7 +36,7 @@ sorting=ynt
 Le contenu des deux premières  cours est très largement inspiré de l'excellent ouvrage sur les lasers d'Orazio Svelto "Principles of Lasers", du cours de Frédérika Augé-Rochereau sur la Physique des Lasers (dont ce cours est une refonte partielle), anciennement EPE11 à l'ENSTA, ainsi que de la référence en ligne d'optique pour l'ingénieur http://www.optique-ingenieur.org/. Etant donnée la contrainte temporelle, des choix de matériel enseigné ont dû être faits. Pour compléter et affiner sa compréhension, le lecteur est encouragé à consulter ces références ainsi que celles en fin de document.
 
 
-\chapter{Approche géométrique}
+\chapter{Approche géométrique : rappels et descriptions des cavités}
 
 \section{Rappels d'optique géométrique}
 Lors de cette section de rappels, nous nous placerons dans les conditions de Gauss, c'est à dire lorsque les rayons lumineux possèdent un angle d'incidence très faible par rapport à l'axe optique, et en sont peu éloignés (on parle aussi d'approximation \textit{paraxiale}). Les systèmes optiques seront aplanétiques et stigmatiques. Nous considérerons les caractéristiques de systèmes admettant un axe de symétrie de révolution (centrés) et des foyers (focaux). Un grand nombre de systèmes optiques sont l’association de miroirs plans, de miroirs sphériques et de lentilles, et l'approximation paraxiale sera toujours vérifiée lors ce cours, que ce soit en optique géométrique ou gaussienne (voir cours suivant et cours de K. Plamann). 
@@ -138,8 +138,8 @@ On remarque aussi que la formule dite "des opticiens" \ref{eq:lensmaker} dépend
 
 Un ensemble de systèmes optiques travaillant dans les conditions de Gauss (== optique paraxiale) constitue une application linéaire, on peut donc exprimer les trajectoires des rayons par produits de \textit{matrices de transfert}, aussi appelées matrices de Gauss. Ce formalisme est  très pratique pour calculer numériquement la propagation d'un grand ensemble de rayons, notamment lors de la conception de cavités laser (voir section suivante!).
 
-Un rayon est complètement caractérisé dans un plan orthogonal à l'axe par sa distance $r$ à l'axe optique et l'angle définissant sa direction de propagation $\theta$. La convention de signe pour les angles est la même qu'en trigonométrie : angles positifs dans le sens inverse des aiguilles d'une montre et zéro au niveau de l'axe optique. 
-L'approximation paraxiale nous permettra d'assimiler $\mathrm{sin}(\theta)\sim\mathrm{tan}(\theta)\sim\theta$, et on aura une relation linéraire entre $\left(r_1, \theta_1\right)$ et $\left(r_2, \theta_2\right)$, positions et angles avant et après passage dans le système optique. Si on définit $r_1'$ et $r_1$ tels que $\theta_1 \sim (dr/dz)_z_1 = r_1'$ et $\theta_2 \sim (dr/dz)_z_2 = r_2'$, on peut alors écrire~: 
+Un rayon est complètement caractérisé dans un plan orthogonal à l'axe par sa distance $h(z)$ à l'axe optique et l'angle définissant sa direction de propagation $\theta(z)$. La convention de signe pour les angles est la même qu'en trigonométrie : angles positifs dans le sens inverse des aiguilles d'une montre et zéro au niveau de l'axe optique. 
+L'approximation paraxiale nous permettra d'assimiler $\mathrm{sin}(\theta)\sim\mathrm{tan}(\theta)\sim\theta$, et on aura une relation linéraire entre $\left(r_1, \theta_1\right)$ et $\left(r_1, \theta_2\right)$, positions et angles avant et après passage dans le système optique. Si on définit $r_1'$ et $r_2'$ tels que $\theta_1 \sim (dr/dz)_z_1 = r_1'$ et $\theta_2 \sim (dr/dz)_z_2 = r_2'$, on peut alors écrire~: 
 
 \begin{align} 
 r_2 &=  Ar_1 + Br'_1 \\ 
@@ -148,13 +148,13 @@ r_2' &=  Cr_1 + Dr'_1
 où $A, B, C, D$ sont des constantes caractéristiques de l'élément optique. Dans une formulation matricielle, on écrira naturellement~:
 
 \begin{gather}
- \begin{bmatrix} r_2 \\ r'_2 \end{bmatrix}
+ \begin{bmatrix} h_2 \\ h'_2 \end{bmatrix}
  =
   \begin{bmatrix}
    A & B \\
    C & D 
    \end{bmatrix}
-   \begin{bmatrix} r1 \\ r'_1 \end{bmatrix}
+   \begin{bmatrix} h_1 \\ h'_1 \end{bmatrix}
 \end{gather}
 
 \begin{figure}[!htbp]
@@ -197,7 +197,7 @@ Nous nous intéressons ici à la propagation des rayons lumineux dans une une ca
 Après $n$ tours de cavité, un rayon de coordonnées $\left[r, r'\right]$ dans le plan $\Pi$ peut soit rester au voisinage de l'axe soit s'en éloigner. Une cavité pour laquelle les rayons restent confinés est dite stable. Lorsque les rayons divergent en-dehors de la cavité, cette cavité est instable. 
 \textbf{Nous cherchons ici à établir une relation générale nous permettant d'évaluer si la cavité est stable ou pas.}  
 
-Dans le cas général, les coordonnées $\left[r_n, r'_n\right]$ sont exprimées par~:
+Dans le cas général, les coordonnées $\left[r_n, r_n'\right]$ sont exprimées par~:
 \begin{gather}
  \begin{bmatrix} r_n \\ r'_n \end{bmatrix}
  =
@@ -499,7 +499,7 @@ Un autre cas particulier est le cas $\sigma=0$. Dans ce cas, on a aussi $\sigma'
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[width=8cm]{pictures/GaussianConjugates.png}
+\includegraphics[width=11cm]{pictures/GaussianConjugates.png}
 \end{center}
 \caption{Abscisses des waists objet et image}
 \label{fig:conjugaison_gauss}
@@ -589,7 +589,7 @@ On construit un résonateur concentrique en plaçant deux miroirs sphériques de
 \end{figure}
 
 \subsection{Cavité confocale}
-La combinaison de deux miroirs sphériques de rayons de courbure $R_1$ et $R_2$ à une distance telle que leurs \textbf{points focaux} soient confondus est un résonateur confocal. Dans le cas particulier de $R_1=R_2=R$, on a alors $L=R$. Comme le montre la figure~\ref{fig:resonateur_confocal}, on peut tracer un nombre infini de chemins optiques géométriques fermés dans ce type de cavité, et par conséquent on ne peut en déduire une relation simple avec les fréquences de résonance. 
+La combinaison de deux miroirs sphériques de rayons de courbure $R_1$ et $R_2$ à une distance telle que leurs \textbf{points focaux} soient confondus est un résonateur confocal. Dans le cas particulier de $R_1=R_2=R$, on a alors $L=R$. Comme le montre la figure~\ref{fig:resonateur_confocal}, on peut tracer un nombre infini de chemins optiques géométriques fermés dans ce type de cavité, et par conséquent on ne peut en déduire une relation simple sur les fréquences de résonance. 
 
 \begin{figure}[!htbp]
 \begin{center}
@@ -1024,7 +1024,7 @@ On veut tout d'abord connaître le mouvement d'un ensemble d'électrons dans un 
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[width=8cm]{}
+\includegraphics[width=15cm]{pictures/PlasmaOsc.png}
 \end{center}
 \caption{Déplacement d'une tranche d'électrons dans le plasma}
 \label{fig:osc_plas}
