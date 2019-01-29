@@ -181,7 +181,7 @@ my_path = "C:\Users\\vernier\PycharmProjects\octo-elective\\"
 #    COULOMB POTENTIAL                       #
 # ############################################
 
-rmax = 10.
+rmax = 12.
 rmin = 0.6
 rnum = 1000
 rstep = rmax/rnum
@@ -198,7 +198,7 @@ ax1 = fig.add_subplot(111)
 def coulomb(r, alpha_2):
     return -alpha_1/m.sqrt(m.pow(r, 2)) - alpha_2*r
 
-a2_arr = [0., 0.5, 1., 1.5, 2., 2.5]
+a2_arr = [0., 0.5, 0.9, 1.5, 1.8, 2., 2.5]
 for ii in range(0, 4):
     a2 = a2_arr[ii]
     c_p = [coulomb(r, a2) for r in r_array]
@@ -208,6 +208,20 @@ ax1.set_xlim(-rmax, rmax)
 ax1.set_ylim(-13, 0)
 ax1.set_xlabel('$r\,\mathrm{(u.a.)}$', fontsize=25)
 ax1.set_ylabel('$V(r)\,\mathrm{(u.a.)}$', fontsize=25)
+plt.tick_params(
+    axis='x',          # changes apply to the x-axis
+    which='both',      # both major and minor ticks are affected
+    bottom=False,      # ticks along the bottom edge are off
+    top=False,         # ticks along the top edge are off
+    left=False,
+    labelbottom=False) # labels along the bottom edge are off
+plt.tick_params(
+    axis='y',          # changes apply to the x-axis
+    which='both',      # both major and minor ticks are affected
+    bottom=False,      # ticks along the bottom edge are off
+    top=False,         # ticks along the top edge are off
+    left=False,
+    labelleft=False) # labels along the bottom edge are off
 #ax1.legend(loc='lower left')
 #plt.show()
 #plt.tight_layout()
