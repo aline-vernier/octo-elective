@@ -1016,23 +1016,18 @@ On veut tout d'abord connaître le mouvement d'un ensemble d'électrons dans un 
 \end{figure}
 
 Lorsque les électrons sont déplacés de leur position d'équilibre par un champ électrique externe (tel qu'un champ laser) d'une quantité $x$ (voir Figure~\ref{fig:osc_plas}), ils subissent une force de rappel $F=-e E_x$ dûe au champ électrostatique qui résulte de ce déplacement. On peut alors très simplement écrire l'équation du mouvement en 1D de ces électrons~: 
-
 \begin{equation}
     m_e\frac{d^2 x}{dt^2}=-eE_x(x)
 \end{equation}
-
 Si on considère la variation de la densité de charge en fonction de la position représentée Figure~\ref{fig:osc_plas} et qui découle de la conservation de la charge, on peut appliquer la Loi de Gauss $\nabla\cdot\textbf{E}=-\frac{e n_0}{\epsilon_0}$ que l'on intègre de 0 à $x$~: 
-
 \begin{equation}
     E_x(x) = en_0\frac{x}{\epsilon_0}
     \label{eq:chp_E}
 \end{equation}
-
 On obtient alors l'équation du mouvement des électrons~:
 \begin{equation}
     \frac{d^2x}{dt^2}+\frac{n_0e^2}{\epsilon_0 m_e} x =0
 \end{equation}
-
 La solution à cette équation est une oscillation harmonique de pulsation $\omega_p = \sqrt{\frac{n_0 e^2}{\epsilon_0 m_e}}$ que l'on appelle la pulsation de Langmuir. 
 Soumis à une perturbation, les électrons suivent donc, dans le régime linéaire, un mouvement oscillant collectif $x(t) = x_0\cos(\omega_p t +\theta_0)$. 
 Cette onde électronique est ce que l'on appelle une onde de sillage lorsqu'elle est excitée par une impulsion laser. Cet nom est donnée par analogie avec l'onde générée dans le sillage d'un bateau (Fig.~\ref{fig:sillage})
@@ -1082,39 +1077,30 @@ La mécanique Hamiltonienne est l'approche la plus élégante d'étudier le mouv
 \end{equation}
 
 d'où on déduit $\Phi_E=\frac{e^2n_0}{\epsilon_0}x^2$, ce qui nous permet d'écrire l'Hamiltonien du système~:
-
 \begin{align}
     H &= E_K + \Phi_E \\
       &= \frac{p^2}{2m_e}+\frac{e^2n_0}{2\epsilon_0}x^2
       \label{eq:hamiltonien}
 \end{align}
 On trouve l'évolution temporelle du système en mécanique Hamiltonienne par les relations suivantes~:
-
 \begin{equation}
     \frac{dp}{dt}=-\frac{\partial H}{\partial q}, \quad \frac{dq}{dt}=\frac{\partial H}{\partial p}
 \end{equation}
-
 où $p$ est la quantité de mouvement et $q$ la position. En appliquant ces relations à l'Hamiltonien~\ref{eq:hamiltonien}, on obtient alors le système d'équations~:
-
 \begin{eqnarray}
         \frac{dp(t)}{dt}&=-\frac{n_0e^2}{\epsilon_0}x(t)\\
         \frac{dx(t)}{dt}&=-\frac{p(t)}{m_e}
 \end{eqnarray}
-
 que l'on peut dériver et réarranger afin d'obtenir les équations différentielles pour la position $x$ et la quantité de mouvement $p$~:
-
 \begin{eqnarray}
         \frac{d^2x(t)}{dt^2} +\frac{n_0e^2}{m_e\epsilon_0}x(t)= 0\\
         \frac{d^2p(t)}{dt^2} +\frac{n_0e^2}{m_e\epsilon_0}p(t)= 0
 \end{eqnarray}
-
 On résoud ces équations avec la condition initiale $x(0)=x_0$ et $p(0)=0$. En utilisant $\omega_0^2=\frac{n_0e^2}{\epsilon_0}$ a alors le couple d'équations paramétriques suivant~:
-
 \begin{eqnarray}
        x(t)&=&x_0\cos{\omega_0 t} \\
        p(t)&=&-m_ex_0\omega_0\sin{\omega_0 t}
 \end{eqnarray}
-
 En écrivant $x^2(t)+\frac{p^2(t)}{m\omega_0}=x_0^2\cos{\omega_0t}+x_0^2\sin{\omega_0t}=x_0^2$, on peut alors facilement représenter $\frac{p^2(t)}{m\omega_0}$ en fonction de $x$, voir Figure~\ref{fig:espace_phases}. C'est ce qu'on appelle l'espace des phases. Cet outil nous sera très utile dans l'analyse des trajectoires des électrons dans le plasma. 
 
 
@@ -1132,60 +1118,48 @@ En écrivant $x^2(t)+\frac{p^2(t)}{m\omega_0}=x_0^2\cos{\omega_0t}+x_0^2\sin{\om
 \noindent\fcolorbox{black}{myGray}{%
     \minipage[t]{\dimexpr1\linewidth-2\fboxsep-2\fboxrule\relax}
         \textbf{Et pour un oscillateur amorti ?\\}
+        \begin{center}
+        \includegraphics[width=8cm]{pictures/empty_phase_space.png}
+        \end{center}
           
-            \vspace{40 mm}
-       
     \endminipage}\hfill
     
 \medskip
 
 \subsubsection{Mouvement des électrons dans l'onde plasma}
 Nous venons de voir que lorsqu'un plasma est perturbé (par un champ externe dans notre cas), il est mis en mouvement et oscille à la pulsation de Langmuir $\omega_p = \sqrt{\frac{n_0 e^2}{\epsilon_0 m_e}}$. Dans ce modèle très simple, les électrons oscillent mais n'obtiennent aucune quantité de mouvement longitudinale. Afin de modéliser les trajectoires des électrons, et de montrer qu'il existe des conditions sous lesquelles un électron peut être piégé dans l'onde plasma et suivre ainsi l'impulsion laser, on peut considérer l'Hamiltonien en 1D d'un électron soumis d'une part au champ laser et d'autre part au potentiel électrostatique $\phi$ dû à l'onde plasma elle-même~: 
-
 \begin{equation*}
     H=m_ec^2\sqrt{1+\frac{p_z^2}{m_e^2c^2}+\frac{p_\perp^2}{m_e^2c^2}}-e\Phi(z-v_pt)
 \end{equation*}
-
 Le premier terme représente l'énergie de masse de l'électron et son énergie cinétique, et le deuxième terme, son énergie potentielle. Cette dernière, dans le cas d'une onde plasma harmonique, est une onde sinusoïdale qui se déplace à la vitesse de phase $v_p$. Afin de simplifier les notations, on normalise cet Hamiltonien en utilisant les variables $u_z=\frac{p_z}{m_ec}$ et $\phi = \frac{e\Phi}{m_ec^2}$~:
-
 \begin{equation}
     H=\sqrt{1+u_z^2+u_\perp^2}-\phi(z-v_pt)
 \end{equation}
-
 $H$ dépend du temps et de la position, mais les deux sont couplés par la vitesse, ce qui se traduit par une dépendance en $\zeta = z-v_pt$, on peut alors effectuer la transformation canonique de l'Hamiltonien $(z, u_z)\rightarrow(\zeta, u_z)$. En utilisant la fonction génératrice du second type $F_2(z, u_z)=u_z(z-v_pt)$ vérifiant les deux conditions~:
-
 \begin{eqnarray*}
     \frac{\partial F_2}{\partial u_z}&=\zeta\\
     \frac{\partial F_2}{\partial z}&=u_z
 \end{eqnarray*}
-
 On peut ainsi simplifier l'Hamiltonien en utilisant la relation $H' = H+\frac{1}{c}\frac{\partial F_2}{\partial t}$~:
-
 \begin{equation}
     H'=\sqrt{1+u_z^2+u_\perp^2}-\phi(\zeta)-\frac{v_p}{c}u_z
 \end{equation}
-
 Nous définissons $\beta=v_p/c$ pour obtenir l'Hamiltonien que nous utiliserons pour notre analyse des trajectoires~:
-
 \begin{equation}
     H'=\sqrt{1+u_z^2+u_\perp^2}-\phi(\zeta)-\beta_p u_z
 \end{equation}
-
 En une dimension, l'Hamiltonien ne varie pas en fonction de $r_\perp$, c'est-à-dire $\partial H/\partial r_\perp = 0$. On peut en déduire que la somme de la composante transverse de la quantité de mouvement $u_\perp$ et de l'amplitude du laser (purement transverse en 1D) doit être constante~:~ $u_\perp(\zeta) - a(\zeta) = \mathrm{cste}$, où $a(\zeta)$ est ce qu'on appelle le potentiel vecteur normalisé. 
 
 \textit{[NDA~:~Pour ceux d'entre vous qui n'ont jamais rencontré le potentiel vecteur, sachez simplement qu'il s'agit d'un potentiel duquel le champ électomagnétique dérive (de la même manière qu'on a $\textbf{E} = -\nabla V$ où $\textbf{E}$ est le champ électrique et $V$ le potentiel, on a $\textbf{B} = \nabla\times\textbf{A}$ avec $\textbf{B}$ le champ magnétique et $\textbf{A}$ le potentiel vecteur.]}
 
 
 Par conservation de l'énergie, si un électron est placé en $\zeta_0$ avec une énergie cinétique $\gamma_0$ à $t=0$, son Hamiltonien $H_0$ est donc une constante du mouvement. En résolvant l'équation polynômiale du second ordre pour $u_z$, on obtient~:
-
 \begin{equation}\label{eqsol}
 u_z(\zeta) = \beta_p\gamma_p^2(H_0+\phi(\zeta))\pm\gamma_p\sqrt{\gamma_p^2(H_0+\phi(\zeta))^2-\gamma\perp^2}
 \end{equation}
-
 Cette équation décrit les trajectoires des électrons dans l'onde de sillage dans l'espace des phases $(\zeta, u_z)$ en fonction de leur condition initiale $H_0$. 
 
 Afin de calculer ces trajectoires, il est nécessaire de connaître le potentiel électrostatique $\phi$ de l'onde de sillage. On peut montrer (ce qu'on ne fera pas ici, vous trouverez une démonstration par exemple dans la référence~\cite{FaureHDR}) qu'en une dimension, ce potentiel est régi par l'équation suivante~:
-
 \begin{equation}
     \frac{\partial^2 \phi}{\partial \zeta ^2 }\approx\frac{k_p^2}{2}\left(\frac{1+a^2/2}{(1+\phi)^2}-1\right)
     \label{eq:1Dnonlinear}
@@ -1205,7 +1179,6 @@ Nous pouvons alors tracer les trajectoires des particules dans ce potentiel dans
 
 
 Nous observons deux types de trajectoires dans cet espace des phases ainsi qu'une trajectoire limite (en rouge) que l'on appelle la séparatrice, et qui délimite les trajectoires piégées des trajectoires non-piégées. La trajectoire en noir représente les électrons qui étaient au repos ($u_z = 0$) à l'arrivée de l'impulsion laser. Ces électrons oscillent dans l'onde plasma un peu comme une bouée oscille sur les vagues : sa quantité de mouvement longitudinale est centrée autour de zéro (on a tracé $u_z+1$ en échelle logarithmique par souci de lisibilité). Les électrons de faible énergie oscillent eux aussi, mais avec une quantité de mouvement moyenne non-nulle, jusqu'à ce que l'énergie soit suffisante pour que ces électrons soient piégés dans l'onde plasma. Les trajectoires fermées correspondent ainsi à des électrons de vitesse longitudinale suffisamment importante pour ``surfer" sur le champ accélérateur et ainsi suivre l'impulsion laser à la vitesse de groupe. C'est ce phénomène de piégeage dans l'onde plasma qui permet l'accélération de particules par laser. 
-
 \begin{figure}[!htbp]
 \begin{center}
 \includegraphics[width=12cm]{pictures/trajectories.png}
@@ -1215,6 +1188,27 @@ Nous observons deux types de trajectoires dans cet espace des phases ainsi qu'un
 \end{figure}
 
 \subsubsection{Une expérience d'accélération laser-plasma au laboratoire d'optique appliquée}
+
+Les années '90 ont connu l'essor des lasers basés sur l'amplification dans des cristaux de saphir dopés au titane, plus connus sous le nom de Titane-Saphir, par amplification par dérive de fréquence - ou Chirped Pulse Amplification (CPA) en anglais-. Cette technique a permis de multiplier par près de trois ordres de grandeur la puissance crête des lasers, et par conséquent d'accéder au régime d'interaction laser-plasma relativiste. Plusieurs groupes dans le monde (le LBNL à Berkeley, l'Imperial College à Londres, et le LOA à Palaiseau) ont ainsi pu, et ce presque simultanément, accélérer des électrons à des énergies relativistes par interaction entre un laser et un plasma généré dans un gaz. 
+Le laser ultra-intense alors utilisé générait des impulsions d'1$\,$J et d'une durée de 30$\,$fs à mi-hauteur pouvant être focalisées sur 20$\,\mathrrm{\mu m}$ à mi-hauteur. Les différents étages du laser utilisé sont donnés sur la Figure\ref{fig:salleJaune}
+
+\medskip
+\noindent\fcolorbox{black}{myGray}{%
+    \minipage[t]{\dimexpr1\linewidth-2\fboxsep-2\fboxrule\relax}
+        \textbf{Quells sont l'intensité sur cible et le champ électrique maximum ?}\\
+        \textit{On supposera l'impulsion gaussienne dans les trois dimensions de l'espace.}
+        \vspace{6cm}
+    \endminipage}\hfill
+\medskip
+
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=10cm]{}
+\end{center}
+\caption{Laser du Laboratoire d'Optique Appliquée, dit de la ``Salle Jaune''}
+\label{fig:salleJaune}
+\end{figure}
 
 
 \printbibliography[title={Bibliographie}]
