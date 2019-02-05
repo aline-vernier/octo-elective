@@ -164,13 +164,13 @@ r_2' &=  Cr_1 + Dr'_1
 où $A, B, C, D$ sont des constantes caractéristiques de l'élément optique. Dans une formulation matricielle, on écrira naturellement~:
 
 \begin{gather}
- \begin{bmatrix} h_2 \\ h'_2 \end{bmatrix}
+ \begin{bmatrix} r_2 \\ r'_2 \end{bmatrix}
  =
   \begin{bmatrix}
    A & B \\
    C & D 
    \end{bmatrix}
-   \begin{bmatrix} h_1 \\ h'_1 \end{bmatrix}
+   \begin{bmatrix} r_1 \\ r'_1 \end{bmatrix}
 \end{gather}
 
 
@@ -189,7 +189,7 @@ où $A, B, C, D$ sont des constantes caractéristiques de l'élément optique. D
         \\\\\\
         \subsubsection{Traversée d'une lentille mince de focale $f$}
         \subsubsection{Traversée d'un dioptre sphérique de rayon $R$}
-        \subsubsection{Matrice de transfert entre deux plans conjugés}
+ 
         \textit{Pour vous amuser...}
         
         Pour tous les exemples donnés ci-dessus, on notera que le déterminant de la matrice $ABCD$ est égal au rapport des indices de réfraction d'entrée et de sortie : $AD - BC = \frac{n_1}{n_2}$. Dans la plupart des cas concrets, les milieux d'entrée et de sortie sont les mêmes, par conséquent, le déterminant de la matrice $ABCD$ sera égal à 1.
@@ -507,16 +507,16 @@ En appliquant la loi ABCD et sachant que $q_0$ et $q_0'$ sont tous les deux des 
 
 \begin{align}
     \sigma \sigma'&=ff'-q_0q_0'\\
-    \sigma q_0 &= \sigma'q_0\\
-    \sigma \sigma' &= ff' + z_RzR'\\
-    -\frac{\sigma}{z_R}&=\frac{\sigma'}{z_R}
+    \sigma q_0' &= -\sigma'q_0\\
+    \sigma \sigma' &= ff' + z_Rz_R'\\
+    -\frac{\sigma}{z_R}&=\frac{\sigma'}{z_R'}
 \end{align}
 
 Ces relations démontrent que la position du waist image dépend non seulement de la position du waist objet mais aussi de sa taille. Lorsque $\sigma>>z_R$, l'onde au niveau du foyer objet est quasi-sphérique (celui-ci est dans le champ lointain du faisceau). Le front d'onde au niveau de la lentille s'apparente donc semble donc au front d'onde d'un point source, et on obtient alors : $\sigma\sigma'=ff'$. On retrouve ici les relations de Newton de l'optique géométrique.
 Un autre cas particulier est le cas $\sigma=0$. Dans ce cas, on a aussi $\sigma'=0$. Le waist image est situé exactement sur le foyer image et la relation de grandissement entre les waists est donnée par~:
 
 \begin{equation}
-    w_0'^2=-\frac{1}{w_0^2}\frac{ff'\lambda\lambda'}{\pi^2}
+    w_0'=\frac{1}{w_0}\frac{f\lambda}{\pi}
 \end{equation}
 
 \begin{figure}[!htbp]
@@ -535,7 +535,7 @@ Le déphasage sur l'axe Oz par propagation du faisceau entre les plans de réfé
     \phi(z) = -kz-\arg(A+B/q) = \phi_0+\phi_g
 \end{equation}
 
-Le terme $\phi_0$ représente le déphasage par propagation d'une onde plane et le terme $\phi_g$ est la phase de Gouy. En prenant pour origine le waist du faisceau, on peut calculer le terme $\phi_g$ correspondant à une propagation libre~:
+Le terme $\phi_0$ représente le déphasage par propagation d'une onde plane et le terme $\phi_g$ est la phase de Gouy. En prenant pour origine le waist du faisceau, on peut calculer $\phi_g$ correspondant à une propagation libre~:
 \begin{equation}
     A+\frac{B}{q}=1+\frac{z}{\iu z_R}
 \end{equation}
@@ -554,7 +554,7 @@ Lorsque $w_0$ ou $Z_R$ deviennent très grands, le faisceau gaussien devient pro
 \noindent\fcolorbox{black}{myGray}{%
     \minipage[t]{\dimexpr1\linewidth-2\fboxsep-2\fboxrule\relax}
         \textbf{Calculs de la taille et de la position du waist en cavité :\\}
-            Soit une cavité linéaire de longueur $L$ et dont les miroirs sont de courbures $R_1$ et $R_2$ telle que sur la Figure~\ref{fig:cell}s
+            Soit une cavité linéaire de longueur $L$ et dont les miroirs sont de courbures $R_1$ et $R_2$ telle que sur la Figure~\ref{fig:cell}
           \\
           \\
           \begin{itemize}
@@ -851,8 +851,9 @@ Le contenu de ce cours est un peu spécial puisqu'il présente une application d
 Comme nous l'avons souligné dans l'introduction, l'essor de l'utilisation des lasers impulsionnels est remarquable : ils ont d'une part peuplé des domaines aussi éloignés que la découpe de tôle et la chirurgie de l'\oe{}il, et ils trouvent d'autre part des applications en recherche fondamentale. Dans un grand nombre de ces activités de recherche, c'est l'intensité crête qui fait l'attractivité des lasers impulsionnels : cette dernière peut atteindre $10^{22}\,\mathrm{W/cm^2}$ sur les lignes de lumières les plus intenses. L'interaction entre un laser aussi intense et la matière permet d'accéder à des phénomènes physiques dits \textit{relativistes} car ils mettent en jeu des énergies cinétiques de l'ordre de l'énergie de masse des particules mises en mouvement par le champ. Pour un électron, cela correspond à une énergie cinétique de l'ordre de $1\,\mathrm{MeV}$. 
 
 
-Depuis la fin du XIX\textsuperscript{e} siècle, on accélère des particules en utilisant des champs électriques, d'abord statiques, puis radiofréquences. Afin d'obtenir des énergies cinétiques toujours plus importantes, les accélérateurs ont depuis atteint des dimensions colossales, ce qui en parallèle a stimulé la recherche de sources plus compactes. L'intensité crête des impulsions laser a éveillé un intérêt dans ce sens et des particules (en particulier des électrons et des protons) ont pu être accélérées par interaction entre des impulsions laser et des solides ou des gaz. 
+Depuis la fin du XIX\textsuperscript{e} siècle, on accélère des particules en utilisant des champs électriques, d'abord statiques, puis radiofréquences. Afin d'obtenir des énergies cinétiques toujours plus importantes, les accélérateurs ont depuis atteint des dimensions colossales, ce qui en parallèle a stimulé la recherche de sources plus compactes. Le saut d'intensité crête des impulsions laser provoqué par l'utilisation de la technique d'amplification par dérive de fréquence a éveillé un intérêt dans ce sens et des particules (en particulier des électrons et des protons) ont pu être accélérées par interaction entre des impulsions laser et des solides ou des gaz. 
 Nous appréhenderons ici les phénomènes fondamentaux permettant l'accélération d'électrons par interaction entre un laser impulsionnel ultra-intense et un gaz moléculaire. Nous discuterons tout d'abord des accélérateurs coventionnels et de leurs limitations, ainsi qu'aux raisons pour lesquelles l'accélération par laser peut permettre de dépasser ces limites. Nous décrirons ensuite les phénomènes physiques qui ont lieu dans la matière lorsqu'on l'illumine à des intensités supérieures à $10^{16}\,\mathrm{W/cm^2}$. L'arrivée de l'impulsion provoque tout d'abord l'ionisation du milieu, et génère ainsi un plasma. Lorsque l'intensité dépasse les quelques $10^{18}\,\mathrm{W/cm^2}$, selon la densité éléctronique du plasma, on peut alors déclencher une excitation d'ondes plasma de forte amplitude. Lorsque l'onde plasma prend un caractère non-linéaire, le champ éléctrique qui en résulte peut dépasser $100\,\textrm{GV/m}$. Nous verrons alors comment ce champ électrique permet d'accélérer des électrons.
+Nous reviendrons enfin aux technologies laser qui ont permis d'atteindre de si hautes intensités dans le cadre d'une des premières expériences de ce type. 
 
 \section{Considérations sur les accélérateurs conventionnels, et limitations}
 
@@ -1183,13 +1184,23 @@ Nous observons deux types de trajectoires dans cet espace des phases ainsi qu'un
 \begin{center}
 \includegraphics[width=12cm]{pictures/trajectories.png}
 \end{center}
-\caption{Trajectoires des électrons dans l'onde de sillage. En noir : trajectoire des électrons à l'arrêt devant l'impulsion laser. En rouge : trajectoire limite, dite séparatrice. En bleu : trajectoires d'électrons pégés dans l'onde plasma. }
+\caption{Trajectoires des électrons dans l'onde de sillage. En noir : trajectoire des électrons à l'arrêt devant l'impulsion laser. En rouge : trajectoire limite, dite séparatrice. En bleu : trajectoires d'électrons piégés dans l'onde plasma. }
 \label{fig:trajectories}
 \end{figure}
 
 \subsubsection{Une expérience d'accélération laser-plasma au laboratoire d'optique appliquée}
 
-Les années '90 ont connu l'essor des lasers basés sur l'amplification laser dans des cristaux de saphir dopés au titane, plus connus sous le nom de Titane-Saphir, par amplification par dérive de fréquence - ou Chirped Pulse Amplification (CPA) en anglais-. Cette technique a permis de multiplier par près de trois ordres de grandeur la puissance crête des lasers, et par conséquent d'accéder au régime d'interaction laser-plasma relativiste. Plusieurs groupes dans le monde (le LBNL à Berkeley, l'Imperial College à Londres, et le LOA à Palaiseau) ont ainsi pu, et ce presque simultanément, accélérer des électrons à des énergies relativistes par interaction entre un laser et un plasma généré dans un gaz. 
+Les années '90 ont connu l'essor des lasers basés sur l'amplification dans des cristaux de saphir dopés au titane (plus connus sous le nom de Titane-Saphir) par amplification par dérive de fréquence - ou Chirped Pulse Amplification (CPA) en anglais-. L'introduction de cette technique, initialement issue du monde de l'électronique radio-fréquence, dans le domaine optique a permis de multiplier par près de trois ordres de grandeur la puissance crête des lasers ! Avant l'arrivée de cette technique, l'amplification d'une impulsion comnprimée, donc très intense, était limitée par les effets non-linéaires indésirables dans le milieu amplificateur, et à l'extrême limite par la destruction de ce dernier. En étirant une impulsion courte dans le temps, c'est-à-dire en déphasant les différentes fréquences les unes par rapport aux autres, on diminue l'intensité crête, permettant donc l'amplification d'impulsions plus énergétiques. En pratique, l'étirement de l'impulsion se fait la plupart du temps grâce à des réseaux de diffraction. Après amplification, l'impulsion doit être recomprimée, et le processus inverse est aussi effectué avec des réseaux. Un schéma de ce type de système est présenté sur la Figure~\ref{}
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=12cm]{pictures/cpa.png}
+\end{center}
+\caption{CPA}
+\label{fig:cpa}
+\end{figure}
+
+ Les intensités crêtes obtenues grâce au CPA ont permis d'accéder au régime d'interaction laser-plasma relativiste. Plusieurs groupes dans le monde (le LBNL à Berkeley, l'Imperial College à Londres, et le LOA à Palaiseau) ont ainsi pu, et ce presque simultanément, accélérer des électrons à plusieurs centaines des MeV par interaction entre un laser et un plasma généré dans un gaz. 
 Le laser ultra-intense alors utilisé générait des impulsions de longueur d'onde centrale 800$\,$nm, d'une énergie d'1$\,$J et d'une durée de 30$\,$fs à mi-hauteur pouvant être focalisées sur 20$\,\mathrrm{\mu m}$ à mi-hauteur. Les différents blocs fonctionnels de ce laser (la ``Salle Jaune'' du Laboratoire d'Optique Appliquée) sont donnés sur la Figure~\ref{fig:salleJaune}, et une vue d'ensemble avant compression est présentée Figure~\ref{fig:salleJauneLayout}. Vous aurez l'occasion de voir de vos yeux ce type d'installation laser lors de la visite de labo !
 
 \medskip
