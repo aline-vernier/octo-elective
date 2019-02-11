@@ -107,7 +107,7 @@ Un miroir concave est convergent, un miroir convexe est divergent. La focale d'u
 \begin{figure}[!htbp]
 \label{fig:miroir_concave}
 \begin{center}
-\includegraphics[width=11cm]{pictures/SpherMirr.png}
+\includegraphics[width=15cm]{pictures/SpherMirr.png}
 \end{center}
 \caption{Tracé de rayons lumineux pour un miroir sphérique concave}
 \end{figure}
@@ -148,14 +148,14 @@ Un ensemble de systèmes optiques travaillant dans les conditions de Gauss (== o
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[width=10cm]{pictures/ABCD.png}
+\includegraphics[width=13cm]{pictures/ABCD.png}
 \end{center}
 \caption{Schéma de principe de la représentation en matrices de transfert}
 \label{fig:matrix}
 \end{figure}
 
 Un rayon est complètement caractérisé dans un plan orthogonal à l'axe par sa distance $h(z)$ à l'axe optique et l'angle définissant sa direction de propagation $\theta(z)$. La convention de signe pour les angles est la même qu'en trigonométrie : le sens positif est défini dans le sens inverse des aiguilles d'une montre et l'origine au niveau de l'axe optique. 
-L'approximation paraxiale nous permet d'assimiler $\mathrm{sin}(\theta)\sim\mathrm{tan}(\theta)\sim\theta$, et on a ainsi une relation linéraire entre $\left(r_1, \theta_1\right)$ et $\left(r_1, \theta_2\right)$, positions et angles avant et après passage dans le système optique. Si on définit $r_1'$ et $r_2'$ tels que $\theta_1 \sim (dr/dz)_z_1 = r_1'$ et $\theta_2 \sim (dr/dz)_z_2 = r_2'$. Du fait de la linéarité du système optique il existe des coefficients $A, B, C$ et $D$ tels que~: 
+L'approximation paraxiale nous permet d'assimiler $\mathrm{sin}(\theta)\sim\mathrm{tan}(\theta)\sim\theta$, et on a ainsi une relation linéraire entre $\left(r_1, \theta_1\right)$ et $\left(r_1, \theta_2\right)$, positions et angles avant et après passage dans le système optique. Si on définit $r_1'$ et $r_2'$ tels que $\theta_1 \sim (dr/dz)_{z_1} = r_1'$ et $\theta_2 \sim (dr/dz)_{z_2} = r_2'$. Du fait de la linéarité du système optique il existe des coefficients $A, B, C$ et $D$ tels que~: 
 
 \begin{align} 
 r_2 &=  Ar_1 + Br'_1 \\ 
@@ -512,7 +512,7 @@ En appliquant la loi ABCD et sachant que $q_0$ et $q_0'$ sont tous les deux des 
     -\frac{\sigma}{z_R}&=\frac{\sigma'}{z_R'}
 \end{align}
 
-Ces relations démontrent que la position du waist image dépend non seulement de la position du waist objet mais aussi de sa taille. Lorsque $\sigma>>z_R$, l'onde au niveau du foyer objet est quasi-sphérique (celui-ci est dans le champ lointain du faisceau). Le front d'onde au niveau de la lentille s'apparente donc semble donc au front d'onde d'un point source, et on obtient alors : $\sigma\sigma'=ff'$. On retrouve ici les relations de Newton de l'optique géométrique.
+Ces relations démontrent que la position du waist image dépend non seulement de la position du waist objet mais aussi de sa taille. Lorsque $\sigma>>z_R$, l'onde au niveau du foyer objet est quasi-sphérique (celui-ci est dans le champ lointain du faisceau). Le front d'onde au niveau de la lentille s'apparente donc au front d'onde d'un point source, on obtient alors : $\sigma\sigma'=ff'$. On retrouve ici les relations de Newton de l'optique géométrique.
 Un autre cas particulier est le cas $\sigma=0$. Dans ce cas, on a aussi $\sigma'=0$. Le waist image est situé exactement sur le foyer image et la relation de grandissement entre les waists est donnée par~:
 
 \begin{equation}
@@ -529,7 +529,7 @@ Un autre cas particulier est le cas $\sigma=0$. Dans ce cas, on a aussi $\sigma'
 
 
 \subsection{Déphasage d'un faisceau gaussien par propagation}
-
+    
 Le déphasage sur l'axe Oz par propagation du faisceau entre les plans de référence est donné par~:
 \begin{equation}
     \phi(z) = -kz-\arg(A+B/q) = \phi_0+\phi_g
@@ -558,7 +558,7 @@ Lorsque $w_0$ ou $Z_R$ deviennent très grands, le faisceau gaussien devient pro
           \\
           \\
           \begin{itemize}
-              \item  Etablir le système de trois équations sur les trois inconnues $z_1, z_2$ et $z_R^2$
+              \item  Etablir le système de trois équations sur les trois inconnues $z_1, z_2$ et $z_R^2$, où $z_1$ et $z_2$ sont les positions des miroirs $R_1$ et $R_2$
               \\\\\\
               \item  En utilisant la relation $L = z_2 - z_1$, résoudre ce système et en déduire la position et la taille du waist (attention, ne vous embarquez pas dans unr résolution de polynômes du 2e degré... Horrible !)
               \\\\\\
@@ -605,7 +605,7 @@ On construit un résonateur concentrique en plaçant deux miroirs sphériques de
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[width=8cm]{pictures/Concentric.png}
+\includegraphics[width=13cm]{pictures/Concentric.png}
 \end{center}
 \caption{Résonateur concentrique}
 \label{fig:resonateur_concentrique}
@@ -616,7 +616,7 @@ La combinaison de deux miroirs sphériques de rayons de courbure $R_1$ et $R_2$ 
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[width=8cm]{pictures/Confocal.png}
+\includegraphics[width=15cm]{pictures/Confocal.png}
 \end{center}
 \caption{Résonateur confocal}
 \label{fig:resonateur_confocal}
@@ -626,11 +626,9 @@ La combinaison de deux miroirs sphériques de rayons de courbure $R_1$ et $R_2$ 
 Dans le cas très général où les rayons de courbures et distances entre les miroirs sont arbitraires, on ne peut pas de façon générale trouver de rayon revenant à son point de départ, et de même que pour un résonateur confocal il est impossible par cette approche d'établir une condition de résonance. 
 
 \subsection{Cavité en anneau}
-Une cavité importante dans le domaine des lasers est la cavité en anneau qui peut être simple ou repliée. Elle peut être faite de miroirs plans et ou sphériques, comme indiqué Fig.~\ref{fig:ring_cavity}. Afin que l'onde revienne sur elle-même après un tour complet de cavité, on établit que~:
+Une cavité importante dans le domaine des lasers est la cavité en anneau qui peut être simple ou repliée. Elle peut être faite de miroirs plans et ou sphériques, comme indiqué Fig.~\ref{fig:ring_cavity}. Afin que l'onde revienne sur elle-même après un tour complet de cavité, on établit que $\nu=\frac{nc}{L}$.
 
-\begin{equation}
-    \nu=\frac{nc}{L}
-\end{equation}
+
 
 \begin{figure}[!htbp]
 \begin{center}
@@ -643,32 +641,32 @@ Une cavité importante dans le domaine des lasers est la cavité en anneau qui p
 \section{Modes propres transverses et valeurs propres }
 
 Jusqu'à présent, nous avons adopté une approche quasiment géométrique à l'établissement des conditions de résonance des \textbf{modes longitudinaux}. On peut dans le cas général dériver une telle condition si on prend en compte l'existence de \textbf{modes transverses}. 
-Si on écrit l'amplitude du champ dans le cas décrit Fig.~\ref{fig:eigenmodes_cavity} après un tour complet de cavité \cite{svelto}, on obtient~:
+Si on écrit l'amplitude du champ dans le cas décrit Fig.~\ref{fig:cell} après un tour complet de cavité \cite{svelto}, on obtient~:
 
 \begin{equation}
-    \tilde E(x,y,2L)=\exp(-2\iu kL)\iint K(x,y; x_1,y_1)~E(x_1, y_1, 0)dx_1dy_1
+    \tilde E(x,y,2L)=\exp(-2\iu kL)\iint K(x,y; x_1,y_1) \tilde E(x_1, y_1, 0)dx_1dy_1
     \label{eq:gen_field}
 \end{equation}
 $K(x,y; x_1,y_1)$ est ce que l'on appelle le noyau de propagation (voir encart ci-après). 
 Afin que ce mode soit résonant, il faut que la forme du champ soit identique à elle-même après un tour complet de cavité. On établit donc que~: 
 
 \begin{equation}
-     \tilde E(x,y,2L)=\tilde\sigma\exp(-2\iu kL)\~E(x,y,0)
+     \tilde E(x,y,2L)=\tilde\sigma\exp(-2\iu kL)\tilde E(x,y,0)
 \end{equation}
 
 $\sigma$ correspond à un facteur complexe constant donnant l'atténuation de l'onde par diffraction ainsi que son déphasage sur un tour complet. On réécrit $ \tilde\sigma = | \tilde\sigma|\exp(\iu \phi)$. On a alors deux contributions au terme de phase : longitudinale ($-2kL$) et une transverse ($\phi$). Le déphasage total est donc~:
 
 \begin{equation}
-    \Delta\phi=2kL+\phi
+    \Delta\phi=-2kL+\phi
 \end{equation}
 Si on insère cette expression dans l'équation~\ref{eq:gen_field}, on obtient~:
 
 \begin{equation}
-    \tilde\sigma \tilde E(x,y,0)=\iint K(x,y; x_1,y_1)~E(x_1, y_1, 0)dx_1dy_1
+    \tilde\sigma \tilde E(x,y,0)=\iint K(x,y; x_1,y_1) \tilde E(x_1, y_1, 0)dx_1dy_1
     \label{eq:fredholm}
 \end{equation}
 
-qui est une équation intégrale de Fredholm du second type admettant des solutions $ \tilde E_{lm}(x,y,0)$ \textbf{auto-similaires après chaque période en cavité}. Chaque solution définie par un couple d'entiers ${l,m}$ sera notée $ \tilde\sigma_{lm}$.
+qui est une équation intégrale de Fredholm du second type admettant des solutions $ \tilde E_{lm}(x,y,0)$ \textbf{auto-similaires après chaque période en cavité}. Les valeurs propres des solution $ \tilde E_{lm}(x,y,0)$ définies par un couple d'entiers ${l,m}$ seront notées $ \tilde\sigma_{lm}$.
 Comme nous l'avons souligné précédemment, le module de ces valeurs propres représente les pertes par diffraction, et il est par conséquent inférieur à 1. Le déphasage total acquis, $\Delta\phi_{lm}=-2kL+\phi_{lm}$ doit être un multiple de $2\pi$ afin que l'interférence soit constructive c'est-à-dire $\phi_{lm}=-2\pi n$. On déduit alors facilement~: 
 
 \begin{equation}
@@ -846,38 +844,40 @@ La Figure~\ref{fig:modes_long_et_trans} présente un exemple arbitraire de spect
 \chapter{Application : accélération d'électrons par laser}
 
 \section{Introduction}
-Le contenu de ce cours est un peu spécial puisqu'il présente une application des lasers qui n'est pas de l'optique, mais à la croisée des chemins entre l'optique, l'interaction laser-matière et l'électrodynamique relativiste. Nous survolerons par conséquent plusieurs notions de physique, en particulier d'électromagnétisme. Ce support donne les grandes lignes et les concepts essentiels qui vous permettront d'avoir une idée schématique des processus permettant l'accélération d'électrons par laser. 
+Le contenu de ce cours est un peu spécial puisqu'il présente une application des lasers qui n'est pas de l'optique, mais à la croisée des chemins entre l'optique, l'interaction laser-matière et l'électrodynamique relativiste. Nous survolerons par conséquent plusieurs notions de physique. Ce support donne les grandes lignes et les concepts essentiels qui vous permettront d'avoir une idée schématique des processus permettant l'accélération d'électrons par laser. 
 
-Comme nous l'avons souligné dans l'introduction, l'essor de l'utilisation des lasers impulsionnels est remarquable : ils ont d'une part peuplé des domaines aussi éloignés que la découpe de tôle et la chirurgie de l'\oe{}il, et ils trouvent d'autre part des applications en recherche fondamentale. Dans un grand nombre de ces activités de recherche, c'est l'intensité crête qui fait l'attractivité des lasers impulsionnels : cette dernière peut atteindre $10^{22}\,\mathrm{W/cm^2}$ sur les lignes de lumières les plus intenses. L'interaction entre un laser aussi intense et la matière permet d'accéder à des phénomènes physiques dits \textit{relativistes} car ils mettent en jeu des énergies cinétiques de l'ordre de l'énergie de masse des particules mises en mouvement par le champ. Pour un électron, cela correspond à une énergie cinétique de l'ordre de $1\,\mathrm{MeV}$. 
+Comme nous l'avons souligné dans l'introduction, l'essor de l'utilisation des lasers impulsionnels est remarquable : ils ont d'une part peuplé des domaines aussi éloignés que la découpe de tôle et la chirurgie de l'\oe{}il, et ils trouvent d'autre part des applications en recherche fondamentale. Ce succès a été récemment salué par le prix Nobel décerné en 2018 à G.~Mourou et D.~Strickland pour leur travail pionnier sur l'amplification par dérive de fréquence qui a permis de dépasser de plus d'un ordre de grandeur les intensités crêtes des lasers de pointe. Dans un grand nombre d'activités applicatives ou de recherche, c'est en effet l'intensité crête qui fait l'attractivité des lasers impulsionnels : cette dernière peut atteindre $10^{22}\,\mathrm{W/cm^2}$ sur les lignes de lumières les plus intenses. L'interaction entre un laser aussi intense et la matière permet d'accéder à des phénomènes physiques dits \textit{relativistes} car ils mettent en jeu des énergies cinétiques de l'ordre de l'énergie de masse des particules mises en mouvement par le champ. Pour un électron, cela correspond à une énergie cinétique de $m_ec^2 = 0.511\,\mathrm{MeV}$. 
 
 
 Depuis la fin du XIX\textsuperscript{e} siècle, on accélère des particules en utilisant des champs électriques, d'abord statiques, puis radiofréquences. Afin d'obtenir des énergies cinétiques toujours plus importantes, les accélérateurs ont depuis atteint des dimensions colossales, ce qui en parallèle a stimulé la recherche de sources plus compactes. Le saut d'intensité crête des impulsions laser provoqué par l'utilisation de la technique d'amplification par dérive de fréquence a éveillé un intérêt dans ce sens et des particules (en particulier des électrons et des protons) ont pu être accélérées par interaction entre des impulsions laser et des solides ou des gaz. 
-Nous appréhenderons ici les phénomènes fondamentaux permettant l'accélération d'électrons par interaction entre un laser impulsionnel ultra-intense et un gaz moléculaire. Nous discuterons tout d'abord des accélérateurs coventionnels et de leurs limitations, ainsi qu'aux raisons pour lesquelles l'accélération par laser peut permettre de dépasser ces limites. Nous décrirons ensuite les phénomènes physiques qui ont lieu dans la matière lorsqu'on l'illumine à des intensités supérieures à $10^{16}\,\mathrm{W/cm^2}$. L'arrivée de l'impulsion provoque tout d'abord l'ionisation du milieu, et génère ainsi un plasma. Lorsque l'intensité dépasse les quelques $10^{18}\,\mathrm{W/cm^2}$, selon la densité éléctronique du plasma, on peut alors déclencher une excitation d'ondes plasma de forte amplitude. Lorsque l'onde plasma prend un caractère non-linéaire, le champ éléctrique qui en résulte peut dépasser $100\,\textrm{GV/m}$. Nous verrons alors comment ce champ électrique permet d'accélérer des électrons.
-Nous reviendrons enfin aux technologies laser qui ont permis d'atteindre de si hautes intensités dans le cadre d'une des premières expériences de ce type. 
+Nous appréhenderons ici les phénomènes fondamentaux permettant l'accélération d'électrons par interaction entre un laser impulsionnel ultra-intense et un gaz moléculaire. Nous discuterons tout d'abord des accélérateurs coventionnels et de leurs limitations, ainsi que des raisons pour lesquelles l'accélération par laser peut permettre de dépasser ces limites. Nous décrirons ensuite les phénomènes physiques qui ont lieu dans la matière lorsqu'on l'illumine à des intensités supérieures à $10^{16}\,\mathrm{W/cm^2}$. L'arrivée de l'impulsion provoque tout d'abord l'ionisation du milieu, et génère ainsi un plasma. Lorsque l'intensité dépasse les quelques $10^{18}\,\mathrm{W/cm^2}$, selon la densité éléctronique du plasma, on peut alors déclencher une excitation d'ondes plasma de forte amplitude. Lorsque l'onde plasma prend un caractère non-linéaire, le champ éléctrique qui en résulte peut dépasser $100\,\textrm{GV/m}$. Nous verrons alors comment ce champ électrique permet d'accélérer des électrons.
+Nous reviendrons enfin aux technologies laser qui ont permis d'atteindre de si hautes intensités sur une des premières expériences de ce type. 
 
-\section{Considérations sur les accélérateurs conventionnels, et limitations}
+\section{Considérations sur les accélérateurs conventionnels}
 
 Le principe de base de l'accélération de particules repose sur la génération d'un champ électrique accélérateur ainsi que sur l'injection d'électrons dans un tel champ. Le tout premier appareil conçu s'apparentant à un accélérateur de particules est le tube de Geissler (ou tube cathodique). Il s'agit d'un tube de verre, contenant une faible pression de gaz, souvent des gaz rares comme le néon ou l'argon, mais aussi d'autres gaz tels que le sodium ou le mercure. De part et d'autre de ce tube sont placées deux électrodes sur lesquelles on applique une haute tension. Le champ éléctrique ainsi créé provoque l'ionisation du milieu ainsi qu'un courant électrique. Une génération de lumière dont la couleur dépend du gaz utilisé dûe à la recombinaison des électrons avec les ions (et la désexcitation radiative qui s'ensuit) par fluorescence peut être observée. Lorsque le tube est sous vide poussé, on appelle ce type de dispositif un tube de Crookes (du scientifique anglais W.~Crookes qui est son inventeur). Dans un tube de Crookes, un rayonnement lumineux est aussi émis, mais seulement au niveau de l'anode. Ces rayonnements, à l'époque mystérieux furent nommés rayons cathodiques. En 1897, J.~J.~Thomson (le même que celui du modèle atomique de Thomson !) démontra que ces rayonnement provenaient d'une particule, alors inconnue, qui fut nommée ``électron''. 
 
-C'est en partant de ce principe que Cockcroft and Walton développèrent le tout premier accélérateur de particules lors de leurs travaux avec Rutherford. Il s'agissait d'un accélérateur de protons destiné à l'étude de la structure interne de l'atome. L'accélérateur fut mis en service en mars 1932. Un mois plus tard, Rutherford, Cockcroft et Walton mirent en évidence la première fission atomique artificielle par bombardement de protons sur une cible de lithium. L'énergie des protons à l'époque était de 710$\,\mathrm{keV}$. Ce type d'accélérateur, que l'on appelle un accélérateur électrostatique est toujours très utilisé aujourd'hui notamment dans les tubes à rayons X utilisés pour les radiographies médicales. L'énergie des particules issues d'un tel accélérateur est cependant limitée par le champ de claquage (même sous "vide" !) à environ 1$\,\mathrm{MV/m}$. On peut pour certaines applications utiliser des gaz isolants tels que le $\mathrm{SF}_6$ afin de multiplier cette limite par un facteur 30.
+C'est en partant de ce principe que Cockcroft and Walton développèrent le tout premier accélérateur de particules lors de leurs travaux avec Rutherford. Il s'agissait d'un accélérateur de protons destiné à l'étude de la structure interne de l'atome. L'accélérateur fut mis en service en mars 1932. Un mois plus tard, Rutherford, Cockcroft et Walton mirent en évidence la première fission atomique artificielle par bombardement de protons sur une cible de lithium. L'énergie des protons à l'époque était de 710$\,\mathrm{keV}$. Ce type d'accélérateur, que l'on appelle un accélérateur électrostatique est toujours très utilisé aujourd'hui, mais où les particules accélérées sont des électrons plutôt que des protons. L'application la plus commune en est sans doute les tubes à rayons X utilisés pour les radiographies médicales. 
 
-Une autre méthode, l'accélération radiofréquence fut inventée par Ising et développée par Wider{\o}e en 1928 (voir Fig.~\ref{fig:wideroe} et Fig.~\ref{fig:acc_dec}. En connectant une série d'électrodes de polarités alternées, on peut arriver à des énergies assez importantes au prix de dimensions colossales comme le SLAC (l'accélérateur linéaire de Stanford) qui peut accélérer des électrons à 50$\,\mathrm{GeV}$, sur une distance de 3,2$\,\mathrm{km}$ ! En général ce type d'accélérateur est utilisé autour de quelques dizaines de MeV. Ce dispositif ingénieux permet de démultiplier la tension d'alimentation étage après étage, tant que le faisceau (impulsionnel !) reste en phase avec le champ accélérateurs. On peut faire un calcul simple des dimensions de l'accélérateur pour des énergies non-relativistes : le gain d'énergie après le $n$-ième étage est le suivant~:
+L'énergie des particules issues d'un tel accélérateur est cependant limitée par le champ de claquage (même sous "vide" !) à environ 1$\,\mathrm{MV/m}$. On peut pour certaines applications utiliser des gaz isolants tels que le $\mathrm{SF}_6$ afin de multiplier cette limite par un facteur 30.
+
+Une autre méthode, l'accélération radiofréquence fut inventée par Ising et développée par Wider{\o}e en 1928 (voir Fig.~\ref{fig:wideroe} et Fig.~\ref{fig:acc_dec}. En connectant une série d'électrodes de polarités alternées, on peut arriver à des énergies assez importantes au prix de dimensions colossales comme le SLAC (l'accélérateur linéaire de Stanford) qui peut accélérer des électrons à 50$\,\mathrm{GeV}$, sur une distance de 3,2$\,\mathrm{km}$ ! En général ce type d'accélérateur est utilisé autour de quelques dizaines de MeV. Ce dispositif ingénieux permet de démultiplier la tension d'alimentation étage après étage, tant que le faisceau (impulsionnel !) reste en phase avec le champ accélérateur. On peut faire un calcul simple des dimensions de l'accélérateur pour des énergies non-relativistes : le gain d'énergie après le $n$-ième étage est le suivant~:
 
 \begin{equation}
     E_n=nqU_0\sin\left(\phi_s\right)
     \label{eq:linac_energy}
 \end{equation}
-où $n$ est le nombre d'étages d'accélération, $q$ est la charge de la particule, $U_0$ la tension d'alimentation et $\phi_s$ la phase relative entre l'impulsion de particules et la tension sinusoïdale. 
+où $n$ est le nombre d'étages d'accélération, $q$ est la charge de la particule, $U_0$ la tension d'alimentation (limitée par le champ de claquage dans le système, de l'ordre de 10 à 100$\,$MV/m) et $\phi_s$ la phase relative entre l'impulsion de particules et la tension sinusoïdale. 
 Il apparaît clairement que la quantité fondamentale dans cette équation est la longueur des étages d'accélération. Pour une radiofréquence donnée, la longueur de l'étage d'accélération est imposée par la vitesse des particules et la demi-période de l'onde RF. On obtient ainsi que $l_n = v_n\cdot \tau_{RF}/2$. Toujours dans l'approximation classique, l'énergie cinétique de la particule est simplement donnée par $E_{kin} = 1/2mv^2$. En insérant ces expressions dans l'équation~\ref{eq:linac_energy}, on obtient la longueur de l'étage en fonction des paramètres de l'accélérateur~:
 
 \begin{equation}
     l=\frac{1}{\nu_{RF}}\sqrt{\frac{nqU_0\sin{\phi_s}}{2m}}
 \end{equation}
 
-Pour des vitesses relativistes, le gain d'énergie n'est évidemment plus linéairement croissant avec le nombre d'étages, et les longueurs des sections deviennent extrêmement longues (l'exemple du SLAC cité précédemment l'illustre). 
+Pour des vitesses relativistes, le gain d'énergie n'est évidemment plus linéairement croissant avec le nombre d'étages, et la longueur totale de l'accélérateur devient colossale (l'exemple du SLAC cité précédemment l'illustre). 
 
 Afin d'accéder à des énergies encore plus importantes, et pouvant aller jusqu'à quelques $\mathrm{TeV}$, on utilise d'autres structures appelées synchrotrons et anneaux de stockage. L'exemple le plus célèbre est évidemment le LHC au CERN. Le LHC fait 27$\,\mathrm{km}$ de circonférence, et a permis l'accélération de protons à 6.5$\,\mathrm{TeV}$ (actuellement, c'est la plus grande machine au monde). 
-Pour plus d'informations sur les accélérateurs, la lecture de l'article de Bernhard Holzer sur les accélérateurs et leur limites \cite{holzer}. 
+Pour plus d'informations sur les accélérateurs, l'article de Bernhard Holzer sur les accélérateurs et leur limites \cite{holzer} est une lecture tout-à-fait appropriée. 
 
 \begin{figure}[!htbp]
 \begin{center}
@@ -910,22 +910,22 @@ En 1979, Dawson et Tajima proposèrent une idée portée par la technologie en e
 
 Comme nous l'avons mentionné au tout début de ce chapitre, lorsqu'on focalise un laser intense à quelques $10^{18}\,\mathrm{W/cm^2}$ dans un matériau, les ``pieds" de l'impulsion ionisent déjà le milieu. Dans cette section, nous proposons de calculer l'énergie requise pour qu'un faisceau gaussien homogène focalisé dont le waist $w_0$ est de $10\,\mathrm{\mu m}$, et de durée d'impulsion $30\,\mathrm{fs}$ ionise le premier niveau de l'atome d'Hélium. 
 
-Commençons par estimer le champ électrique nécessaire pour ioniser l'atome d'Hélium. Dans un atome, les électrons sont liés au noyau par le potentiel coulombien (voir Figure~\ref{fig:potentiel} résultant de la combinaison des charges du noyau et des charges des électrons du nuage atomique le cas échéant. Ce potentiel s'écrit~:
+Commençons par estimer le champ électrique nécessaire pour ioniser l'atome d'Hélium. Dans un atome, les électrons sont liés au noyau par le potentiel coulombien (voir Figure~\ref{fig:potentiel} résultant de la combinaison des charges du noyau et des charges des électrons du nuage atomique le cas échéant. En 1D ce potentiel s'écrit~:
 \begin{equation}
-    V(r)=-\frac{Z^*e^2}{4\pi\epsilon_0r}
+    V(z)=-\frac{Z^*e^2}{4\pi\epsilon_0z}
 \end{equation}
 où $Z^*$ est le numéro atomique effectif (il prend en compte l'écrantage du champ du noyau par les électrons), $e$ est la charge électronique élémentaire, et $r$ est la position radiale. Il existe une énergie $V_i$ pour laquelle un électron piégé dans un tel potentiel n'est plus lié. C'est ce qu'on appelle l'énergie d'ionisation. 
 
 Dans les fréquences optiques, le moment dipolaire magnétique est négligeable par rapport au moment dipolaire électrique. La contribution au potentiel du laser se limite donc à son champ électrique $E_0$. On a alors~:
 
 \begin{equation}
-    V(r)=-\frac{Z^*e^2}{4\pi\epsilon_0r}-eE_0z
+    V(z)=-\frac{Z^*e^2}{4\pi\epsilon_0z}-eE_0z
 \end{equation}
 
-La figure~\ref{fig:potentiel} montre que le champ extérieur abaisse la barrière de potentiel. Lorsque cette dernière passe en-dessous de l'énergie de liaison $V_i$, on a ionisation par suppression de barrière. Pour calculer ce champ, on calcule le maximum du potentiel (abscisses positives sur la figure~\ref{fig:potentiel}) au point $z_M$ tel que $\left(\partial V/\partial r\right)_{r_M}=0$. Ce maximum se situe en $r_M=\left(\frac{Z^*e}{4\pi\epsilon_0E}\right)^{1/2}$, où le potentiel vaut~:
+La figure~\ref{fig:potentiel} montre que le champ extérieur abaisse la barrière de potentiel. Lorsque cette dernière passe en-dessous de l'énergie de liaison $V_i$, on a ionisation par suppression de barrière. Pour calculer ce champ, on calcule le maximum du potentiel (abscisses positives sur la figure~\ref{fig:potentiel}) au point $z_M$ tel que $\left(\partial V/\partial z\right)_{z_M}=0$. Ce maximum se situe en $z_M=\left(\frac{Z^*e}{4\pi\epsilon_0E}\right)^{1/2}$, où le potentiel vaut~:
 
 \begin{equation}
-    V(r_M)=2e\left(\frac{Z^*eE}{4\pi\epsilon_0}\right)^{1/2}
+    V(z_M)=2e\left(\frac{Z^*eE}{4\pi\epsilon_0}\right)^{1/2}
     \label{eq:max_potentiel}
 \end{equation}
 
@@ -954,7 +954,7 @@ Les valeurs des énergies d'ionisation sont des données expérimentales mesuré
 
 Nous pouvons à présent répondre à la question posée en début de section, à savoir, si notre impulsion fait $30\,\mathrm{fs}$ de durée, et est focalisée sur un waist de $10\,\mathrm{\mu m}$, quelle est l'énergie nécessaire pour ioniser l'Hélium~?
 
-Faisons tout d'abord un calcul d'ordre de grandeur pour aiguiser notre intuition. L'intensité est une densité surfacique de puissance. Estimons tout d'abord la puissance instantanée $P$ d'une impulsion d'énergie $U$ et de durée à mi-hauteur $\tau$ par $P = U/\tau$ (Nous avons alors de $\mathrm{J/s}$). Puis, supposons une distribution plate de l'énergie sur un disque de rayon $w_0$. On a une surface $S=\pi w_0^2$, et donc une intensité $I = P/S = U/(\tau S)$. On obtient alors que $137\,\mathrm{\mu J}$ suffisent à ioniser le premier niveau de l'Hélium en première approximation. 
+Faisons tout d'abord un calcul d'ordre de grandeur pour aiguiser notre intuition. L'intensité est une densité surfacique de puissance. Estimons tout d'abord la puissance instantanée $P$ d'une impulsion d'énergie $U$ et de durée à mi-hauteur $\tau$ par $P = U/\tau$ (Nous avons alors des $\mathrm{J/s}$). Puis, supposons une distribution plate de l'énergie sur un disque de rayon $w_0$. On a une surface $S=\pi w_0^2$, et donc une intensité $I = P/S = U/(\tau S)$. On obtient alors que $137\,\mathrm{\mu J}$ suffisent à ioniser le premier niveau de l'Hélium en première approximation. 
 
 Afin d'affiner cette estimation, supposons une impulsion gaussienne dans les trois dimensions de l'espace. L'expression du mode fondamental d'un champ électromagnétique gaussien dans le plan focal, c'est-à-dire en $z=0$ (Eq.~\ref{eq:HermiteGauss}) s'écrit~:
 
@@ -967,13 +967,14 @@ On déduit alors l'intensité (en W/cm$^2$ ou J/s/cm$^2$)~:
 \begin{equation}
     I(r)=\frac{E_0^2}{2\eta}\mathrm{e}^{-\frac{2r^2}{w_0^2}}
 \end{equation}
+où $\eta \approx 377\,\mathrm{\Omega}$ est l'impédance caractéristique du vide qui est définie comme $\eta = \frac{1}{\epsilon_0c_0}$.
 
-La distribution temporelle gaussienne de l'impulsion est de largeur à 1/e$^2$ égale à $\tau$, on alors écrit alors~:
+La distribution temporelle gaussienne de l'impulsion est de largeur à 1/e égale à $\tau$, on alors écrit alors~:
 \begin{equation}
     I(r, t)=\frac{E_0^2}{2\eta}\mathrm{e}^{-\frac{2r^2}{w_0^2}}\mathrm{e}^{-\frac{t^2}{\tau^2}}
 \end{equation}
 
-où $\eta = 377\,\mathrm{\Omega}$ est l'impédance caractéristique du vide. La puissance $P(t)$ du faisceau (en W ou J/s) est donnée par~: 
+La puissance $P(t)$ du faisceau (en W ou J/s) est donnée par~: 
 \begin{equation}
     P(t)=\int  r I(r, t)d\theta dr
 \end{equation}
@@ -1020,14 +1021,15 @@ Lorsque les électrons sont déplacés de leur position d'équilibre par un cham
 \begin{equation}
     m_e\frac{d^2 x}{dt^2}=-eE_x(x)
 \end{equation}
-Si on considère la variation de la densité de charge en fonction de la position représentée Figure~\ref{fig:osc_plas} et qui découle de la conservation de la charge, on peut appliquer la Loi de Gauss $\nabla\cdot\textbf{E}=-\frac{e n_0}{\epsilon_0}$ que l'on intègre de 0 à $x$~: 
+Si on considère la variation de la densité de charge en fonction de la position représentée Figure~\ref{fig:osc_plas} et qui découle de la conservation de la charge, on peut appliquer la Loi de Gauss $\nabla\cdot\textbf{E}=\frac{\rho(x)}{\epsilon_0}$. Dans notre système, on a alors $\nabla\cdot\textbf{E}= -\frac{e n_0}{\epsilon_0}$ que l'on intègre de 0 à $x$ pour obtenir le champ~: 
 \begin{equation}
     E_x(x) = en_0\frac{x}{\epsilon_0}
     \label{eq:chp_E}
 \end{equation}
-On obtient alors l'équation du mouvement des électrons~:
+On obtient alors l'équation harmonique du mouvement des électrons~:
 \begin{equation}
     \frac{d^2x}{dt^2}+\frac{n_0e^2}{\epsilon_0 m_e} x =0
+    \label{eq:plasmOscLin}
 \end{equation}
 La solution à cette équation est une oscillation harmonique de pulsation $\omega_p = \sqrt{\frac{n_0 e^2}{\epsilon_0 m_e}}$ que l'on appelle la pulsation de Langmuir. 
 Soumis à une perturbation, les électrons suivent donc, dans le régime linéaire, un mouvement oscillant collectif $x(t) = x_0\cos(\omega_p t +\theta_0)$. 
@@ -1040,6 +1042,47 @@ Cette onde électronique est ce que l'on appelle une onde de sillage lorsqu'elle
 \caption{Onde de sillage. \textcopyleft Edmont [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0) }
 \label{fig:sillage}
 \end{figure}
+
+\subsubsection{Excitation d'une onde plasma par laser}
+
+Nous souhaitons à présent dériver la forme d'une onde de sillage générée par laser en une dimension, et dans le régime linéaire. Nous souhaitons connaître la variation temporelle du potentiel électrostatique $\phi$. Ce dernier dépend linérairement de la séparation spatiale des charges, et en l'absence de forçage on a donc~:
+
+
+\begin{equation}
+    \frac{\partial^2 \phi}{\partial t ^2 }+\omega_p^2\phi=0
+    \label{eq:1DlinearNolaser}
+\end{equation}
+
+On fait ensuite apparaître un terme de forçage dû au laser. On peut démonter (mais nous ne le ferons pas ici) que la quantité pertinente est $\omega_p^2a(t)^2/2$. $a = \frac{eA}{m_ec}$ est ce que l'on appelle le potentiel vecteur normalisé. On l'obtient en normalisant  par la quantité $\frac{m_ec}{e}$ le module du potentiel vecteur $\textbf{A}$ dont la dérivée par rapport au temps donne le champ électrique~:
+\begin{equation}
+    E_{laser} = -\frac{\partial \textbf{A}}{\partial t}
+\end{equation}
+On soulignera ici que le champ éléctrique total est donc la somme de la contribution du laser $E_{laser} = -\frac{\partial \textbf{A}}{\partial t}$ oscillant à la fréquence centrale du laser $\omega_0$ et de celle du plasma $E_{plasma} = -\nabla \phi$ oscillant à la fréquence plasma $\omega_p$.
+
+En ajoutant le terme de forçage dans l'équation~\ref{eq:1DlinearNolaser} on obtient alors l'équation harmonique forcée~:
+\begin{equation}
+    \frac{\partial^2 \phi}{\partial t ^2 }+\omega_p^2\phi=\frac{\omega_p^2a^2}{2}
+    \label{eq:1DlinearWithLaser}
+\end{equation}
+
+En résolvant numériquement cette équation pour une impulsion laser de la forme $a(t) = a_0\mathrm{e}^{-t/\tau}$ on a alors une oscillation du potentiel et donc du champ qui en dérive, représentés sur la Figure~\ref{}.
+
+En raffinant le modèle, on peut montrer (vous trouverez une démonstration par exemple dans la référence~\cite{FaureHDR}) qu'en une dimension et dans le régime non-linéaire, le potentiel est régi par l'équation suivante~:
+\begin{equation}
+    \frac{\partial^2 \phi}{\partial \zeta ^2 }\approx\frac{k_p^2}{2}\left(\frac{1+a^2/2}{(1+\phi)^2}-1\right)
+    \label{eq:1Dnonlinear}
+\end{equation}
+L'intensité laser commence à générer des phénomènes relativistes autour de $a>1$. Pour notre exemple, nous allons prendre $a=3$. En résolvant l'équation~\ref{eq:1Dnonlinear} numériquement, on peut alors tracer le potentiel électrostatique $\phi$ et le champ électrique $E$ qui en dérive en fonction de notre variable d'espace-temps $\zeta$ qui se déplace à la vitesse de groupe de l'impulsion laser (voir Fig.~\ref{fig:1D_pot_field}). 
+
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=11cm]{pictures/1D_Field_and_Potential.png}
+\end{center}
+\caption{Potentiel $\phi$ et champ électrique $E$ de l'onde de sillage}
+\label{fig:1D_pot_field}
+\end{figure}
+
 
 
 \medskip
@@ -1071,13 +1114,13 @@ Cette onde électronique est ce que l'on appelle une onde de sillage lorsqu'elle
 
 \subsubsection{Mouvement collectif des électrons, approche Hamiltonienne}
 
-La mécanique Hamiltonienne est l'approche la plus élégante d'étudier le mouvement des électrons dans l'onde plasma. Comme la mécanique Newtonienne, elle permet d'établir les équations du mouvement d'un système soumis à un ensemble de forces mais repose sur la conservation de l'énergie au lieu de la conservation de l'impulsion. Dans le cas de notre tranche d'électrons perturbés, on a une énergie cinétique $\frac{p_x^2}{2m_e}$ et une énergie potentielle électrostatique $\Phi_E$ que l'on peut déduire du champ électrique établi dans la section précédente (équation~\ref{eq:chp_E}). On sait tout d'abord que la force électrostatique est conservative, le champ est donc le gradient du potentiel. De plus, l'énergie électrostatique est le produit de la charge et du potentiel, on a donc~:
+La mécanique Hamiltonienne est la manière la plus élégante d'étudier le mouvement des électrons dans l'onde plasma. Comme la mécanique Newtonienne, elle permet d'établir les équations du mouvement d'un système soumis à un ensemble de forces mais repose sur la conservation de l'énergie au lieu de la conservation de l'impulsion. Dans le cas de notre tranche d'électrons perturbés, on a une énergie cinétique $\frac{p_x^2}{2m_e}$ et une énergie potentielle électrostatique $\Phi_E$ que l'on peut déduire du champ électrique établi dans la section précédente (équation~\ref{eq:chp_E}). On sait tout d'abord que la force électrostatique est conservative, le champ est donc le gradient du potentiel. De plus, l'énergie électrostatique est le produit de la charge et du potentiel, on a donc~:
 
 \begin{equation}
     \textbf{E}=-\nabla V_E \quad \mathrm{et} \quad \Phi_E=-eV_E
 \end{equation}
 
-d'où on déduit $\Phi_E=\frac{e^2n_0}{\epsilon_0}x^2$, ce qui nous permet d'écrire l'Hamiltonien du système~:
+La variable $x$ sur laquelle on dérive le potentiel représente la position de la tranche d'électrons. On déduit $\Phi_E=\frac{e^2n_0}{\epsilon_0}x^2$, ce qui nous permet d'écrire l'Hamiltonien du système~:
 \begin{align}
     H &= E_K + \Phi_E \\
       &= \frac{p^2}{2m_e}+\frac{e^2n_0}{2\epsilon_0}x^2
@@ -1097,12 +1140,12 @@ que l'on peut dériver et réarranger afin d'obtenir les équations différentie
         \frac{d^2x(t)}{dt^2} +\frac{n_0e^2}{m_e\epsilon_0}x(t)= 0\\
         \frac{d^2p(t)}{dt^2} +\frac{n_0e^2}{m_e\epsilon_0}p(t)= 0
 \end{eqnarray}
-On résoud ces équations avec la condition initiale $x(0)=x_0$ et $p(0)=0$. En utilisant $\omega_0^2=\frac{n_0e^2}{\epsilon_0}$ a alors le couple d'équations paramétriques suivant~:
+On résoud ces équations avec la condition initiale $x(0)=x_0$ et $p(0)=0$. En utilisant $\omega_0^2=\frac{n_0e^2}{m_e\epsilon_0}$ a alors le couple d'équations paramétriques suivant~:
 \begin{eqnarray}
-       x(t)&=&x_0\cos{\omega_0 t} \\
-       p(t)&=&-m_ex_0\omega_0\sin{\omega_0 t}
+       x(t)&=&x_0\cos{(\omega_p t + \varphi)} \\
+       p(t)&=&-m_ex_0\omega_0\sin{(\omega_p t + \varphi)}
 \end{eqnarray}
-En écrivant $x^2(t)+\frac{p^2(t)}{m\omega_0}=x_0^2\cos{\omega_0t}+x_0^2\sin{\omega_0t}=x_0^2$, on peut alors facilement représenter $\frac{p^2(t)}{m\omega_0}$ en fonction de $x$, voir Figure~\ref{fig:espace_phases}. C'est ce qu'on appelle l'espace des phases. Cet outil nous sera très utile dans l'analyse des trajectoires des électrons dans le plasma. 
+En écrivant $x^2(t)+\frac{p^2(t)}{m_e\omega_p}=x_0^2\cos{\omega_pt}+x_0^2\sin{\omega_pt}=x_0^2$, on peut alors facilement représenter $\frac{p^2(t)}{m\omega_p}$ en fonction de $x$, voir Figure~\ref{fig:espace_phases}. C'est ce qu'on appelle l'espace des phases. Cet outil nous sera très utile dans l'analyse des trajectoires des électrons dans le plasma. 
 
 
 \begin{figure}[!htbp]
@@ -1127,6 +1170,8 @@ En écrivant $x^2(t)+\frac{p^2(t)}{m\omega_0}=x_0^2\cos{\omega_0t}+x_0^2\sin{\om
     
 \medskip
 
+
+
 \subsubsection{Mouvement des électrons dans l'onde plasma}
 Nous venons de voir que lorsqu'un plasma est perturbé (par un champ externe dans notre cas), il est mis en mouvement et oscille à la pulsation de Langmuir $\omega_p = \sqrt{\frac{n_0 e^2}{\epsilon_0 m_e}}$. Dans ce modèle très simple, les électrons oscillent mais n'obtiennent aucune quantité de mouvement longitudinale. Afin de modéliser les trajectoires des électrons, et de montrer qu'il existe des conditions sous lesquelles un électron peut être piégé dans l'onde plasma et suivre ainsi l'impulsion laser, on peut considérer l'Hamiltonien en 1D d'un électron soumis d'une part au champ laser et d'autre part au potentiel électrostatique $\phi$ dû à l'onde plasma elle-même~: 
 \begin{equation*}
@@ -1149,9 +1194,7 @@ Nous définissons $\beta=v_p/c$ pour obtenir l'Hamiltonien que nous utiliserons 
 \begin{equation}
     H'=\sqrt{1+u_z^2+u_\perp^2}-\phi(\zeta)-\beta_p u_z
 \end{equation}
-En une dimension, l'Hamiltonien ne varie pas en fonction de $r_\perp$, c'est-à-dire $\partial H/\partial r_\perp = 0$. On peut en déduire que la somme de la composante transverse de la quantité de mouvement $u_\perp$ et de l'amplitude du laser (purement transverse en 1D) doit être constante~:~ $u_\perp(\zeta) - a(\zeta) = \mathrm{cste}$, où $a(\zeta)$ est ce qu'on appelle le potentiel vecteur normalisé. 
-
-\textit{[NDA~:~Pour ceux d'entre vous qui n'ont jamais rencontré le potentiel vecteur, sachez simplement qu'il s'agit d'un potentiel duquel le champ électomagnétique dérive (de la même manière qu'on a $\textbf{E} = -\nabla V$ où $\textbf{E}$ est le champ électrique et $V$ le potentiel, on a $\textbf{B} = \nabla\times\textbf{A}$ avec $\textbf{B}$ le champ magnétique et $\textbf{A}$ le potentiel vecteur.]}
+En une dimension, l'Hamiltonien ne varie pas en fonction de $r_\perp$, c'est-à-dire $\partial H/\partial r_\perp = 0$. On peut en déduire que la somme de la composante transverse de la quantité de mouvement $u_\perp$ et de l'amplitude du laser (purement transverse en 1D) doit être constante~:~ $u_\perp(\zeta) - a(\zeta) = \mathrm{cste}$ (où $a(\zeta)$ est le potentiel vecteur normalisé). 
 
 
 Par conservation de l'énergie, si un électron est placé en $\zeta_0$ avec une énergie cinétique $\gamma_0$ à $t=0$, son Hamiltonien $H_0$ est donc une constante du mouvement. En résolvant l'équation polynômiale du second ordre pour $u_z$, on obtient~:
@@ -1160,23 +1203,8 @@ u_z(\zeta) = \beta_p\gamma_p^2(H_0+\phi(\zeta))\pm\gamma_p\sqrt{\gamma_p^2(H_0+\
 \end{equation}
 Cette équation décrit les trajectoires des électrons dans l'onde de sillage dans l'espace des phases $(\zeta, u_z)$ en fonction de leur condition initiale $H_0$. 
 
-Afin de calculer ces trajectoires, il est nécessaire de connaître le potentiel électrostatique $\phi$ de l'onde de sillage. On peut montrer (ce qu'on ne fera pas ici, vous trouverez une démonstration par exemple dans la référence~\cite{FaureHDR}) qu'en une dimension, ce potentiel est régi par l'équation suivante~:
-\begin{equation}
-    \frac{\partial^2 \phi}{\partial \zeta ^2 }\approx\frac{k_p^2}{2}\left(\frac{1+a^2/2}{(1+\phi)^2}-1\right)
-    \label{eq:1Dnonlinear}
-\end{equation}
-où $a$ est \textit{grosso modo} l'amplitude du potentiel issu du champ laser (on l'appelle le "potentiel vecteur normalisé"). L'intensité laser commence à générer des phénomènes relativistes autour de $a>1$. Pour notre exemple, nous allons prendre $a=3$. En résolvant l'équation~\ref{eq:1Dnonlinear} numériquement, on peut alors tracer le potentiel électrostatique $\phi$ et le champ électrique $E$ qui en dérive en fonction de notre variable d'espace-temps $\zeta$ qui se déplace à la vitesse de groupe de l'impulsion laser (voir Fig.~\ref{fig:1D_pot_field}). 
 
-
-\begin{figure}[!htbp]
-\begin{center}
-\includegraphics[width=11cm]{pictures/1D_Field_and_Potential.png}
-\end{center}
-\caption{Potentiel $\phi$ et champ électrique $E$ de l'onde de sillage}
-\label{fig:1D_pot_field}
-\end{figure}
-
-Nous pouvons alors tracer les trajectoires des particules dans ce potentiel dans l'espace des phases~$(\gamma, k_p\zeta)$.
+Nous avions calculé la forme de l'onde plasma excitée par le laser (equation\ref{eq:1Dnonlinear}, solution représentée sur la figure~\ref{fig:1D_pot_field}). En reprenant l'oscillation calculée numériquement, nous pouvons tracer les trajectoires des particules dans ce potentiel dans l'espace des phases~$(\gamma, k_p\zeta)$.
 
 
 Nous observons deux types de trajectoires dans cet espace des phases ainsi qu'une trajectoire limite (en rouge) que l'on appelle la séparatrice, et qui délimite les trajectoires piégées des trajectoires non-piégées. La trajectoire en noir représente les électrons qui étaient au repos ($u_z = 0$) à l'arrivée de l'impulsion laser. Ces électrons oscillent dans l'onde plasma un peu comme une bouée oscille sur les vagues : sa quantité de mouvement longitudinale est centrée autour de zéro (on a tracé $u_z+1$ en échelle logarithmique par souci de lisibilité). Les électrons de faible énergie oscillent eux aussi, mais avec une quantité de mouvement moyenne non-nulle, jusqu'à ce que l'énergie soit suffisante pour que ces électrons soient piégés dans l'onde plasma. Les trajectoires fermées correspondent ainsi à des électrons de vitesse longitudinale suffisamment importante pour ``surfer" sur le champ accélérateur et ainsi suivre l'impulsion laser à la vitesse de groupe. C'est ce phénomène de piégeage dans l'onde plasma qui permet l'accélération de particules par laser. 
@@ -1190,7 +1218,7 @@ Nous observons deux types de trajectoires dans cet espace des phases ainsi qu'un
 
 \subsubsection{Une expérience d'accélération laser-plasma au laboratoire d'optique appliquée}
 
-Les années '90 ont connu l'essor des lasers basés sur l'amplification dans des cristaux de saphir dopés au titane (plus connus sous le nom de Titane-Saphir) par amplification par dérive de fréquence - ou Chirped Pulse Amplification (CPA) en anglais-. L'introduction de cette technique, initialement issue du monde de l'électronique radio-fréquence, dans le domaine optique a permis de multiplier par près de trois ordres de grandeur la puissance crête des lasers ! Avant l'arrivée de cette technique, l'amplification d'une impulsion comnprimée, donc très intense, était limitée par les effets non-linéaires indésirables dans le milieu amplificateur, et à l'extrême limite par la destruction de ce dernier. En étirant une impulsion courte dans le temps, c'est-à-dire en déphasant les différentes fréquences les unes par rapport aux autres, on diminue l'intensité crête, permettant donc l'amplification d'impulsions plus énergétiques. En pratique, l'étirement de l'impulsion se fait la plupart du temps grâce à des réseaux de diffraction. Après amplification, l'impulsion doit être recomprimée, et le processus inverse est aussi effectué avec des réseaux. Un schéma de ce type de système est présenté sur la Figure~\ref{}
+Les années '90 ont connu l'essor des lasers basés sur l'amplification dans des cristaux de saphir dopés au titane (plus connus sous le nom de Titane-Saphir) par amplification par dérive de fréquence - ou Chirped Pulse Amplification (CPA) en anglais-. L'introduction de cette technique, initialement issue du monde de l'électronique radio-fréquence, dans le domaine optique a permis de multiplier par près de trois ordres de grandeur la puissance crête des lasers ! Avant l'arrivée de cette technique, l'amplification d'une impulsion comprimée, donc très intense, était limitée par les effets non-linéaires indésirables dans le milieu amplificateur, et à l'extrême limite par la destruction de ce dernier. En étirant une impulsion courte dans le temps, c'est-à-dire en déphasant les différentes fréquences les unes par rapport aux autres, on diminue l'intensité crête, permettant donc l'amplification d'impulsions plus énergétiques. En pratique, l'étirement de l'impulsion se fait la plupart du temps grâce à des réseaux de diffraction. Après amplification, l'impulsion doit être recomprimée, et le processus inverse est aussi effectué avec des réseaux. Un schéma de ce type de système est présenté sur la Figure~\ref{}
 
 \begin{figure}[!htbp]
 \begin{center}
@@ -1201,12 +1229,12 @@ Les années '90 ont connu l'essor des lasers basés sur l'amplification dans des
 \end{figure}
 
  Les intensités crêtes obtenues grâce au CPA ont permis d'accéder au régime d'interaction laser-plasma relativiste. Plusieurs groupes dans le monde (le LBNL à Berkeley, l'Imperial College à Londres, et le LOA à Palaiseau) ont ainsi pu, et ce presque simultanément, accélérer des électrons à plusieurs centaines des MeV par interaction entre un laser et un plasma généré dans un gaz. 
-Le laser ultra-intense alors utilisé générait des impulsions de longueur d'onde centrale 800$\,$nm, d'une énergie d'1$\,$J et d'une durée de 30$\,$fs à mi-hauteur pouvant être focalisées sur 20$\,\mathrrm{\mu m}$ à mi-hauteur. Les différents blocs fonctionnels de ce laser (la ``Salle Jaune'' du Laboratoire d'Optique Appliquée) sont donnés sur la Figure~\ref{fig:salleJaune}, et une vue d'ensemble avant compression est présentée Figure~\ref{fig:salleJauneLayout}. Vous aurez l'occasion de voir de vos yeux ce type d'installation laser lors de la visite de labo !
+Le laser ultra-intense alors utilisé générait des impulsions de longueur d'onde centrale 800$\,$nm, d'une énergie d'1$\,$J et d'une durée de 30$\,$fs à mi-hauteur pouvant être focalisées sur 20$\,\mathrm{\mu}$m à mi-hauteur. Les différents blocs fonctionnels de ce laser (la ``Salle Jaune'' du Laboratoire d'Optique Appliquée) sont donnés sur la Figure~\ref{fig:salleJaune}, et une vue d'ensemble avant compression est présentée Figure~\ref{fig:salleJauneLayout}. Vous aurez l'occasion de voir de vos yeux ce type d'installation laser lors de la visite de labo !
 
 \medskip
 \noindent\fcolorbox{black}{myGray}{%
     \minipage[t]{\dimexpr1\linewidth-2\fboxsep-2\fboxrule\relax}
-        \textbf{Quells sont l'intensité sur cible et le champ électrique maximum ?}\\
+        \textbf{Quels sont l'intensité sur cible et le champ électrique maximum ?}\\
         \textit{On supposera l'impulsion gaussienne dans les trois dimensions de l'espace.}
         \vspace{6cm}
     \endminipage}\hfill
