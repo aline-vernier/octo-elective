@@ -58,33 +58,33 @@ my_path = "C:\Users\\vernier\PycharmProjects\octo-elective\\"
 #       OSCILLATOR IN PHASE SPACE            #
 ##############################################
 
-# tmin = 0
-# tmax = 10.
-# tnum = 1000
-# tstep = (tmax - tmin)/tnum
-#
-# t_array = np.arange(tmin, tmax, tstep)
-#
-#
-# fig = plt.figure(1, figsize=(10,10), dpi=80, facecolor='w', edgecolor='k')
-#
-# # Plot theta as a function of time
-# ax1 = fig.add_subplot(111)
-# for a0 in np.arange(1, 10, 1):
-#     x = [a0*m.cos(t) for t in t_array]
-#     y = [a0*m.sin(t) for t in t_array]
-#     ax1.plot(x, y, linewidth=2, color=tableau20[a0])
-#
-# ax1.set_xlabel('$x$', fontsize=30)
-# ax1.set_ylabel('$\\frac{p^2(t)}{m\omega_0}$', fontsize=30)
-# plt.tight_layout()
-# plt.savefig(my_path + 'simple_phase_space.png')
+tmin = 0
+tmax = 10.
+tnum = 1000
+tstep = (tmax - tmin)/tnum
+
+t_array = np.arange(tmin, tmax, tstep)
+
+
+fig = plt.figure(1, figsize=(10,10), dpi=80, facecolor='w', edgecolor='k')
+
+# Plot theta as a function of time
+ax1 = fig.add_subplot(111)
+for a0 in np.arange(1, 10, 1):
+    x = [a0*m.cos(t) for t in t_array]
+    y = [a0*m.sin(t) for t in t_array]
+    ax1.plot(x, y, linewidth=2, color=tableau20[a0])
+
+ax1.set_xlabel('$x$', fontsize=30)
+ax1.set_ylabel('$\\frac{p^2(t)}{m\omega_p}$', fontsize=30)
+plt.tight_layout()
+plt.savefig(my_path + 'simple_phase_space.png')
 
 ##############################################
 #    DAMPED OSCILLATOR IN PHASE SPACE, BLANK #
 # ##############################################
-#
-#
+
+
 # tmin = 0
 # tmax = 10.
 # tnum = 1000
@@ -106,7 +106,7 @@ my_path = "C:\Users\\vernier\PycharmProjects\octo-elective\\"
 # ax1.set_xlim(-1, 1)
 # ax1.set_ylim(-1, 1)
 # ax1.set_xlabel('$x$', fontsize=30)
-# ax1.set_ylabel('$\\frac{p^2(t)}{m\omega_0}$', fontsize=30)
+# ax1.set_ylabel('$\\frac{p^2(t)}{m\omega_p}$', fontsize=30)
 # plt.tight_layout()
 # plt.savefig(my_path + 'empty_phase_space.png')
 
@@ -180,50 +180,50 @@ my_path = "C:\Users\\vernier\PycharmProjects\octo-elective\\"
 ##############################################
 #    COULOMB POTENTIAL                       #
 # ############################################
-
-rmax = 12.
-rmin = 0.6
-rnum = 1000
-rstep = rmax/rnum
-
-alpha_1 = 10.
-r_array = np.append(np.arange(-rmax, -rmin, rstep), np.arange(rmin, rmax, rstep))
-
-
-fig = plt.figure(1, figsize=(17, 7), dpi=80, facecolor='w', edgecolor='k')
-
-# Plot theta as a function of time
-ax1 = fig.add_subplot(111)
-
-def coulomb(r, alpha_2):
-    return -alpha_1/m.sqrt(m.pow(r, 2)) - alpha_2*r
-
-a2_arr = [0., 0.5, 0.9, 1.5, 1.8, 2., 2.5]
-for ii in range(0, 4):
-    a2 = a2_arr[ii]
-    c_p = [coulomb(r, a2) for r in r_array]
-    ax1.plot(r_array, c_p, linewidth=4, color=tableau20[ii], label='eE = '+str(a2)+'$\,$(u.a.)')
-
-ax1.set_xlim(-rmax, rmax)
-ax1.set_ylim(-13, 0)
-ax1.set_xlabel('$r\,\mathrm{(u.a.)}$', fontsize=25)
-ax1.set_ylabel('$V(r)\,\mathrm{(u.a.)}$', fontsize=25)
-plt.tick_params(
-    axis='x',          # changes apply to the x-axis
-    which='both',      # both major and minor ticks are affected
-    bottom=False,      # ticks along the bottom edge are off
-    top=False,         # ticks along the top edge are off
-    left=False,
-    labelbottom=False) # labels along the bottom edge are off
-plt.tick_params(
-    axis='y',          # changes apply to the x-axis
-    which='both',      # both major and minor ticks are affected
-    bottom=False,      # ticks along the bottom edge are off
-    top=False,         # ticks along the top edge are off
-    left=False,
-    labelleft=False) # labels along the bottom edge are off
-#ax1.legend(loc='lower left')
-#plt.show()
-#plt.tight_layout()
-plt.savefig(my_path + 'suppression_barriere.png')
-
+#
+# rmax = 12.
+# rmin = 0.6
+# rnum = 1000
+# rstep = rmax/rnum
+#
+# alpha_1 = 10.
+# r_array = np.append(np.arange(-rmax, -rmin, rstep), np.arange(rmin, rmax, rstep))
+#
+#
+# fig = plt.figure(1, figsize=(17, 7), dpi=80, facecolor='w', edgecolor='k')
+#
+# # Plot theta as a function of time
+# ax1 = fig.add_subplot(111)
+#
+# def coulomb(r, alpha_2):
+#     return -alpha_1/m.sqrt(m.pow(r, 2)) - alpha_2*r
+#
+# a2_arr = [0., 0.5, 0.9, 1.5, 1.8, 2., 2.5]
+# for ii in range(0, 4):
+#     a2 = a2_arr[ii]
+#     c_p = [coulomb(r, a2) for r in r_array]
+#     ax1.plot(r_array, c_p, linewidth=4, color=tableau20[ii], label='eE = '+str(a2)+'$\,$(u.a.)')
+#
+# ax1.set_xlim(-rmax, rmax)
+# ax1.set_ylim(-13, 0)
+# ax1.set_xlabel('$r\,\mathrm{(u.a.)}$', fontsize=25)
+# ax1.set_ylabel('$V(r)\,\mathrm{(u.a.)}$', fontsize=25)
+# plt.tick_params(
+#     axis='x',          # changes apply to the x-axis
+#     which='both',      # both major and minor ticks are affected
+#     bottom=False,      # ticks along the bottom edge are off
+#     top=False,         # ticks along the top edge are off
+#     left=False,
+#     labelbottom=False) # labels along the bottom edge are off
+# plt.tick_params(
+#     axis='y',          # changes apply to the x-axis
+#     which='both',      # both major and minor ticks are affected
+#     bottom=False,      # ticks along the bottom edge are off
+#     top=False,         # ticks along the top edge are off
+#     left=False,
+#     labelleft=False) # labels along the bottom edge are off
+# #ax1.legend(loc='lower left')
+# #plt.show()
+# #plt.tight_layout()
+# plt.savefig(my_path + 'suppression_barriere.png')
+#
